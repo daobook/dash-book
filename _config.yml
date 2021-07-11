@@ -1,0 +1,190 @@
+#######################################################################################
+# Book settings
+title: ""
+logo: logo.jpg
+author: ""
+email: xinzone@outlook.com
+copyright: ""
+
+exclude_patterns:
+  [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", .github]
+
+# Bibliography settings
+bibtex_bibfiles:
+  - references.bib
+
+execute:
+  execute_notebooks: cache # 是否在构建时执行笔记本。必须是 ("auto", "force", "cache", "off") 之一
+  cache: "" # jupyter 的缓存路径，该路径将用于存储执行工件。 `_build/.jupyter_cache/`
+  exclude_patterns: [] # 在执行中要“跳过”的模式列表（例如，需要很长时间的笔记本）
+  timeout: -1 # 每个笔记本单元允许运行的最长时间（以秒为单位）。
+  # 如果为 `true`，则将创建一个临时目录并将其用作命令工作目录（cwd），否则，笔记本的父目录将是 cwd。
+  run_in_temp: false
+  allow_errors: true # 如果为 `False`，则当代码单元引发错误时，执行将停止，否则所有单元将始终运行。
+  stderr_output: show # 'show', 'remove', 'remove-warn', 'warn', 'error', 'severe' 之一
+
+only_build_toc_files: true
+
+html:
+  favicon: "page-logo.jfif"
+  home_page_in_navbar: false # Whether to include your home page in the left Navigation Bar
+  use_edit_page_button: false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button: true # Whether to add a link to your repository button
+  use_issues_button: true # Whether to add an "open an issue" button
+  baseurl: https://xinetzone.github.io/sanstyle-starter/ # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  
+  extra_navbar: |
+    <div class="w3-padding w3-card-4 w3-pale-green">
+      <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+          data-position="top" data-delay="50">
+          <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
+          data-delay="50">
+          <i class="fas fa-envelope-open"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
+          target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+          <i class="fab fa-qq"></i>
+      </a>
+      <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
+          data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+          <i class="fab fa-zhihu1">知</i>
+      </a>
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
+          data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+          <i class="fab fa-linkedin"></i>
+      </a>
+      <div><a href="https://github.com/xinetzone/sanstyle">上善若水</a> 版权所有</div>
+    </div>
+  extra_footer: |
+    <p class="w3-card w3-pale-blue w3-padding">
+      Copyright © 2021
+      <a href="https://sanstylelab.github.io/">SanstyleLab</a> | 
+      Powered by <a href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a>.
+    </p>
+  comments:
+    hypothesis: true
+    utterances:
+      repo: "xinetzone/sanstyle-starter"
+
+repository:
+  url: https://github.com/xinetzone/sanstyle-starter # The URL to your book's repository
+  path_to_book: "./" # A path to your book's folder, relative to the repository root., ie docs
+  branch: main # Which branch of the repository should be used when creating links
+
+launch_buttons:
+  notebook_interface: "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+  thebe: true
+
+parse:
+  myst_substitutions:
+    sub3: My _global_ value!
+  myst_enable_extensions: # 在 myst 解析器中启用的默认扩展。参考 https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath # 启用解析 LaTeX 样式的数学块
+    - colon_fence # 启用 ::: 防护栅栏，以便使其更易于在不支持 MyST 的界面中呈现
+    - deflist # 启用定义清单
+    - dollarmath # 为数学块支持 $$ 和 $ 语法
+    - html_admonition  # 启用纯定义的 HTML 的提示
+    - html_image # 启用解析原始 HTML 图像
+    - linkify # 自动检测 Markdown 中类似 HTML 的链接并将其转换为超链接
+    - replacements
+    - smartquotes
+    - substitution # 为了允许您定义 Markdown “变量”并在使用它们时置换文本
+  myst_url_schemes: [mailto, http, https] # 在 Markdown 链接中将被识别为外部 URL 的 URI 方案
+
+#######################################################################################
+# LaTeX-specific settings
+latex:
+  latex_engine: xelatex # one of 'pdflatex', 'xelatex' (recommended for unicode), 'luatex', 'platex', 'uplatex'
+  use_jupyterbook_latex: true # use jupyterbook-latex for pdf builds as default
+  latex_documents:
+    targetname: book.tex
+  
+#######################################################################################
+# Advanced and power-user settings
+sphinx:
+  local_extensions: # A list of local extensions to load by sphinx specified by "name: path" items
+  config: 
+    html_show_copyright: false
+    nb_custom_formats:
+      .Rmd:
+        - jupytext.reads
+        - fmt: Rmd
+    bibtex_reference_style: author_year  # or label, super, \supercite
+    # #917 this path will be the default in sphinx v4
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    # However, it is incompatible with the mathjax config below for macros
+    mathjax_config:
+      TeX:
+        Macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat": ["\\left[\\begin{array}"]
+          "emat": ["\\end{array}\\right]"]
+    latex_elements:
+        preamble: |
+          \newcommand\N{\mathbb{N}}
+          \newcommand\floor[1]{\lfloor#1\rfloor}
+          \newcommand{\bmat}{\left[\begin{array}}
+          \newcommand{\emat}{\end{array}\right]}
+    intersphinx_mapping:
+      wiki:
+        - "https://xinetzone.github.io/wiki/"
+        - null
+      # ebp:
+      #   - "https://executablebooks.org/en/latest/"
+      #   - null
+      # myst-parser:
+      #   - "https://myst-parser.readthedocs.io/en/latest/"
+      #   - null
+      # myst-nb:
+      #   - "https://myst-nb.readthedocs.io/en/latest/"
+      #   - null
+      # sphinx:
+      #   - "https://www.sphinx-doc.org/en/master"
+      #   - null
+      # nbformat:
+      #   - "https://nbformat.readthedocs.io/en/latest"
+      #   - null
+      # sphinx-panels:
+      #   - https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/
+      #   - null
+      # plotly-book:
+      #   - "https://xinetzone.github.io/plotly-book/"
+      #   - null
+      # sympy-book:
+      #   - "https://xinetzone.github.io/sympy-book/"
+      #   - null
+      # jupyter-book:
+      #   - "https://xinetzone.github.io/jupyter-book/"
+      #   - null
+      # pytorch-book:
+      #   - "https://xinetzone.github.io/pytorch-book/"
+      #   - null
+      # tensorflow-book:
+      #   - "https://xinetzone.github.io/tensorflow-book/"
+      #   - null
+      # life:
+      #   - "https://xinetzone.github.io/life/"
+      #   - null
+      # ai-world:
+      #   - "https://xinetzone.github.io/ai-world/"
+      #   - null
+      # mathematics:
+      #   - "https://xinetzone.github.io/mathematics/"
+      #   - null
+      # linear-algebra:
+      #   - "https://xinetzone.github.io/linear-algebra/"
+      #   - null
+      # matrix-theory:
+      #   - "https://xinetzone.github.io/matrix-theory/"
+      #   - null
+    language: zh
+
+  extra_extensions:
+    - sphinx_click.ext
+    - sphinx_inline_tabs
+    - sphinx.ext.intersphinx
