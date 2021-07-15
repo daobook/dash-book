@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>添加 CSS 和 JS 以覆盖页面加载模板 &#8212; Dash 手册</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/dash-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xinetzone.github.io/dash-book/advanced/02_external-resources.html" />
+    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="多页面应用程序和 URL 支持" href="03_urls.html" />
+    <link rel="prev" title="实时更新" href="01_live-updates.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dash 手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  教程
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/index.html">
+   快速上手
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/00_intro.html">
+     Dash 简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/01_sanstyle.html">
+     Dash Xinet 与 Sanstyle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/02_layout.html">
+     布局
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/03_callback.html">
+     回调与交互
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/04_interactive-graphing.html">
+     交互式可视化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/05_sharing-data-between-callbacks.html">
+     在回调之间共享数据
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/06_faqs.html">
+     FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/topic.html">
+     某个主题
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics/index.html">
+   指南
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/00_advanced-callbacks.html">
+     高级回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/01_clientside-callbacks.html">
+     客户端回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/02_pattern-matching-callbacks.html">
+     模式匹配回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/03_callback-gotchas.html">
+     回调 Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/topic.html">
+     基础
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   高级教程
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="00_performance.html">
+     性能
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_live-updates.html">
+     实时更新
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     添加 CSS 和 JS 以覆盖页面加载模板
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_urls.html">
+     多页面应用程序和 URL 支持
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_persistence.html">
+     persistence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_devtools.html">
+     devtools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_loading-states.html">
+     Loading States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_testing.html">
+     testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08_app-lifecycle.html">
+     app-lifecycle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09_reference.html">
+     reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="test.html">
+     测试
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  主题
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../custom-components/index.html">
+   创建自己的组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/00_react-for-python-developers.html">
+     面向 Python 开发人员：入门
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/01_plugins.html">
+     编写自己的组件
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/02_d3-react-components.html">
+     将
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       D3.js
+      </span>
+     </code>
+     图表封装为 Python Dash 组件
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../production-capabilities/index.html">
+   面向生产
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/00_deployment.html">
+     部署 Dash 应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/01_authentication.html">
+     authentication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/02_integrating-dash.html">
+     integrating-dash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/server.html">
+     Waitress
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  参考
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../core-components/index.html">
+   Dash 核心组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/graph.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Graph
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/interval.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Interval
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/link.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Link
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/location.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Location
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/store.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Store
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  混沌
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   关于本书
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">
+   Sanstyle Book
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../news/index.html">
+   Dash 资讯
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/av.html">
+     自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/dash.html">
+     关于 Plotly Dash 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/dashboard-giant.html">
+     Streamlit vs Dash vs Voilà vs Panel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/deploy-github-pages.html">
+     Deploy dash to github pages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/panel.html">
+     关于 Panel 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/streamlit.html">
+     关于 Streamlit 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/voila.html">
+     关于 Voilà 你需要知道的一切
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book.html">
+   外部资源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGELOG.html">
+   变更日志
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div class="w3-padding w3-card-4 w3-pale-green">
+  <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+      data-position="top" data-delay="50">
+      <i class="fab fa-github"></i>
+  </a>
+  <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
+      data-delay="50">
+      <i class="fas fa-envelope-open"></i>
+  </a>
+  <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
+      target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+      <i class="fab fa-qq"></i>
+  </a>
+  <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
+      data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+      <i class="fab fa-zhihu1">知</i>
+  </a>
+  <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
+      data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+      <i class="fab fa-linkedin"></i>
+  </a>
+  <div><a href="https://github.com/xinetzone/sanstyle">上善若水</a> 版权所有</div>
+</div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/advanced/02_external-resources.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/advanced/02_external-resources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/dash-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/dash-book/issues/new?title=Issue%20on%20page%20%2Fadvanced/02_external-resources.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xinetzone/dash-book/main?urlpath=tree/./advanced/02_external-resources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#css-javascript">
+   添加自定义 CSS 和 JavaScript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   示例：包含本地 CSS 和 JavaScript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   添加外部 CSS / JavaScript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash">
+   自定义 Dash 的文件或浏览器标签标题
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#url">
+   根据 URL 或选项卡动态更新文档标题
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash-updating">
+   定制或删除 Dash 的
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     "Updating..."
+    </span>
+   </code>
+   消息
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash-html-index">
+   自定义 Dash 的 HTML index 模板
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-1-index-string">
+     Option 1 - index_string
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-2-interpolate-index">
+     Option 2 - interpolate_index
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dash-renderer">
+     使用请求钩子定制 dash-renderer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meta">
+   定制 Meta 标记
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="css-js">
+<span id="dash-external-resources"></span><h1>添加 CSS 和 JS 以覆盖页面加载模板<a class="headerlink" href="#css-js" title="永久链接至标题">¶</a></h1>
+<p>参考：<a class="reference external" href="https://dash.plotly.com/external-resources">Adding CSS &amp; JS and Overriding the Page-Load Template | Dash for Python Documentation | Plotly</a></p>
+<p>Dash 应用程序通过 CSS 和 JavaScript 在 web 浏览器中呈现。在页面加载时，Dash 提供一个小的 HTML 模板，其中包括渲染应用程序所需的 CSS 和 JavaScript 引用。这一章涵盖了你需要知道的关于配置这个 HTML 文件以及关于在 Dash 应用程序中包括外部 CSS 和 JavaScript 的一切。</p>
+<div class="section" id="css-javascript">
+<h2>添加自定义 CSS 和 JavaScript<a class="headerlink" href="#css-javascript" title="永久链接至标题">¶</a></h2>
+<p>在你的 Dash 应用程序中包含自定义 CSS 或 JavaScript 是很简单的。你只需在 <code class="docutils literal notranslate"><span class="pre">app</span></code> 目录的根目录下创建一个名为 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 的文件夹，并在该文件夹中包含你的 CSS 和 JavaScript 文件。Dash 会自动提供这个文件夹中包含的所有文件。默认情况下，请求资产的 <code class="docutils literal notranslate"><span class="pre">url</span></code> 是 <code class="docutils literal notranslate"><span class="pre">/assets</span></code>，但是你可以用 <code class="docutils literal notranslate"><span class="pre">assets_url_path</span></code> 参数将其自定义为 <code class="docutils literal notranslate"><span class="pre">dash.Dash</span></code>。</p>
+<div class="w3-yellow docutils">
+<p>建议：你需要在 Dash 构造函数中包含 <code class="docutils literal notranslate"><span class="pre">__name__</span></code>。</p>
+</div>
+<p>也就是说，<code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash(__name__)</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash()</span></code>。理由见 <a class="reference external" href="https://community.plotly.com/t/dash-app-does-not-load-assets-and-app-index-string/12178/10?u=chriddyp">dash-app-does-not-load-assets-and-app-index-string</a>。</p>
+</div>
+<div class="section" id="id1">
+<h2>示例：包含本地 CSS 和 JavaScript<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>我们将创建几个文件：<code class="docutils literal notranslate"><span class="pre">app.py</span></code>，一个名为 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 的文件夹，以及该文件夹中的三个文件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>- app.py
+- assets/
+    <span class="p">|</span>-- typography.css
+    <span class="p">|</span>-- header.css
+    <span class="p">|</span>-- custom-script.js
+</pre></div>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="7593f198-ce9b-4393-a906-10e655b87362" name="e3a215eb-8294-4a7e-90ce-9a2ddbdaa5f9" type="radio">
+</input><label class="tabbed-label" for="7593f198-ce9b-4393-a906-10e655b87362">
+app</label><div class="tabbed-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
+        <span class="n">className</span><span class="o">=</span><span class="s2">&quot;app-header&quot;</span><span class="p">,</span>
+        <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Plotly Dash&#39;</span><span class="p">,</span> <span class="n">className</span><span class="o">=</span><span class="s2">&quot;app-header--title&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
+        <span class="n">children</span><span class="o">=</span><span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+            <span class="n">html</span><span class="o">.</span><span class="n">H5</span><span class="p">(</span><span class="s1">&#39;Overview&#39;</span><span class="p">),</span>
+            <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">                This is an example of a simple Dash app with</span>
+<span class="s1">                local, customized CSS.</span>
+<span class="s1">            &#39;&#39;&#39;</span><span class="p">)</span>
+        <span class="p">])</span>
+    <span class="p">)</span>
+<span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="81a08fd2-965f-42e9-b624-6d439cb532bc" name="e3a215eb-8294-4a7e-90ce-9a2ddbdaa5f9" type="radio">
+</input><label class="tabbed-label" for="81a08fd2-965f-42e9-b624-6d439cb532bc">
+custom-script</label><div class="tabbed-content docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;如果您看到此警告，说明您的自定义 JavaScript 脚本已经运行！&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="53957297-006e-4a0b-8760-12d802c5d2ef" name="e3a215eb-8294-4a7e-90ce-9a2ddbdaa5f9" type="radio">
+</input><label class="tabbed-label" for="53957297-006e-4a0b-8760-12d802c5d2ef">
+typography</label><div class="tabbed-content docutils">
+<div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="p">{</span>
+    <span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span> <span class="p">{</span>
+    <span class="n">color</span><span class="p">:</span> <span class="n">hotpink</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<input id="b6ac1558-e4f9-432b-9973-4456c13fed54" name="e3a215eb-8294-4a7e-90ce-9a2ddbdaa5f9" type="radio">
+</input><label class="tabbed-label" for="b6ac1558-e4f9-432b-9973-4456c13fed54">
+header</label><div class="tabbed-content docutils">
+<div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span> <span class="p">{</span>
+    <span class="n">height</span><span class="p">:</span> <span class="mi">60</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">line</span><span class="o">-</span><span class="n">height</span><span class="p">:</span> <span class="mi">60</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">border</span><span class="o">-</span><span class="n">bottom</span><span class="p">:</span> <span class="n">thin</span> <span class="n">lightgrey</span> <span class="n">solid</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span> <span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span><span class="o">--</span><span class="n">title</span> <span class="p">{</span>
+    <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="mi">22</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">padding</span><span class="o">-</span><span class="n">left</span><span class="p">:</span> <span class="mi">5</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>当你运行 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 时，你的应用看起来应该是这样的：</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-book.herokuapp.com/examples/external-resources"></div></div>
+</div>
+<p>在自动添加 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 时，你需要牢记以下几点:</p>
+<ol class="simple">
+<li><p>以下文件类型将自动包括:</p>
+<ul class="simple">
+<li><p>CSS 文件后缀为 <code class="docutils literal notranslate"><span class="pre">.css</span></code></p></li>
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 作为后缀的 JavaScript 文件</p></li>
+<li><p>一个名为 <code class="docutils literal notranslate"><span class="pre">favicon.ico</span></code> 的文件(页面标签的图标)</p></li>
+</ul>
+</li>
+<li><p>Dash 将包括文件在字母数字顺序的文件名。因此，如果你需要确保文件名的顺序(例如 <code class="docutils literal notranslate"><span class="pre">10_typography.css</span></code>, <code class="docutils literal notranslate"><span class="pre">20_header.css</span></code>)，我们建议你在文件名前加上数字前缀。</p></li>
+<li><p>你可以使用正则过滤器 <code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash(assets_ignore='.*ignored.*')</span></code> 来忽略 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹中的某些文件。这将阻止 Dash 加载包含上述模式的文件。</p></li>
+<li><p>如果你想包含来自远程 URL 的CSS，请参阅下一节。</p></li>
+<li><p>你的自定义 CSS 将包含在 Dash 组件 CSS 之后。</p></li>
+<li><p>建议在 dash init 中添加<code class="docutils literal notranslate"><span class="pre">__name__</span></code>，以确保加载 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹中的资源，例如：<code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash(__name__,</span> <span class="pre">meta_tags=[...])</span></code>。当您通过其他命令行运行应用程序时(如 <code class="docutils literal notranslate"><span class="pre">flask</span></code> 命令或 <code class="docutils literal notranslate"><span class="pre">gunicorn/waitress</span></code>)，<code class="docutils literal notranslate"><span class="pre">__main__</span></code> 模块将不再位于 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 所在的位置。通过明确设置 <code class="docutils literal notranslate"><span class="pre">__name__</span></code>， <code class="docutils literal notranslate"><span class="pre">Dash</span></code> 将能够正确地找到相对 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹。</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>添加外部 CSS / JavaScript<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>你可以通过 <code class="docutils literal notranslate"><span class="pre">external_stylesheets</span></code> 和 <code class="docutils literal notranslate"><span class="pre">external_scripts</span></code> init 关键字将托管在你的 Dash 应用程序上的资源添加到外部。</p>
+<p>资源可以是字符串，也可以是包含标签属性（<code class="docutils literal notranslate"><span class="pre">src</span></code>、<code class="docutils literal notranslate"><span class="pre">integrity</span></code>、<code class="docutils literal notranslate"><span class="pre">crossorigin</span></code> 等）的字典。你可以两者混合。</p>
+<p>外部 css/js 文件在 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 之前被加载。</p>
+<p>例如：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+
+<span class="c1"># external JavaScript files</span>
+<span class="n">external_scripts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://www.google-analytics.com/analytics.js&#39;</span><span class="p">,</span>
+    <span class="p">{</span><span class="s1">&#39;src&#39;</span><span class="p">:</span> <span class="s1">&#39;https://cdn.polyfill.io/v2/polyfill.min.js&#39;</span><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;src&#39;</span><span class="p">:</span> <span class="s1">&#39;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.js&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;integrity&#39;</span><span class="p">:</span> <span class="s1">&#39;sha256-Qqd/EfdABZUcAxjOkMi8eGEivtdTkh3b65xCZL4qAQA=&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;crossorigin&#39;</span><span class="p">:</span> <span class="s1">&#39;anonymous&#39;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1"># external CSS stylesheets</span>
+<span class="n">external_stylesheets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://codepen.io/chriddyp/pen/bWLwgP.css&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;href&#39;</span><span class="p">:</span> <span class="s1">&#39;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rel&#39;</span><span class="p">:</span> <span class="s1">&#39;stylesheet&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;integrity&#39;</span><span class="p">:</span> <span class="s1">&#39;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;crossorigin&#39;</span><span class="p">:</span> <span class="s1">&#39;anonymous&#39;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span>
+                <span class="n">external_scripts</span><span class="o">=</span><span class="n">external_scripts</span><span class="p">,</span>
+                <span class="n">external_stylesheets</span><span class="o">=</span><span class="n">external_stylesheets</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dash">
+<h2>自定义 Dash 的文件或浏览器标签标题<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
+<p>文档标题是出现在网页浏览器选项卡中的网页名称。</p>
+<p>默认值是 <code class="docutils literal notranslate"><span class="pre">Dash</span></code>。</p>
+<p>在 Dash 1.14.0 中，你可以使用 <code class="docutils literal notranslate"><span class="pre">title=</span></code> 关键字来定制这个标题:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Weekly Analytics&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="url">
+<h2>根据 URL 或选项卡动态更新文档标题<a class="headerlink" href="#url" title="永久链接至标题">¶</a></h2>
+<p>要动态设置文档标题，可以使用<code class="docutils literal notranslate"><span class="pre">clientside</span> <span class="pre">callback</span></code> 作为一个副作用更新 <code class="docutils literal notranslate"><span class="pre">document.title</span></code>。下面的示例设置 <code class="docutils literal notranslate"><span class="pre">document.title</span></code>的基础上，当前选择的选项卡。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;blank-output&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Tabs</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;tabs-example&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;tab-1&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">dcc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tab one&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;tab-1&#39;</span><span class="p">),</span>
+        <span class="n">dcc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tab two&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;tab-2&#39;</span><span class="p">),</span>
+    <span class="p">]),</span>
+<span class="p">])</span>
+
+
+<span class="n">app</span><span class="o">.</span><span class="n">clientside_callback</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function(tab_value) {</span>
+<span class="sd">        if (tab_value === &#39;tab-1&#39;) {</span>
+<span class="sd">            document.title = &#39;Tab 1&#39;</span>
+<span class="sd">        } else if (tab_value === &#39;tab-2&#39;) {</span>
+<span class="sd">            document.title = &#39;Tab 2&#39;</span>
+<span class="sd">        }</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;blank-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;tabs-example&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>基于 URL 更新页面将是类似的：回调的输入将是 <code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code> 的 <code class="docutils literal notranslate"><span class="pre">pathname</span></code> 属性。关于 <code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code>，请参阅 <a class="reference external" href="https://dash.plotly.com/urls">url 和多页应用程序</a>章节。</p>
+</div>
+<div class="section" id="dash-updating">
+<h2>定制或删除 Dash 的<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息<a class="headerlink" href="#dash-updating" title="永久链接至标题">¶</a></h2>
+<p>当一个回调运行时，Dash 更新文档标题(出现在你的浏览器标签)与<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">update_title=属性</span></code> 定制此消息：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">update_title</span><span class="o">=</span><span class="s1">&#39;Loading...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>或者，通过设置<code class="docutils literal notranslate"><span class="pre">update_title=None</span></code>来阻止此消息的出现：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">update_title</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dash-html-index">
+<h2>自定义 Dash 的 HTML index 模板<a class="headerlink" href="#dash-html-index" title="永久链接至标题">¶</a></h2>
+<p>Dash 的 UI 是通过 Dash 的 <code class="docutils literal notranslate"><span class="pre">React.js</span></code> 前端动态生成的。因此，在页面加载时，Dash提 供一个非常小的 HTML 模板字符串，其中包括渲染页面所需的 CSS 和 JavaScript 以及一些简单的 HTML 元标记。</p>
+<p>这个简单的 HTML 字符串是可定制的。如果你想自定义这个字符串:</p>
+<ul class="simple">
+<li><p>定制页面中包含 CSS 或 JavaScript 的方式。例如，如果您想包含远程脚本，或者如果您想在 Dash 组件 CSS 之前包含 CSS</p></li>
+<li><p>在你的应用程序中包含自定义元标记。注意，元标记也可以通过 <code class="docutils literal notranslate"><span class="pre">meta_tags</span></code> 参数添加(下面的例子)。</p></li>
+<li><p>通过自己实例化 <code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code> 类，包含一个自定义版本的<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>。你可以通过下面的例子提供一个<code class="docutils literal notranslate"><span class="pre">hooks</span></code>配置对象来添加请求钩子。</p></li>
+</ul>
+<div class="section" id="option-1-index-string">
+<h3>Option 1 - index_string<a class="headerlink" href="#option-1-index-string" title="永久链接至标题">¶</a></h3>
+<p>添加一个<code class="docutils literal notranslate"><span class="pre">index_string</span></code>来修改默认的 HTML 索引模板：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">external_stylesheets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://codepen.io/chriddyp/pen/bWLwgP.css&#39;</span><span class="p">]</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">external_stylesheets</span><span class="o">=</span><span class="n">external_stylesheets</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">index_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;!DOCTYPE html&gt;</span>
+<span class="s1">&lt;html&gt;</span>
+<span class="s1">    &lt;head&gt;</span>
+<span class="s1">        {%metas%}</span>
+<span class="s1">        &lt;title&gt;{%title%}&lt;/title&gt;</span>
+<span class="s1">        {</span><span class="si">%f</span><span class="s1">avicon%}</span>
+<span class="s1">        {</span><span class="si">%c</span><span class="s1">ss%}</span>
+<span class="s1">    &lt;/head&gt;</span>
+<span class="s1">    &lt;body&gt;</span>
+<span class="s1">        &lt;div&gt;My Custom header&lt;/div&gt;</span>
+<span class="s1">        {</span><span class="si">%a</span><span class="s1">pp_entry%}</span>
+<span class="s1">        &lt;footer&gt;</span>
+<span class="s1">            {</span><span class="si">%c</span><span class="s1">onfig%}</span>
+<span class="s1">            {</span><span class="si">%s</span><span class="s1">cripts%}</span>
+<span class="s1">            {</span><span class="si">%r</span><span class="s1">enderer%}</span>
+<span class="s1">        &lt;/footer&gt;</span>
+<span class="s1">        &lt;div&gt;My Custom footer&lt;/div&gt;</span>
+<span class="s1">    &lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Simple Dash App&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">{%key%}</span></code>是模板变量，Dash 会用默认属性自动填充。可用的<code class="docutils literal notranslate"><span class="pre">key</span></code>是：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{%metas%}</span></code> (optional)：注册的<code class="docutils literal notranslate"><span class="pre">meta</span></code>标签包含在<code class="docutils literal notranslate"><span class="pre">dash.Dash</span></code>中的<code class="docutils literal notranslate"><span class="pre">meta_tags</span></code>参数中。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%favicon%}</span></code> (optional)：如果在<code class="docutils literal notranslate"><span class="pre">assets</span></code>文件夹中找到<code class="docutils literal notranslate"><span class="pre">favicon</span></code>链接标签。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%css%}</span></code> (optional)：&lt;link&gt; CSS 资源的标签。这些资源包括 Dash 组件库CSS资源以及在<code class="docutils literal notranslate"><span class="pre">assets</span></code>文件夹中找到的任何 CSS 资源。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%title%}</span></code> (optional)：页面内容 &lt;title&gt;标签。了解更多关于<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title/&gt;</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%config%}</span></code> (required)：一个自动生成的标签，包括从 Dash 的后端到前端的配置设置(<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>)。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%app_entry%}</span></code> (required)：渲染 Dash 布局的容器。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%scripts%}</span></code> (required)：渲染 Dash 应用所需的 JavaScript 脚本集。这包括 Dash 组件的 JavaScript 文件以及在 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹中找到的任何 JavaScript 文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%renderer%}</span></code> (required)：通过调用<code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">DashRenderer()</span></code>实例化<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>的<code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>脚本</p></li>
+</ul>
+</div>
+<div class="section" id="option-2-interpolate-index">
+<h3>Option 2 - interpolate_index<a class="headerlink" href="#option-2-interpolate-index" title="永久链接至标题">¶</a></h3>
+<p>如果你的 HTML 内容不是静态的，或者你想 introspect 或修改模板变量，那么你可以覆盖 <code class="docutils literal notranslate"><span class="pre">Dash.interpolate_index</span></code> 方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+
+<span class="k">class</span> <span class="nc">CustomDash</span><span class="p">(</span><span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">interpolate_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Inspect the arguments by printing them</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">        &lt;!DOCTYPE html&gt;</span>
+<span class="s1">        &lt;html&gt;</span>
+<span class="s1">            &lt;head&gt;</span>
+<span class="s1">                &lt;title&gt;My App&lt;/title&gt;</span>
+<span class="s1">            &lt;/head&gt;</span>
+<span class="s1">            &lt;body&gt;</span>
+
+<span class="s1">                &lt;div id=&quot;custom-header&quot;&gt;My custom header&lt;/div&gt;</span>
+<span class="s1">                </span><span class="si">{app_entry}</span><span class="s1"></span>
+<span class="s1">                </span><span class="si">{config}</span><span class="s1"></span>
+<span class="s1">                </span><span class="si">{scripts}</span><span class="s1"></span>
+<span class="s1">                </span><span class="si">{renderer}</span><span class="s1"></span>
+<span class="s1">                &lt;div id=&quot;custom-footer&quot;&gt;My custom footer&lt;/div&gt;</span>
+<span class="s1">            &lt;/body&gt;</span>
+<span class="s1">        &lt;/html&gt;</span>
+<span class="s1">        &#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">app_entry</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;app_entry&#39;</span><span class="p">],</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">],</span>
+            <span class="n">scripts</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;scripts&#39;</span><span class="p">],</span>
+            <span class="n">renderer</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;renderer&#39;</span><span class="p">])</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">CustomDash</span><span class="p">()</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Simple Dash App&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>不像<code class="docutils literal notranslate"><span class="pre">index_string</span></code>方法，我们使用模板字符串变量，传递到<code class="docutils literal notranslate"><span class="pre">interpolate_index</span></code>的关键字变量已经被求值了。</p>
+<p>在上面的例子中，当我们打印<code class="docutils literal notranslate"><span class="pre">interpolate_index</span></code>的输入参数时，应该会看到这样的输出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Dash&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;app_entry&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&lt;div id=&quot;react-entry-point&quot;&gt;</span><span class="se">\n</span><span class="s1">    &lt;div class=&quot;_dash-loading&quot;&gt;</span><span class="se">\n</span><span class="s1">        Loading...</span><span class="se">\n</span><span class="s1">    &lt;/div&gt;</span><span class="se">\n</span><span class="s1">&lt;/div&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;favicon&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;metas&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;meta charset=&quot;UTF-8&quot;/&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;scripts&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;script src=&quot;https://unpkg.com/react@15.4.2/dist/react.min.js&quot;&gt;&lt;/script&gt;</span><span class="se">\n</span><span class="s1">&lt;script src=&quot;https://unpkg.com/react-dom@15.4.2/dist/react-dom.min.js&quot;&gt;&lt;/script&gt;</span><span class="se">\n</span><span class="s1">&lt;script src=&quot;https://unpkg.com/dash-html-components@0.14.0/dash_html_components/bundle.js&quot;&gt;&lt;/script&gt;</span><span class="se">\n</span><span class="s1">&lt;script src=&quot;https://unpkg.com/dash-renderer@0.20.0/dash_renderer/bundle.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;renderer&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;script id=&quot;_dash-renderer&quot; type=&quot;application/javascript&quot;&gt;var renderer = new DashRenderer();&lt;/script&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;script id=&quot;_dash-config&quot; type=&quot;application/json&quot;&gt;{&quot;requests_pathname_prefix&quot;: &quot;/&quot;, &quot;url_base_pathname&quot;: &quot;/&quot;}&lt;/script&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;css&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">scripts</span></code>和<code class="docutils literal notranslate"><span class="pre">css</span></code>键的值可能会不同，这取决于您包含的组件库或<code class="docutils literal notranslate"><span class="pre">assets</span></code>文件夹中的文件。</p>
+</div>
+<div class="section" id="dash-renderer">
+<h3>使用请求钩子定制 dash-renderer<a class="headerlink" href="#dash-renderer" title="永久链接至标题">¶</a></h3>
+<p>为了实例化你自己的<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>版本，你可以覆盖 Dash 的HTML Index Template，并提供你自己的脚本来代替标准脚本。这个脚本应该在某处调用<code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">renderer</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">DashRenderer();</span></code>，它实例化了<code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code>类。当你设置<code class="docutils literal notranslate"><span class="pre">app.index_string</span></code>时，你可以将这个脚本添加到你的 index HTML 中，或者你可以像这样简单地覆盖<code class="docutils literal notranslate"><span class="pre">app.renderer</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">external_stylesheets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://codepen.io/chriddyp/pen/bWLwgP.css&#39;</span><span class="p">]</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">external_stylesheets</span><span class="o">=</span><span class="n">external_stylesheets</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">renderer</span> <span class="o">=</span> <span class="s1">&#39;var renderer = new DashRenderer();&#39;</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Simple Dash App&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当你提供你自己的<code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code>时，你也可以传入一个钩子对象来保存<code class="docutils literal notranslate"><span class="pre">request_pre</span></code>和<code class="docutils literal notranslate"><span class="pre">request_post</span></code>函数。这些请求钩子将在<code class="docutils literal notranslate"><span class="pre">Dash</span></code>向其后端发出请求之前和之后被触发。这里有一个例子：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">external_stylesheets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://codepen.io/chriddyp/pen/bWLwgP.css&#39;</span><span class="p">]</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">external_stylesheets</span><span class="o">=</span><span class="n">external_stylesheets</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">renderer</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">var renderer = new DashRenderer({</span>
+<span class="s1">    request_pre: (payload) =&gt; {</span>
+<span class="s1">        // print out payload parameter</span>
+<span class="s1">        console.log(payload);</span>
+<span class="s1">    },</span>
+<span class="s1">    request_post: (payload, response) =&gt; {</span>
+<span class="s1">        // print out payload and response parameter</span>
+<span class="s1">        console.log(payload);</span>
+<span class="s1">        console.log(response);</span>
+<span class="s1">    }</span>
+<span class="s1">})</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Simple Dash App&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>请注意，<code class="docutils literal notranslate"><span class="pre">request_pre</span></code>函数将正在发送的请求的有效负载作为其参数，而<code class="docutils literal notranslate"><span class="pre">request_post</span></code>函数将有效负载和服务器的响应同时作为参数。这些可以在我们的功能中改变，允许你修改<code class="docutils literal notranslate"><span class="pre">Dash</span></code>发送给服务器的响应和请求对象。在上面的例子中，<code class="docutils literal notranslate"><span class="pre">request_pre</span></code>函数在每次服务器调用之前被触发，在这个例子中，它将<code class="docutils literal notranslate"><span class="pre">console.log()</span></code>请求参数。<code class="docutils literal notranslate"><span class="pre">request_post</span></code>函数将在每次服务器调用后触发，在我们的示例中还将打印出响应参数。</p>
+</div>
+</div>
+<div class="section" id="meta">
+<h2>定制 Meta 标记<a class="headerlink" href="#meta" title="永久链接至标题">¶</a></h2>
+<p>要在你的应用程序中添加自定义元标签，你可以覆盖<code class="docutils literal notranslate"><span class="pre">Dash</span></code>的 HTML 索引模板。另外，<code class="docutils literal notranslate"><span class="pre">Dash</span></code> 提供了一个快捷方式：你可以直接在 <code class="docutils literal notranslate"><span class="pre">Dash</span></code> 构造函数中指定 <code class="docutils literal notranslate"><span class="pre">meta</span></code> 标签：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="n">meta_tags</span><span class="o">=</span><span class="p">[</span>
+    <span class="c1"># A description of the app, used by e.g.</span>
+    <span class="c1"># search engines when displaying search results.</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;My description&#39;</span>
+    <span class="p">},</span>
+    <span class="c1"># A tag that tells Internet Explorer (IE)</span>
+    <span class="c1"># to use the latest renderer version available</span>
+    <span class="c1"># to that browser (e.g. Edge)</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;http-equiv&#39;</span><span class="p">:</span> <span class="s1">&#39;X-UA-Compatible&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;IE=edge&#39;</span>
+    <span class="p">},</span>
+    <span class="c1"># A tag that tells the browser not to scale</span>
+    <span class="c1"># desktop widths to fit mobile screens.</span>
+    <span class="c1"># Sets the width of the viewport (browser)</span>
+    <span class="c1"># to the width of the device, and the zoom level</span>
+    <span class="c1"># (initial scale) to 1.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Necessary for &quot;true&quot; mobile support.</span>
+    <span class="p">{</span>
+      <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;viewport&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;width=device-width, initial-scale=1.0&#39;</span>
+    <span class="p">}</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Simple Dash App&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/dash-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ai"
+        },
+        kernelOptions: {
+            kernelName: "ai",
+            path: "./advanced"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ai'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01_live-updates.html" title="previous page">实时更新</a>
+    <a class='right-next' id="next-link" href="03_urls.html" title="next page">多页面应用程序和 URL 支持</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p class="w3-card w3-pale-blue w3-padding">
+  Copyright © 2021
+  <a href="https://sanstylelab.github.io/">SanstyleLab</a> | 
+  Powered by <a href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a>.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

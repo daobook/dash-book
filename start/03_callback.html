@@ -1,0 +1,1137 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>回调与交互 &#8212; Dash 手册</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/dash-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xinetzone.github.io/dash-book/start/03_callback.html" />
+    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="交互式可视化" href="04_interactive-graphing.html" />
+    <link rel="prev" title="布局" href="02_layout.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dash 手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  教程
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   快速上手
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="00_intro.html">
+     Dash 简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_sanstyle.html">
+     Dash Xinet 与 Sanstyle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_layout.html">
+     布局
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     回调与交互
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_interactive-graphing.html">
+     交互式可视化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_sharing-data-between-callbacks.html">
+     在回调之间共享数据
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_faqs.html">
+     FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topic.html">
+     某个主题
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics/index.html">
+   指南
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/00_advanced-callbacks.html">
+     高级回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/01_clientside-callbacks.html">
+     客户端回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/02_pattern-matching-callbacks.html">
+     模式匹配回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/03_callback-gotchas.html">
+     回调 Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/topic.html">
+     基础
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../advanced/index.html">
+   高级教程
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/00_performance.html">
+     性能
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/01_live-updates.html">
+     实时更新
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/02_external-resources.html">
+     添加 CSS 和 JS 以覆盖页面加载模板
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/03_urls.html">
+     多页面应用程序和 URL 支持
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/04_persistence.html">
+     persistence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/05_devtools.html">
+     devtools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/06_loading-states.html">
+     Loading States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/07_testing.html">
+     testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/08_app-lifecycle.html">
+     app-lifecycle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/09_reference.html">
+     reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/test.html">
+     测试
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  主题
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../custom-components/index.html">
+   创建自己的组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/00_react-for-python-developers.html">
+     面向 Python 开发人员：入门
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/01_plugins.html">
+     编写自己的组件
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/02_d3-react-components.html">
+     将
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       D3.js
+      </span>
+     </code>
+     图表封装为 Python Dash 组件
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../production-capabilities/index.html">
+   面向生产
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/00_deployment.html">
+     部署 Dash 应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/01_authentication.html">
+     authentication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/02_integrating-dash.html">
+     integrating-dash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/server.html">
+     Waitress
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  参考
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../core-components/index.html">
+   Dash 核心组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/graph.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Graph
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/interval.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Interval
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/link.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Link
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/location.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Location
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/store.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Store
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  混沌
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   关于本书
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">
+   Sanstyle Book
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../news/index.html">
+   Dash 资讯
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/av.html">
+     自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/dash.html">
+     关于 Plotly Dash 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/dashboard-giant.html">
+     Streamlit vs Dash vs Voilà vs Panel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/deploy-github-pages.html">
+     Deploy dash to github pages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/panel.html">
+     关于 Panel 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/streamlit.html">
+     关于 Streamlit 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/voila.html">
+     关于 Voilà 你需要知道的一切
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book.html">
+   外部资源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGELOG.html">
+   变更日志
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div class="w3-padding w3-card-4 w3-pale-green">
+  <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+      data-position="top" data-delay="50">
+      <i class="fab fa-github"></i>
+  </a>
+  <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
+      data-delay="50">
+      <i class="fas fa-envelope-open"></i>
+  </a>
+  <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
+      target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+      <i class="fab fa-qq"></i>
+  </a>
+  <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
+      data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+      <i class="fab fa-zhihu1">知</i>
+  </a>
+  <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
+      data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+      <i class="fab fa-linkedin"></i>
+  </a>
+  <div><a href="https://github.com/xinetzone/sanstyle">上善若水</a> 版权所有</div>
+</div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/start/03_callback.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/start/03_callback.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/dash-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/dash-book/issues/new?title=Issue%20on%20page%20%2Fstart/03_callback.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xinetzone/dash-book/main?urlpath=tree/./start/03_callback.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   简单的交互
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-slider">
+   Figure 和 Slider 交互
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash-multiple-inputs">
+   多输入的回调
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash-multiple-outputs">
+   多输出的回调
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash-chained-callback">
+   链式回调
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dash">
+   带状态的 Dash 应用
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   小结
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dash-interactive">
+<span id="id1"></span><h1>回调与交互<a class="headerlink" href="#dash-interactive" title="永久链接至标题">¶</a></h1>
+<p>参考：<a class="reference external" href="https://dash.plotly.com/basic-callbacks">Basic Callbacks | Dash for Python Documentation | Plotly</a></p>
+<p>在 <a class="reference internal" href="02_layout.html#dash-layout"><span class="std std-ref">布局</span></a> 中，我们了解到 <code class="docutils literal notranslate"><span class="pre">app.layout</span></code> 描述应用程序的外观，并且是组件的分层树。<code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> 库提供了所有 HTML 标记的类，关键字参数描述了 HTML 属性，例如 <code class="docutils literal notranslate"><span class="pre">style</span></code>，<code class="docutils literal notranslate"><span class="pre">className</span></code> 和 <code class="docutils literal notranslate"><span class="pre">id</span></code>。<code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> 库生成更高级别的组件，如控件和图形。本章介绍如何使用回调函数制作 Dash 应用程序：每当输入组件的属性发生更改时 Dash 会自动调用的 Python 函数。</p>
+<p>为了获得最佳的用户交互和图表加载性能，生产Dash应用程序应考虑 Dash Enterprise 的 <a class="reference external" href="https://plotly.com/dash/job-queue">Job Queue</a>，<a class="reference external" href="https://plotly.com/dash/big-data-for-python">HPC</a>，<a class="reference external" href="https://plotly.com/dash/big-data-for-python">Datashader</a> 和 <a class="reference external" href="https://plotly.com/dash/kubernetes">horizontal scaling</a> 功能。</p>
+<p>让我们从一个交互式 Dash 应用程序的简单示例开始。</p>
+<p>为了保证全书的 Dash 应用代码的主题一致，创建文件 <a class="reference download internal" download="" href="../_downloads/3f41e546893dc64b71aaacad12cad815/app.py"><code class="xref download docutils literal notranslate"><span class="pre">../app.py</span></code></a>，其他应用均需要使用 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">app</span> <span class="pre">import</span> <span class="pre">app</span></code> 载入 <code class="docutils literal notranslate"><span class="pre">app</span></code>。</p>
+<div class="section" id="id2">
+<h2>简单的交互<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H6</span><span class="p">(</span><span class="s2">&quot;更改文本框中的值以查看回调操作！&quot;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span><span class="s2">&quot;输入：&quot;</span><span class="p">,</span>
+              <span class="n">dcc</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;初始值&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">)]),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;my-output&#39;</span><span class="p">),</span>
+
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="n">component_id</span><span class="o">=</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="n">component_property</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="n">component_id</span><span class="o">=</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="n">component_property</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_output_div</span><span class="p">(</span><span class="n">input_value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;输出：</span><span class="si">{</span><span class="n">input_value</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-book.herokuapp.com/examples/callback"></div></div>
+</div>
+<p>让我们拆解这个例子：</p>
+<ul class="simple">
+<li><p>我们将应用程序接口的 <code class="docutils literal notranslate"><span class="pre">&quot;inputs&quot;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&quot;outputs&quot;</span></code> 声明性地描述为 <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器的参数。</p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>关于 <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器</p>
+<ul class="simple">
+<li><p>通过编写此装饰器，我们告诉 Dash 每当 “input” 组件（文本框）的值更改时为我们调用此函数，以便更新页面上 “output” 组件的子级（HTML div）。</p></li>
+<li><p>您可以为 <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器包装的函数使用任何名称。约定是该名称描述了回调输出。</p></li>
+<li><p>您可以为函数参数使用任何名称，但是必须像在常规 Python 函数中一样在回调函数中使用与定义时相同的名称。参数是位置性的：首先以与装饰器中相同的顺序给出 <code class="docutils literal notranslate"><span class="pre">Input</span></code> 项，然后给出任何  <code class="docutils literal notranslate"><span class="pre">State</span></code> 项。</p></li>
+<li><p>当引用它作为 <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器的输入或输出时，必须使用与给 <code class="docutils literal notranslate"><span class="pre">app.layout</span></code> 中的 Dash 组件相同的 ID。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器需要直接位于回调函数声明的上方。如果装饰器和函数定义之间有空白行，则回调注册将不会成功。</p></li>
+<li><p>如果您对装饰器语法的含义感到好奇，可以阅读此 <a href="https://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators/1594484#1594484">StackOverflow 答案</a>，并通过阅读 <a href="https://www.python.org/dev/peps/pep-0318/#current-syntax">PEP 318-函数和方法的装饰器</a> 来了解有关装饰器的更多信息。</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>在 Dash 中，我们应用程序的输入和输出只是特定组件的属性。在此示例中，我们的输入是ID为<code class="docutils literal notranslate"><span class="pre">&quot;my-input&quot;</span></code>的组件的<code class="docutils literal notranslate"><span class="pre">&quot;value&quot;</span></code>属性。我们的输出是 ID 为 <code class="docutils literal notranslate"><span class="pre">&quot;my-output&quot;</span></code> 的组件的<code class="docutils literal notranslate"><span class="pre">&quot;children&quot;</span></code>属性。</p></li>
+<li><p>每当输入属性更改时，回调装饰器包装的函数将自动被调用。Dash 为函数提供输入属性的新值作为输入参数，Dash 使用函数返回的值更新输出组件的属性。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">component_id</span></code> 和 <code class="docutils literal notranslate"><span class="pre">component_property</span></code> 关键字是可选的（每个对象只有两个参数）。为了清楚起见，它们包含在此示例中，但是为了简洁和易读起见，在本文档的其余部分中将省略它们。</p></li>
+<li><p>不要混淆 <code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code> 对象和 <code class="docutils literal notranslate"><span class="pre">dash_core_components.Input</span></code> 对象。前者仅用于这些回调中，而后者是实际组件。</p></li>
+<li><p>注意，我们没有在布局中为 <code class="docutils literal notranslate"><span class="pre">my-output</span></code> 组件的 <code class="docutils literal notranslate"><span class="pre">children</span></code> 属性设置值。Dash 应用程序启动时，它将自动使用输入组件的初始值调用所有回调，以填充输出组件的初始状态。在此示例中，如果您指定了类似 <code class="docutils literal notranslate"><span class="pre">html.Div(id='my-output',</span> <span class="pre">children='Hello</span> <span class="pre">world')</span></code> 的名称，则在应用启动时它将被覆盖。</p></li>
+</ul>
+<p>这有点像使用 Microsoft Excel 进行编程：每当输入单元格发生更改时，依赖于该单元格的所有单元格都会自动更新。这称为“反应式编程”（“Reactive Programming”）。</p>
+<p>还记得每个组件是如何通过其一组关键字参数进行完整描述的吗？这些属性现在很重要。借助 Dash 交互性，我们可以通过回调函数动态更新这些属性中的任何一个。通常，我们将更新组件的 <code class="docutils literal notranslate"><span class="pre">children</span></code> 以显示新文本，或者更新 <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code> 组件的 <code class="docutils literal notranslate"><span class="pre">figure</span></code> 以显示新数据，但是我们还可以更新组件的 <code class="docutils literal notranslate"><span class="pre">style</span></code>，甚至更新 <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> 组件可用的 <code class="docutils literal notranslate"><span class="pre">options</span></code>！</p>
+<p>让我们看一下另一个示例，其中 <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code> 更新了 <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>。</p>
+</div>
+<div class="section" id="figure-slider">
+<h2>Figure 和 Slider 交互<a class="headerlink" href="#figure-slider" title="永久链接至标题">¶</a></h2>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
+
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">lfs_url</span><span class="p">(</span><span class="s1">&#39;SanstyleLab/plotly-dastsets&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;graph-with-slider&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;year-slider&#39;</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="nb">max</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="n">marks</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">):</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()},</span>
+        <span class="n">step</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;graph-with-slider&#39;</span><span class="p">,</span> <span class="s1">&#39;figure&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;year-slider&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">update_figure</span><span class="p">(</span><span class="n">selected_year</span><span class="p">):</span>
+    <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">selected_year</span><span class="p">]</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;gdpPercap&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;lifeExp&quot;</span><span class="p">,</span>
+                     <span class="n">size</span><span class="o">=</span><span class="s2">&quot;pop&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;continent&quot;</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+                     <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size_max</span><span class="o">=</span><span class="mi">55</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">transition_duration</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+</div>
+<p><span class="pasted-inline"><span class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="500" src="https://dash-book.herokuapp.com/examples/figure-n-slider"></span></span></p>
+<p>在此示例中，<code class="docutils literal notranslate"><span class="pre">Slider</span></code> 的 <code class="docutils literal notranslate"><span class="pre">&quot;value&quot;</span></code> 属性是应用程序的输入，而应用程序的输出则是 <code class="docutils literal notranslate"><span class="pre">Graph</span></code> 的 <code class="docutils literal notranslate"><span class="pre">&quot;figure&quot;</span></code> 属性。每当 <code class="docutils literal notranslate"><span class="pre">Slider</span></code> 的值更改时，Dash 就会使用新值调用回调函数 <code class="docutils literal notranslate"><span class="pre">update_figure</span></code>。该函数使用此新值过滤数据框，构造一个 <code class="docutils literal notranslate"><span class="pre">figure</span></code> 对象，并将其返回给 Dash 应用程序。</p>
+<p>此示例中有一些不错的模式：</p>
+<ol class="simple">
+<li><p>我们正在使用 <a class="reference external" href="http://pandas.pydata.org/">Pandas</a> 库来导入和过滤内存中的数据集。</p></li>
+<li><p>我们在应用程序的开头加载数据帧：<code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv('...')</span></code>。此数据框 <code class="docutils literal notranslate"><span class="pre">df</span></code> 处于应用程序的全局状态，可以在回调函数中读取。</p></li>
+<li><p>将数据加载到内存中可能会很昂贵。通过在应用程序的开始而不是在回调函数内部加载查询数据，我们确保仅在应用程序服务器启动时执行此操作。当用户访问该应用程序或与该应用程序进行交互时，该数据（<code class="docutils literal notranslate"><span class="pre">df</span></code>）已经在内存中。如果可能，应在应用程序的全局范围内而不是在回调函数内完成昂贵的初始化（如下载或查询数据）。</p></li>
+<li><p>回调不会修改原始数据，它只是通过 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 过滤器进行过滤来创建数据帧的副本。这很重要：您的回调函数绝不要在变量范围之外进行变量的更改。如果您的回调修改了全局状态，则一个用户的会话可能会影响下一个用户的会话，并且当应用程序部署在多个进程或线程上时，这些修改将不会在各个会话之间共享。</p></li>
+<li><p>我们正在使用 <code class="docutils literal notranslate"><span class="pre">layout.transition</span></code> 打开 <code class="docutils literal notranslate"><span class="pre">transitions</span></code>，以了解数据集如何随时间演变：<code class="docutils literal notranslate"><span class="pre">transitions</span></code>允许图表从一个状态平滑地更新到下一个状态，就好像它是动态的一样。</p></li>
+</ol>
+</div>
+<div class="section" id="dash-multiple-inputs">
+<span id="id3"></span><h2>多输入的回调<a class="headerlink" href="#dash-multiple-inputs" title="永久链接至标题">¶</a></h2>
+<p>在 Dash 中，任何 <code class="docutils literal notranslate"><span class="pre">&quot;Output&quot;</span></code> 可以具有多个 <code class="docutils literal notranslate"><span class="pre">&quot;Input&quot;</span></code> 组件。这是一个简单的示例，它将五个 Inputs（2个<code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>组件，2个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件和1个<code class="docutils literal notranslate"><span class="pre">Slider</span></code>组件的<code class="docutils literal notranslate"><span class="pre">value</span></code>属性）绑定到1个 Output 组件（<code class="docutils literal notranslate"><span class="pre">Graph</span></code>组件的<code class="docutils literal notranslate"><span class="pre">figure</span></code>属性）。请注意<code class="docutils literal notranslate"><span class="pre">app.callback</span></code>如何在第二个参数的列表内列出所有五个<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>。</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
+
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">lfs_url</span><span class="p">(</span><span class="s1">&#39;SanstyleLab/plotly-dastsets&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;country_indicators.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">available_indicators</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Indicator Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;xaxis-column&#39;</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span>
+                         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">available_indicators</span><span class="p">],</span>
+                <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Fertility rate, total (births per woman)&#39;</span>
+            <span class="p">),</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;xaxis-type&#39;</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="s1">&#39;Log&#39;</span><span class="p">]],</span>
+                <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span>
+                <span class="n">labelStyle</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;display&#39;</span><span class="p">:</span> <span class="s1">&#39;inline-block&#39;</span><span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="s1">&#39;48%&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">:</span> <span class="s1">&#39;inline-block&#39;</span><span class="p">}),</span>
+
+        <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;yaxis-column&#39;</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span>
+                         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">available_indicators</span><span class="p">],</span>
+                <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Life expectancy at birth, total (years)&#39;</span>
+            <span class="p">),</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;yaxis-type&#39;</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="s1">&#39;Log&#39;</span><span class="p">]],</span>
+                <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span>
+                <span class="n">labelStyle</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;display&#39;</span><span class="p">:</span> <span class="s1">&#39;inline-block&#39;</span><span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="s1">&#39;48%&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">:</span> <span class="s1">&#39;inline-block&#39;</span><span class="p">})</span>
+    <span class="p">]),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;indicator-graphic&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;year--slider&#39;</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="nb">max</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+        <span class="n">marks</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">):</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()},</span>
+        <span class="n">step</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;indicator-graphic&#39;</span><span class="p">,</span> <span class="s1">&#39;figure&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;xaxis-column&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;yaxis-column&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;xaxis-type&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;yaxis-type&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;year--slider&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">update_graph</span><span class="p">(</span><span class="n">xaxis_column_name</span><span class="p">,</span> <span class="n">yaxis_column_name</span><span class="p">,</span>
+                 <span class="n">xaxis_type</span><span class="p">,</span> <span class="n">yaxis_type</span><span class="p">,</span>
+                 <span class="n">year_value</span><span class="p">):</span>
+    <span class="n">dff</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year_value</span><span class="p">]</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">dff</span><span class="p">[</span><span class="n">dff</span><span class="p">[</span><span class="s1">&#39;Indicator Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">xaxis_column_name</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">],</span>
+                     <span class="n">y</span><span class="o">=</span><span class="n">dff</span><span class="p">[</span><span class="n">dff</span><span class="p">[</span><span class="s1">&#39;Indicator Name&#39;</span><span class="p">]</span> <span class="o">==</span>
+                           <span class="n">yaxis_column_name</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">],</span>
+                     <span class="n">hover_name</span><span class="o">=</span><span class="n">dff</span><span class="p">[</span><span class="n">dff</span><span class="p">[</span><span class="s1">&#39;Indicator Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">yaxis_column_name</span><span class="p">][</span><span class="s1">&#39;Country Name&#39;</span><span class="p">])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">hovermode</span><span class="o">=</span><span class="s1">&#39;closest&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">xaxis_column_name</span><span class="p">,</span>
+                     <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span> <span class="k">if</span> <span class="n">xaxis_type</span> <span class="o">==</span> <span class="s1">&#39;Linear&#39;</span> <span class="k">else</span> <span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">yaxis_column_name</span><span class="p">,</span>
+                     <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span> <span class="k">if</span> <span class="n">yaxis_type</span> <span class="o">==</span> <span class="s1">&#39;Linear&#39;</span> <span class="k">else</span> <span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="550" src="https://dash-book.herokuapp.com/examples/multiple-inputs"></div></div>
+</div>
+<p>在此示例中，只要<code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>，<code class="docutils literal notranslate"><span class="pre">Slider</span></code>或<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件的<code class="docutils literal notranslate"><span class="pre">value</span></code>属性发生更改，就会调用 <code class="docutils literal notranslate"><span class="pre">update_graph</span></code> 函数。</p>
+<p>按指定顺序，<code class="docutils literal notranslate"><span class="pre">update_graph</span></code>函数的输入参数是每个<code class="docutils literal notranslate"><span class="pre">Input</span></code>属性的新值或当前值。</p>
+<p>即使一次仅更改一个<code class="docutils literal notranslate"><span class="pre">Input</span></code>（用户只能在给定的时刻更改单个<code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>的值），Dash 仍会收集所有指定<code class="docutils literal notranslate"><span class="pre">Input</span></code>属性的当前状态并将其传递给您的函数。您的回调函数始终保证传递给应用程序代表状态。</p>
+<p>让我们扩展示例以包括多个输出。</p>
+</div>
+<div class="section" id="dash-multiple-outputs">
+<span id="id4"></span><h2>多输出的回调<a class="headerlink" href="#dash-multiple-outputs" title="永久链接至标题">¶</a></h2>
+<p>到目前为止，我们编写的所有回调仅更新单个<code class="docutils literal notranslate"><span class="pre">Output</span></code>属性。我们也可以一次更新几个：将要更新的所有属性作为列表放置在装饰器中，并从回调中返回那么多项。如果两个输出依赖于相同的计算密集型中间结果（例如慢速数据库查询），则特别好。</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;num-multi&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">5</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Table</span><span class="p">([</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Tr</span><span class="p">([</span><span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">Sup</span><span class="p">(</span><span class="mi">2</span><span class="p">)]),</span> <span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;square&#39;</span><span class="p">)]),</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Tr</span><span class="p">([</span><span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">Sup</span><span class="p">(</span><span class="mi">3</span><span class="p">)]),</span> <span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;cube&#39;</span><span class="p">)]),</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Tr</span><span class="p">([</span><span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">Sup</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)]),</span> <span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;twos&#39;</span><span class="p">)]),</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Tr</span><span class="p">([</span><span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">Sup</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)]),</span> <span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;threes&#39;</span><span class="p">)]),</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Tr</span><span class="p">([</span><span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">Sup</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)]),</span> <span class="n">html</span><span class="o">.</span><span class="n">Td</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;x^x&#39;</span><span class="p">)]),</span>
+    <span class="p">]),</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;cube&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;twos&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;threes&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;x^x&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;num-multi&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">callback_a</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="280" src="https://dash-book.herokuapp.com/examples/multiple-outputs"></div></div>
+</div>
+<p>提醒您：即使您可以合并输出，也不总是一个好主意：</p>
+<ul class="simple">
+<li><p>如果输出依赖于某些而非全部相同的输入，则将它们分开可以避免不必要的更新。</p></li>
+<li><p>如果它们具有相同的输入，但使用这些输入进行独立的计算，则将回调分开设置可以使它们并行运行。</p></li>
+</ul>
+</div>
+<div class="section" id="dash-chained-callback">
+<span id="id5"></span><h2>链式回调<a class="headerlink" href="#dash-chained-callback" title="永久链接至标题">¶</a></h2>
+<p>您也可以将输出和输入链接在一起：一个回调函数的输出可以是另一个回调函数的输入。</p>
+<p>此模式可用于创建动态 UI，其中一个输入组件将更新下一个输入组件的可用选项。这是一个简单的例子。</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="n">all_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;America&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;New York City&#39;</span><span class="p">,</span> <span class="s1">&#39;San Francisco&#39;</span><span class="p">,</span> <span class="s1">&#39;Cincinnati&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Canada&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Montréal&#39;</span><span class="p">,</span> <span class="s1">&#39;Toronto&#39;</span><span class="p">,</span> <span class="s1">&#39;Ottawa&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;countries-radio&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">k</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">all_options</span><span class="o">.</span><span class="n">keys</span><span class="p">()],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;America&#39;</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Hr</span><span class="p">(),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Hr</span><span class="p">(),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;display-selected-values&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;options&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;countries-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">set_cities_options</span><span class="p">(</span><span class="n">selected_country</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">all_options</span><span class="p">[</span><span class="n">selected_country</span><span class="p">]]</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;options&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">set_cities_value</span><span class="p">(</span><span class="n">available_options</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">available_options</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;display-selected-values&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;countries-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">set_display_children</span><span class="p">(</span><span class="n">selected_country</span><span class="p">,</span> <span class="n">selected_city</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">selected_city</span><span class="si">}</span><span class="s1"> is a city in </span><span class="si">{</span><span class="n">selected_country</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="230" src="https://dash-book.herokuapp.com/examples/chained-callback"></div></div>
+</div>
+<p>第一个回调根据第一个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件中的选定值更新第二个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件中的可用选项。</p>
+<p>当<code class="docutils literal notranslate"><span class="pre">options</span></code>属性更改时，第二个回调将设置一个初始值：它将其设置为该<code class="docutils literal notranslate"><span class="pre">options</span></code>数组中的第一个值。</p>
+<p>最后的回调显示每个组件的选定<code class="docutils literal notranslate"><span class="pre">value</span></code>。如果更改国家<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件的<code class="docutils literal notranslate"><span class="pre">value</span></code>，则 Dash 将等待，直到更新了城市组件的值，然后才调用最后的回调。这样可以防止以<code class="docutils literal notranslate"><span class="pre">&quot;America&quot;</span></code>和<code class="docutils literal notranslate"><span class="pre">&quot;Montréal&quot;</span></code>之类的不一致状态调用您的回调。</p>
+</div>
+<div class="section" id="dash">
+<span id="dash-state-callback"></span><h2>带状态的 Dash 应用<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
+<p>在某些情况下，您的应用程序中可能会有“表单”类型的模式。在这种情况下，您可能希望读取输入组件的值，但是仅当用户完成了以表格形式输入其所有信息时才可以。</p>
+<p>将回调直接附加到输入值可以看起来像这样：</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">dcc</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;input-1&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Montréal&quot;</span><span class="p">),</span>
+        <span class="n">dcc</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;input-2&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Canada&quot;</span><span class="p">),</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;number-output&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">&quot;number-output&quot;</span><span class="p">,</span> <span class="s2">&quot;children&quot;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">&quot;input-1&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">&quot;input-2&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_output</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Input 1 is &quot;</span><span class="si">{</span><span class="n">input1</span><span class="si">}</span><span class="s1">&quot; and Input 2 is &quot;</span><span class="si">{</span><span class="n">input2</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="60" src="https://dash-book.herokuapp.com/examples/table-callback"></div></div>
+</div>
+<p>在此示例中，只要<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>描述的任何属性发生更改，就会触发回调函数。在上面的输入中输入数据，自己尝试一下。</p>
+<p><code class="docutils literal notranslate"><span class="pre">dash.dependencies.State</span></code>允许您传递额外的值而无需触发回调。这是与上述相同的示例，但<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>为<code class="docutils literal notranslate"><span class="pre">dash.dependencies.State</span></code>，按钮为<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>。</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">State</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;input-1-state&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Montréal&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;input-2-state&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Canada&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;submit-button-state&#39;</span><span class="p">,</span> <span class="n">n_clicks</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="s1">&#39;Submit&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;output-state&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s1">&#39;output-state&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+              <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;submit-button-state&#39;</span><span class="p">,</span> <span class="s1">&#39;n_clicks&#39;</span><span class="p">),</span>
+              <span class="n">State</span><span class="p">(</span><span class="s1">&#39;input-1-state&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+              <span class="n">State</span><span class="p">(</span><span class="s1">&#39;input-2-state&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">update_output</span><span class="p">(</span><span class="n">n_clicks</span><span class="p">,</span> <span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">        The Button has been pressed </span><span class="si">{</span><span class="n">n_clicks</span><span class="si">}</span><span class="s1"> times,</span>
+<span class="s1">        Input 1 is &quot;</span><span class="si">{</span><span class="n">input1</span><span class="si">}</span><span class="s1">&quot;,</span>
+<span class="s1">        and Input 2 is &quot;</span><span class="si">{</span><span class="n">input2</span><span class="si">}</span><span class="s1">&quot;</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="60" src="https://dash-book.herokuapp.com/examples/state-callback"></div></div>
+</div>
+<p>在此示例中，在<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>框中更改文本不会触发回调，但单击按钮将起作用。<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>值的当前值仍会传递到回调中，即使它们不会触发回调函数本身。</p>
+<p>请注意，我们通过侦听<code class="docutils literal notranslate"><span class="pre">html.Button</span></code>组件的<code class="docutils literal notranslate"><span class="pre">n_clicks</span></code>属性来触发回调。<code class="docutils literal notranslate"><span class="pre">n_clicks</span></code>是一个属性，每次单击该组件时该属性都会增强。它在<code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code>库中的每个组件中都可用。</p>
+</div>
+<div class="section" id="id6">
+<h2>小结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>我们已经介绍了 Dash 中回调的基础。Dash 应用程序是基于一组简单但功能强大的原则构建的：声明性 UI，可通过反应性（reactive）和功能性（functional ）Python 回调进行自定义。声明性组件的每个元素属性都可以通过回调进行更新，并且该属性的子集（例如<code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>的<code class="docutils literal notranslate"><span class="pre">value</span></code>属性）可以由用户在界面中进行编辑。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/dash-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ai"
+        },
+        kernelOptions: {
+            kernelName: "ai",
+            path: "./start"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ai'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="02_layout.html" title="previous page">布局</a>
+    <a class='right-next' id="next-link" href="04_interactive-graphing.html" title="next page">交互式可视化</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p class="w3-card w3-pale-blue w3-padding">
+  Copyright © 2021
+  <a href="https://sanstylelab.github.io/">SanstyleLab</a> | 
+  Powered by <a href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a>.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

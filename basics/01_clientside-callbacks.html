@@ -1,0 +1,1006 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>客户端回调 &#8212; Dash 手册</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/dash-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xinetzone.github.io/dash-book/basics/01_clientside-callbacks.html" />
+    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="模式匹配回调" href="02_pattern-matching-callbacks.html" />
+    <link rel="prev" title="高级回调" href="00_advanced-callbacks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dash 手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  教程
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/index.html">
+   快速上手
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/00_intro.html">
+     Dash 简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/01_sanstyle.html">
+     Dash Xinet 与 Sanstyle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/02_layout.html">
+     布局
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/03_callback.html">
+     回调与交互
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/04_interactive-graphing.html">
+     交互式可视化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/05_sharing-data-between-callbacks.html">
+     在回调之间共享数据
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/06_faqs.html">
+     FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/topic.html">
+     某个主题
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   指南
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="00_advanced-callbacks.html">
+     高级回调
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     客户端回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_pattern-matching-callbacks.html">
+     模式匹配回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_callback-gotchas.html">
+     回调 Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topic.html">
+     基础
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../advanced/index.html">
+   高级教程
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/00_performance.html">
+     性能
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/01_live-updates.html">
+     实时更新
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/02_external-resources.html">
+     添加 CSS 和 JS 以覆盖页面加载模板
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/03_urls.html">
+     多页面应用程序和 URL 支持
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/04_persistence.html">
+     persistence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/05_devtools.html">
+     devtools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/06_loading-states.html">
+     Loading States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/07_testing.html">
+     testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/08_app-lifecycle.html">
+     app-lifecycle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/09_reference.html">
+     reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/test.html">
+     测试
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  主题
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../custom-components/index.html">
+   创建自己的组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/00_react-for-python-developers.html">
+     面向 Python 开发人员：入门
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/01_plugins.html">
+     编写自己的组件
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-components/02_d3-react-components.html">
+     将
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       D3.js
+      </span>
+     </code>
+     图表封装为 Python Dash 组件
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../production-capabilities/index.html">
+   面向生产
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/00_deployment.html">
+     部署 Dash 应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/01_authentication.html">
+     authentication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/02_integrating-dash.html">
+     integrating-dash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../production-capabilities/server.html">
+     Waitress
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  参考
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../core-components/index.html">
+   Dash 核心组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/graph.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Graph
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/interval.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Interval
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/link.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Link
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/location.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Location
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/store.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Store
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  混沌
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   关于本书
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">
+   Sanstyle Book
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../news/index.html">
+   Dash 资讯
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/av.html">
+     自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/dash.html">
+     关于 Plotly Dash 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/dashboard-giant.html">
+     Streamlit vs Dash vs Voilà vs Panel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/deploy-github-pages.html">
+     Deploy dash to github pages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/panel.html">
+     关于 Panel 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/streamlit.html">
+     关于 Streamlit 你需要知道的一切
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../news/voila.html">
+     关于 Voilà 你需要知道的一切
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book.html">
+   外部资源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGELOG.html">
+   变更日志
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div class="w3-padding w3-card-4 w3-pale-green">
+  <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+      data-position="top" data-delay="50">
+      <i class="fab fa-github"></i>
+  </a>
+  <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
+      data-delay="50">
+      <i class="fas fa-envelope-open"></i>
+  </a>
+  <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
+      target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+      <i class="fab fa-qq"></i>
+  </a>
+  <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
+      data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+      <i class="fab fa-zhihu1">知</i>
+  </a>
+  <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
+      data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+      <i class="fab fa-linkedin"></i>
+  </a>
+  <div><a href="https://github.com/xinetzone/sanstyle">上善若水</a> 版权所有</div>
+</div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/basics/01_clientside-callbacks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/basics/01_clientside-callbacks.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/dash-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/dash-book/issues/new?title=Issue%20on%20page%20%2Fbasics/01_clientside-callbacks.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xinetzone/dash-book/main?urlpath=tree/./basics/01_clientside-callbacks.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   一个简单的例子
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotly-express-figure">
+   使用 Plotly Express 生成 figure
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dash-clientside-callbacks">
+<span id="id1"></span><h1>客户端回调<a class="headerlink" href="#dash-clientside-callbacks" title="永久链接至标题">¶</a></h1>
+<p>参考：<a class="reference external" href="https://dash.plotly.com/clientside-callbacks">Clientside Callbacks | Dash for Python Documentation | Plotly</a></p>
+<p>有时，回调可能会导致相当大的开销，尤其是在以下情况下：</p>
+<ul class="simple">
+<li><p>接收和/或返回大量数据（传输时间）</p></li>
+<li><p>经常被调用（网络延迟，排队，握手）</p></li>
+<li><p>是回调链的一部分，该回调链需要浏览器和 Dash 之间进行多次往返</p></li>
+</ul>
+<p>当回调的开销成本变得太大并且无法进行其他优化时，可以将回调修改为直接在浏览器中运行，而不是向 Dash 发出请求。</p>
+<p>回调的语法几乎完全相同。您可以像在声明回调时一样正常使用<code class="docutils literal notranslate"><span class="pre">Input</span></code>和<code class="docutils literal notranslate"><span class="pre">Output</span></code>，但是还可以将 JavaScript 函数定义为<code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code>装饰器的第一个参数。</p>
+<p>例如，以下回调：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;out-component&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;in-component1&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;in-component2&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">large_params_function</span><span class="p">(</span><span class="n">largeValue1</span><span class="p">,</span> <span class="n">largeValue2</span><span class="p">):</span>
+    <span class="n">largeValueOutput</span> <span class="o">=</span> <span class="n">someTransform</span><span class="p">(</span><span class="n">largeValue1</span><span class="p">,</span> <span class="n">largeValue2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">largeValueOutput</span>
+</pre></div>
+</div>
+<p>可以重写为使用 JavaScript，如下所示：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">clientside_callback</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function(largeValue1, largeValue2) {</span>
+<span class="sd">        return someTransform(largeValue1, largeValue2);</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;out-component&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;in-component1&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;in-component2&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>您还可以选择在 <code class="docutils literal notranslate"><span class="pre">assets/</span></code> 文件夹中的 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 文件中定义函数。为了获得与上面的代码相同的结果，<code class="docutils literal notranslate"><span class="pre">.js</span></code> 文件的内容如下所示：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">dash_clientside</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nb">window</span><span class="p">.</span><span class="nx">dash_clientside</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">clientside</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">large_params_function</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">largeValue1</span><span class="p">,</span> <span class="nx">largeValue2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">someTransform</span><span class="p">(</span><span class="nx">largeValue1</span><span class="p">,</span> <span class="nx">largeValue2</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>在 Dash 中，回调现在将写为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">ClientsideFunction</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">clientside_callback</span><span class="p">(</span>
+    <span class="n">ClientsideFunction</span><span class="p">(</span>
+        <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;clientside&#39;</span><span class="p">,</span>
+        <span class="n">function_name</span><span class="o">=</span><span class="s1">&#39;large_params_function&#39;</span>
+    <span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;out-component&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;in-component1&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;in-component2&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>一个简单的例子<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>下面是两个使用客户端回调与<code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code>组件一起更新图形的示例。在这些示例中，我们在后端更新了<code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code>组件。为了创建和显示图形，我们在前端有一个客户端回调，该回调添加了一些有关我们使用<code class="docutils literal notranslate"><span class="pre">&quot;Graph</span> <span class="pre">scale&quot;</span></code>下的单选按钮指定的<code class="docutils literal notranslate"><span class="pre">layout</span></code>的其他信息。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">lfs_url</span><span class="p">(</span><span class="s1">&#39;SanstyleLab/plotly-dastsets&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">available_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph&#39;</span>
+    <span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Store</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-figure-store&#39;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Canada&#39;</span><span class="p">][</span><span class="s1">&#39;year&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Canada&#39;</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span>
+        <span class="p">}]</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Indicator&#39;</span><span class="p">,</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-indicator&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;pop&#39;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Life Expectancy&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;lifeExp&#39;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;GDP per Capita&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;gdpPercap&#39;</span><span class="p">}</span>
+        <span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;pop&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Country&#39;</span><span class="p">,</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-country&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">available_countries</span>
+        <span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Canada&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Graph scale&#39;</span><span class="p">,</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-scale&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">]</span>
+        <span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Hr</span><span class="p">(),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Details</span><span class="p">([</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Summary</span><span class="p">(</span><span class="s1">&#39;Contents of figure storage&#39;</span><span class="p">),</span>
+        <span class="n">dcc</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-figure-json&#39;</span>
+        <span class="p">)</span>
+    <span class="p">])</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;clientside-figure-store&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-graph-indicator&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-graph-country&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_store_data</span><span class="p">(</span><span class="n">indicator</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="n">dff</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">dff</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">dff</span><span class="p">[</span><span class="n">indicator</span><span class="p">],</span>
+        <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;markers&#39;</span>
+    <span class="p">}]</span>
+
+
+<span class="n">app</span><span class="o">.</span><span class="n">clientside_callback</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function(data, scale) {</span>
+<span class="sd">        return {</span>
+<span class="sd">            &#39;data&#39;: data,</span>
+<span class="sd">            &#39;layout&#39;: {</span>
+<span class="sd">                 &#39;yaxis&#39;: {&#39;type&#39;: scale}</span>
+<span class="sd">             }</span>
+<span class="sd">        }</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;clientside-graph&#39;</span><span class="p">,</span> <span class="s1">&#39;figure&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-figure-store&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-graph-scale&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;clientside-figure-json&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-figure-store&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">generated_figure_json</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;```</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">```&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="800" src="https://dash-book.herokuapp.com/examples/clientside-callbacks"></div></div>
+</div>
+<p>请注意，在此示例中，我们通过从数据框中提取相关数据来手动创建<code class="docutils literal notranslate"><span class="pre">figure</span></code>字典。这就是存储在我们的<code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code>组件中的内容； 展开上面的&quot;Contents of figure storage&quot;，以准确查看用于构建图形的内容。</p>
+</div>
+<div class="section" id="plotly-express-figure">
+<h2>使用 Plotly Express 生成 figure<a class="headerlink" href="#plotly-express-figure" title="永久链接至标题">¶</a></h2>
+<p>通过 Plotly Express，您可以创建 <code class="docutils literal notranslate"><span class="pre">figures</span></code> 的单行声明。当使用诸如 <code class="docutils literal notranslate"><span class="pre">plotly_express.Scatter</span></code> 创建 graph 时，您将获得一个字典作为返回值。该字典的形状与 <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code> 组件的 <code class="docutils literal notranslate"><span class="pre">figure</span></code> 参数相同。（有关<code class="docutils literal notranslate"><span class="pre">figure</span></code>形状的更多信息，请参见<a class="reference external" href="https://plotly.com/python/creating-and-updating-figures/">此处</a>。）</p>
+<p>我们可以重做上面的示例以使用 Plotly Express。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">lfs_url</span><span class="p">(</span><span class="s1">&#39;SanstyleLab/plotly-dastsets&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">available_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-px&#39;</span>
+    <span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Store</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-figure-store-px&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Indicator&#39;</span><span class="p">,</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-indicator-px&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;pop&#39;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Life Expectancy&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;lifeExp&#39;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;GDP per Capita&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;gdpPercap&#39;</span><span class="p">}</span>
+        <span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;pop&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Country&#39;</span><span class="p">,</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-country-px&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">available_countries</span>
+        <span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Canada&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Graph scale&#39;</span><span class="p">,</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-graph-scale-px&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">]</span>
+        <span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Hr</span><span class="p">(),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Details</span><span class="p">([</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Summary</span><span class="p">(</span><span class="s1">&#39;Contents of figure storage&#39;</span><span class="p">),</span>
+        <span class="n">dcc</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;clientside-figure-json-px&#39;</span>
+        <span class="p">)</span>
+    <span class="p">])</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;clientside-figure-store-px&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-graph-indicator-px&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-graph-country-px&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_store_data</span><span class="p">(</span><span class="n">indicator</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="n">dff</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dff</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">indicator</span><span class="p">))</span>
+
+
+<span class="n">app</span><span class="o">.</span><span class="n">clientside_callback</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function(figure, scale) {</span>
+<span class="sd">        if(figure === undefined) {</span>
+<span class="sd">            return {&#39;data&#39;: [], &#39;layout&#39;: {}};</span>
+<span class="sd">        }</span>
+<span class="sd">        const fig = Object.assign({}, figure, {</span>
+<span class="sd">            &#39;layout&#39;: {</span>
+<span class="sd">                ...figure.layout,</span>
+<span class="sd">                &#39;yaxis&#39;: {</span>
+<span class="sd">                    ...figure.layout.yaxis, type: scale</span>
+<span class="sd">                }</span>
+<span class="sd">             }</span>
+<span class="sd">        });</span>
+<span class="sd">        return fig;</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;clientside-graph-px&#39;</span><span class="p">,</span> <span class="s1">&#39;figure&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-figure-store-px&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-graph-scale-px&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;clientside-figure-json-px&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;clientside-figure-store-px&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">generated_px_figure_json</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;```</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">```&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="800" src="https://dash-book.herokuapp.com/examples/clientside-callbacks-px"></div></div>
+</div>
+<p>同样，您可以展开上方的 “Contents of figure storage” 部分，以查看生成的内容。您可能会注意到，这比前面的示例要广泛得多。特别是已经定义了<code class="docutils literal notranslate"><span class="pre">layout</span></code>。因此，我们不必像以前那样创建<code class="docutils literal notranslate"><span class="pre">layout</span></code>，而是必须对 JavaScript 代码中的现有<code class="docutils literal notranslate"><span class="pre">layout</span></code>进行更改。</p>
+<p>注意：有一些限制要牢记：</p>
+<ul class="simple">
+<li><p>客户端回调在浏览器的主线程上执行，并在执行时阻止渲染和事件处理。</p></li>
+<li><p>Dash 当前不支持异步客户端回调，如果返回 <code class="docutils literal notranslate"><span class="pre">Promise</span></code>，它将失败。</p></li>
+<li><p>如果您需要引用服务器上的全局变量，或者需要数据库调用，则无法进行客户端回调。</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/dash-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ai"
+        },
+        kernelOptions: {
+            kernelName: "ai",
+            path: "./basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ai'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="00_advanced-callbacks.html" title="previous page">高级回调</a>
+    <a class='right-next' id="next-link" href="02_pattern-matching-callbacks.html" title="next page">模式匹配回调</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p class="w3-card w3-pale-blue w3-padding">
+  Copyright © 2021
+  <a href="https://sanstylelab.github.io/">SanstyleLab</a> | 
+  Powered by <a href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a>.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
