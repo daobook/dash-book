@@ -9,29 +9,32 @@ parts:
   - file: basics/index
     sections:
     - glob: basics/**
-
+  - file: advanced/index
+    sections:
+    - glob: advanced/**
 - caption: 主题
   chapters:
-  - file: topics/index
+  - file: custom-components/index
     sections:
-    - glob: topics/**
+      - glob: custom-components/**
+  - file: production-capabilities/index
+    sections:
+    - glob: production-capabilities/**
 
-- caption: 原理
-  chapters:
-  - file: principle/index
-    sections:
-    - glob: principle/**
 
 - caption: 参考
   chapters:
-  - file: reference/index
+  - file: core-components/index
     sections:
-    - glob: reference/**
+    - glob: core-components/**
 
 - caption: 混沌
   chapters:
   - file: about
   - url: https://xinetzone.github.io/sanstyle-book/
     title: Sanstyle Book
+  - file: news/index
+    sections:
+    - glob: news/**
   - file: book
   - file: CHANGELOG

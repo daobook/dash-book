@@ -131,3 +131,6 @@ dmypy.json
 # css
 xin-css/
 w3css/
+
+# cache
+cache-directory/
