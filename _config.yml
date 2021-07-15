@@ -134,6 +134,9 @@ sphinx:
       wiki:
         - "https://xinetzone.github.io/wiki/"
         - null
+      sanstyle-book:
+        - "https://xinetzone.github.io/sanstyle-book/"
+        - null
       # ebp:
       #   - "https://executablebooks.org/en/latest/"
       #   - null

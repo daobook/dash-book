@@ -10,7 +10,6 @@ sphinx-click
 # sphinxext-rediraffe
 sympy
 statsmodels
-jupyter-server-proxy
 jupyter-dash
 plotly
 pyorbital
@@ -19,3 +18,4 @@ dash-xinet -i https://pypi.org/simple/
 sanstyle -i https://pypi.org/simple/ 
 Flask-Caching
 redis
+# jupyter-server-proxy
