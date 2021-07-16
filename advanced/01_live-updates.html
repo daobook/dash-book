@@ -666,7 +666,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="dcc-interval">
 <h2><code class="docutils literal notranslate"><span class="pre">dcc.Interval</span></code><a class="headerlink" href="#dcc-interval" title="永久链接至标题">¶</a></h2>
 <p>Dash 中的组件通常通过用户交互进行更新，比如：选择下拉菜单，拖动滑块，悬停在点上。</p>
-<p>如果您正在构建用于监视的应用程序，您可能希望每隔几秒或几分钟更新应用程序中的组件。<a class="reference internal" href="../core-components/location.html#dash-dcc-location"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">dash_core_components.Interval</span></code></span></a> 元素允许您按预定义的时间间隔更新组件。<code class="docutils literal notranslate"><span class="pre">n_interval</span></code> 属性是一个整数，每经过 <code class="docutils literal notranslate"><span class="pre">interval</span></code> 毫秒时间间隔就自动增加一次。你可以在你的应用程序的 <code class="docutils literal notranslate"><span class="pre">callback</span></code> 中监听这个变量，以按预先定义的时间间隔触发回调。</p>
+<p>如果您正在构建用于监视的应用程序，您可能希望每隔几秒或几分钟更新应用程序中的组件。<a class="reference internal" href="../core-components/interval.html#dash-dcc-interval"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">dash_core_components.Interval</span></code></span></a> 元素允许您按预定义的时间间隔更新组件。<code class="docutils literal notranslate"><span class="pre">n_interval</span></code> 属性是一个整数，每经过 <code class="docutils literal notranslate"><span class="pre">interval</span></code> 毫秒时间间隔就自动增加一次。你可以在你的应用程序的 <code class="docutils literal notranslate"><span class="pre">callback</span></code> 中监听这个变量，以按预先定义的时间间隔触发回调。</p>
 <p>此示例从实时卫星反馈中提取数据，并每秒钟更新图表和文本。</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
