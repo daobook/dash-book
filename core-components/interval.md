@@ -1,3 +1,4 @@
+(dash:dcc/interval)=
 # `dcc.Interval`
 
 `dcc.Interval` 组件会周期性地触发一个回调。使用 `dcc.Interval` 不需要刷新页面或点击任何按钮就可以实时更新应用程序的间隔时间。
