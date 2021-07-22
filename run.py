@@ -1,3 +1,4 @@
+import asyncio
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -27,5 +28,7 @@ def display_page(pathname):
 server = app.server
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=5555, threaded=True)
+    asyncio.run(app.run_server(debug=True,
+                               port=6666,
+                               threaded=True))
     # app.run_server(app, debug=True, port=5555, threaded=True)
