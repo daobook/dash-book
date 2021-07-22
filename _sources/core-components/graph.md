@@ -4,14 +4,13 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.10.3
 kernelspec:
   display_name: ai
   language: python
   name: ai
 ---
 
+(dash:dcc/graph)=
 # `dcc.Graph`
 
 参考：[dcc.Graph | Dash for Python Documentation | Plotly](https://dash.plotly.com/dash-core-components/graph)

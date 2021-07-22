@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>某个主题 &#8212; Dash 手册</title>
+    <title>dcc.Slider &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -94,13 +94,13 @@ commentsRunWhenDOMLoaded(addUtterances);
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xinetzone.github.io/dash-book/start/topic.html" />
+    <link rel="canonical" href="https://xinetzone.github.io/dash-book/core-components/slider.html" />
     <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="指南" href="../basics/index.html" />
-    <link rel="prev" title="FAQs" href="06_faqs.html" />
+    <link rel="next" title="dcc.Store" href="store.html" />
+    <link rel="prev" title="dcc.Location" href="location.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -135,55 +135,50 @@ commentsRunWhenDOMLoaded(addUtterances);
   教程
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/index.html">
    快速上手
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="00_intro.html">
+    <a class="reference internal" href="../start/00_intro.html">
      Dash 简介
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_sanstyle.html">
+    <a class="reference internal" href="../start/01_sanstyle.html">
      Dash Xinet 与 Sanstyle
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_layout.html">
+    <a class="reference internal" href="../start/02_layout.html">
      布局
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_callback.html">
+    <a class="reference internal" href="../start/03_callback.html">
      回调与交互
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_interactive-graphing.html">
+    <a class="reference internal" href="../start/04_interactive-graphing.html">
      交互式可视化
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05_sharing-data-between-callbacks.html">
+    <a class="reference internal" href="../start/05_sharing-data-between-callbacks.html">
      在回调之间共享数据
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06_faqs.html">
+    <a class="reference internal" href="../start/06_faqs.html">
      FAQs
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     某个主题
     </a>
    </li>
   </ul>
@@ -216,11 +211,6 @@ commentsRunWhenDOMLoaded(addUtterances);
    <li class="toctree-l2">
     <a class="reference internal" href="../basics/03_callback-gotchas.html">
      回调 Gotchas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/topic.html">
-     基础
     </a>
    </li>
   </ul>
@@ -370,19 +360,19 @@ commentsRunWhenDOMLoaded(addUtterances);
   参考
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../core-components/index.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
    Dash 核心组件
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/graph.html">
+    <a class="reference internal" href="graph.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        dcc.Graph
@@ -391,7 +381,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/interval.html">
+    <a class="reference internal" href="interval.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        dcc.Interval
@@ -400,7 +390,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/link.html">
+    <a class="reference internal" href="link.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        dcc.Link
@@ -409,7 +399,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/location.html">
+    <a class="reference internal" href="location.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        dcc.Location
@@ -417,8 +407,17 @@ commentsRunWhenDOMLoaded(addUtterances);
      </code>
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.Slider
+      </span>
+     </code>
+    </a>
+   </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/store.html">
+    <a class="reference internal" href="store.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        dcc.Store
@@ -564,9 +563,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/core-components/slider.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/start/topic.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/core-components/slider.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -586,7 +588,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xinetzone/dash-book/issues/new?title=Issue%20on%20page%20%2Fstart/topic.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xinetzone/dash-book/issues/new?title=Issue%20on%20page%20%2Fcore-components/slider.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -602,6 +604,26 @@ commentsRunWhenDOMLoaded(addUtterances);
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xinetzone/dash-book/main?urlpath=tree/./core-components/slider.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -615,8 +637,38 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>某个主题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="dcc-slider">
+<span id="dash-dcc-slider"></span><h1><code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code><a class="headerlink" href="#dcc-slider" title="永久链接至标题">¶</a></h1>
+<p>一个绑定回调的基本滑块的例子。</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;my-slider&#39;</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">max</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;slider-output-container&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;slider-output-container&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-slider&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">update_output</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;你选择了 &quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="400" src="https://dash-book.herokuapp.com/examples/simple-slider"></div></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -628,24 +680,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ai"
         },
         kernelOptions: {
-            kernelName: "python3",
-            path: "./start"
+            kernelName: "ai",
+            path: "./core-components"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ai'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="06_faqs.html" title="previous page">FAQs</a>
-    <a class='right-next' id="next-link" href="../basics/index.html" title="next page">指南</a>
+    <a class='left-prev' id="prev-link" href="location.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code></a>
+    <a class='right-next' id="next-link" href="store.html" title="next page"><code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code></a>
 
         </div>
         
