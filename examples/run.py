@@ -71,8 +71,8 @@ def callback_example(pathname):
         return live_update.layout
     elif pathname == '/examples/flask-caching':
         return flask_caching.layout
-    elif pathname == '/examples/caching-dataset':
-        return caching_dataset.layout
+    # elif pathname == '/examples/caching-dataset':
+    #     return caching_dataset.layout
     elif pathname == '/examples/share-data-callbacks':
         return share_data_callbacks.layout
     elif pathname == '/examples/simple-slider':
