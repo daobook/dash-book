@@ -20,13 +20,21 @@ parts:
   - file: production-capabilities/index
     sections:
     - glob: production-capabilities/**
-
+  - file: w3schools/index
+    sections:
+    - glob: w3schools/**
 
 - caption: 参考
   chapters:
+  - file: html-components/index
+    sections:
+    - glob: html-components/**
   - file: core-components/index
     sections:
     - glob: core-components/**
+  - file: principle/index
+    sections:
+    - glob: principle/**
 
 - caption: 混沌
   chapters:

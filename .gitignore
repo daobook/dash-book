@@ -134,3 +134,5 @@ w3css/
 
 # cache
 cache-directory/
+*.h5
+*.hdf5
