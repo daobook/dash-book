@@ -23,18 +23,18 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -87,7 +87,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
@@ -128,7 +128,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p class="caption">
  <span class="caption-text">
@@ -354,6 +354,23 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../w3schools/index.html">
+   W3Schools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../w3schools/nav.html">
+     Nav
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -362,11 +379,32 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../html-components/index.html">
+   Dash HTML 组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../html-components/a.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       html.A
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../core-components/index.html">
    Dash 核心组件
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -408,6 +446,15 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/range-slider.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.RangeSlider
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../core-components/slider.html">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -423,6 +470,23 @@ commentsRunWhenDOMLoaded(addUtterances);
        dcc.Store
       </span>
      </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../principle/index.html">
+   解释
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../principle/topic.html">
+     高级教程
     </a>
    </li>
   </ul>
@@ -448,8 +512,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   <a class="reference internal" href="../news/index.html">
    Dash 资讯
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -651,51 +715,88 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hostname :   fv-az292-508
-IP :  10.1.1.90
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hostname :   fv-az201-808
+IP :  10.1.1.240
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
-<span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="n">lfs_url</span><span class="p">(</span><span class="s1">&#39;SanstyleLab/plotly-dastsets&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-
-<span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
-    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;graph-with-slider&#39;</span><span class="p">),</span>
-    <span class="n">dcc</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span>
-        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;year-slider&#39;</span><span class="p">,</span>
-        <span class="nb">min</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
-        <span class="nb">max</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
-        <span class="n">value</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
-        <span class="n">marks</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">):</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()},</span>
-        <span class="n">step</span><span class="o">=</span><span class="kc">None</span>
-    <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">State</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Location</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;page-content&#39;</span><span class="p">)</span>
 <span class="p">])</span>
 
 
-<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
-    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;graph-with-slider&#39;</span><span class="p">,</span> <span class="s1">&#39;figure&#39;</span><span class="p">),</span>
-    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;year-slider&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">update_figure</span><span class="p">(</span><span class="n">selected_year</span><span class="p">):</span>
-    <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">selected_year</span><span class="p">]</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;gdpPercap&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;lifeExp&quot;</span><span class="p">,</span>
-                     <span class="n">size</span><span class="o">=</span><span class="s2">&quot;pop&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;continent&quot;</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-                     <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size_max</span><span class="o">=</span><span class="mi">55</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">transition_duration</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">fig</span>
+<span class="n">index_page</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="s1">&#39;Go to Page 1&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;/page-1&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="s1">&#39;Go to Page 2&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;/page-2&#39;</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="n">page_1_layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s1">&#39;Page 1&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;page-1-dropdown&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;NYC&#39;</span><span class="p">,</span> <span class="s1">&#39;MTL&#39;</span><span class="p">]],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;LA&#39;</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;page-1-content&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="s1">&#39;Go to Page 2&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;/page-2&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="s1">&#39;Go back to home&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;/&#39;</span><span class="p">),</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s1">&#39;page-1-content&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+              <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;page-1-dropdown&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">page_1_dropdown</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;You have selected &quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+
+
+<span class="n">page_2_layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s1">&#39;Page 2&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">RadioItems</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;page-2-radios&#39;</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">]],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Orange&#39;</span>
+    <span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;page-2-content&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="s1">&#39;Go to Page 1&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;/page-1&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="s1">&#39;Go back to home&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s1">&#39;page-2-content&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+              <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;page-2-radios&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">page_2_radios</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;You have selected &quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+
+
+<span class="c1"># 更新 index</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s1">&#39;page-content&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+              <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;pathname&#39;</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">display_page</span><span class="p">(</span><span class="n">pathname</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pathname</span> <span class="o">==</span> <span class="s1">&#39;/page-1&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">page_1_layout</span>
+    <span class="k">elif</span> <span class="n">pathname</span> <span class="o">==</span> <span class="s1">&#39;/page-2&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">page_2_layout</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">index_page</span>
+    <span class="c1"># 你也可以在这里返回一个404 &quot;URL not found&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -709,7 +810,7 @@ IP :  10.1.1.90
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dash app running on http://10.1.1.90:5555/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dash app running on http://10.1.1.240:5555/
 </pre></div>
 </div>
 </div>
@@ -739,12 +840,32 @@ IP :  10.1.1.90
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="09_reference.html" title="previous page">reference</a>
-    <a class='right-next' id="next-link" href="../custom-components/index.html" title="next page">创建自己的组件</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="09_reference.html" title="上一页 页">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">上一页</p>
+                <p class="prevnext-title">reference</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../custom-components/index.html" title="下一页 页">
+            <div class="prevnext-info">
+                <p class="prevnext-label">下一页</p>
+                <p class="prevnext-title">创建自己的组件</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

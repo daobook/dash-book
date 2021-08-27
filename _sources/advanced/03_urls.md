@@ -63,7 +63,9 @@ def display_page(pathname):
 await run_server(app, layout, port=8050)
 ```
 
-在这个例子中，回调`display_page`接收页面的当前路径名(URL 的最后一部分)。回调只是在页面上显示 `pathname`，但是它可以使用路径名来显示不同的内容。`Link` 元素更新浏览器的路径名，而不刷新页面。如果你使用 `html.A` 元素，那么路径名更新，页面也会刷新。具体细节见下图：请注意，尽管点击链接会更新 URL，但它不会刷新页面。
+在这个例子中，回调函数 `display_page` 接收页面的当前 `pathname`（URL 的最后一部分）。回调只是在页面上显示 `pathname`，但是它可以使用路径名来显示不同的内容。
+
+`Link` 元素更新浏览器的 `pathname`，而不刷新页面。如果你使用 `html.A` 元素，那么 `pathname` 更新，页面也会刷新。具体细节见下图：请注意，尽管点击链接会更新 URL，但它不会刷新页面。
 
 ![](./images/url-support.gif)
 

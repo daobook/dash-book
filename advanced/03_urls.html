@@ -23,18 +23,18 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/page.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -87,7 +87,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
@@ -128,7 +128,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p class="caption">
  <span class="caption-text">
@@ -354,6 +354,23 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../w3schools/index.html">
+   W3Schools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../w3schools/nav.html">
+     Nav
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -362,11 +379,32 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../html-components/index.html">
+   Dash HTML 组件
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../html-components/a.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       html.A
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../core-components/index.html">
    Dash 核心组件
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -408,6 +446,15 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../core-components/range-slider.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dcc.RangeSlider
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../core-components/slider.html">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -423,6 +470,23 @@ commentsRunWhenDOMLoaded(addUtterances);
        dcc.Store
       </span>
      </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../principle/index.html">
+   解释
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../principle/topic.html">
+     高级教程
     </a>
    </li>
   </ul>
@@ -448,8 +512,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   <a class="reference internal" href="../news/index.html">
    Dash 资讯
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -632,7 +696,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
@@ -700,7 +764,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">await</span> <span class="n">run_server</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8050</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>在这个例子中，回调<code class="docutils literal notranslate"><span class="pre">display_page</span></code>接收页面的当前路径名(URL 的最后一部分)。回调只是在页面上显示 <code class="docutils literal notranslate"><span class="pre">pathname</span></code>，但是它可以使用路径名来显示不同的内容。<code class="docutils literal notranslate"><span class="pre">Link</span></code> 元素更新浏览器的路径名，而不刷新页面。如果你使用 <code class="docutils literal notranslate"><span class="pre">html.A</span></code> 元素，那么路径名更新，页面也会刷新。具体细节见下图：请注意，尽管点击链接会更新 URL，但它不会刷新页面。</p>
+<p>在这个例子中，回调函数 <code class="docutils literal notranslate"><span class="pre">display_page</span></code> 接收页面的当前 <code class="docutils literal notranslate"><span class="pre">pathname</span></code>（URL 的最后一部分）。回调只是在页面上显示 <code class="docutils literal notranslate"><span class="pre">pathname</span></code>，但是它可以使用路径名来显示不同的内容。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Link</span></code> 元素更新浏览器的 <code class="docutils literal notranslate"><span class="pre">pathname</span></code>，而不刷新页面。如果你使用 <code class="docutils literal notranslate"><span class="pre">html.A</span></code> 元素，那么 <code class="docutils literal notranslate"><span class="pre">pathname</span></code> 更新，页面也会刷新。具体细节见下图：请注意，尽管点击链接会更新 URL，但它不会刷新页面。</p>
 <p><img alt="" src="../_images/url-support.gif" /></p>
 <p><code class="docutils literal notranslate"><span class="pre">Link</span></code> 允许你在一个多页面应用程序中创建一个可点击的链接。对于当前应用程序之外的目的地链接，<code class="docutils literal notranslate"><span class="pre">html.A</span></code> 是一个更好的组件选择。</p>
 <p><code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code> 组件表示 web 浏览器中的位置或地址栏。通过它的 <code class="docutils literal notranslate"><span class="pre">href</span></code>, <code class="docutils literal notranslate"><span class="pre">pathname</span></code>, <code class="docutils literal notranslate"><span class="pre">search</span></code> 和 <code class="docutils literal notranslate"><span class="pre">hash</span></code> 属性，你可以访问应用程序加载的 url 的不同部分。</p>
@@ -897,8 +962,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">app.py</span></code></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ad4b8086-a651-4146-9714-af4af44d9610" name="0e93393d-306c-4967-8a29-ab09e9135220" type="radio">
-</input><label class="tabbed-label" for="ad4b8086-a651-4146-9714-af4af44d9610">
+<input checked="checked" id="327f8be4-fc7a-4c75-8a95-8a63076bb64d" name="30ec20bc-54f1-40d2-b32d-599269fe24b8" type="radio">
+</input><label class="tabbed-label" for="327f8be4-fc7a-4c75-8a95-8a63076bb64d">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 
@@ -907,8 +972,8 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="2e41ac1c-ff54-49a1-9792-00b4003e417b" name="0e93393d-306c-4967-8a29-ab09e9135220" type="radio">
-</input><label class="tabbed-label" for="2e41ac1c-ff54-49a1-9792-00b4003e417b">
+<input id="5bea393c-5162-4ae3-98d9-c0ac945044b9" name="30ec20bc-54f1-40d2-b32d-599269fe24b8" type="radio">
+</input><label class="tabbed-label" for="5bea393c-5162-4ae3-98d9-c0ac945044b9">
 apps/app1</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -938,8 +1003,8 @@ apps/app1</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="52b081b9-8741-424f-894f-f6a27574923a" name="0e93393d-306c-4967-8a29-ab09e9135220" type="radio">
-</input><label class="tabbed-label" for="52b081b9-8741-424f-894f-f6a27574923a">
+<input id="b7f6e64e-c525-4ce9-9da6-5ceeb75dcbf9" name="30ec20bc-54f1-40d2-b32d-599269fe24b8" type="radio">
+</input><label class="tabbed-label" for="b7f6e64e-c525-4ce9-9da6-5ceeb75dcbf9">
 apps/app2</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -971,8 +1036,8 @@ apps/app2</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b53418b9-e987-4b5d-9972-91178daf3057" name="0e93393d-306c-4967-8a29-ab09e9135220" type="radio">
-</input><label class="tabbed-label" for="b53418b9-e987-4b5d-9972-91178daf3057">
+<input id="a3440d62-ee0c-4be0-8f8a-30db8b883e4d" name="30ec20bc-54f1-40d2-b32d-599269fe24b8" type="radio">
+</input><label class="tabbed-label" for="a3440d62-ee0c-4be0-8f8a-30db8b883e4d">
 index</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">index.py</span></code> 在不同的 url 上加载不同的应用，就像这样：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
@@ -1014,8 +1079,8 @@ index</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="04f5fb58-625b-410e-83f2-760c82f492a0" name="24849048-2362-4f95-8ca5-bf4c7f2e55c5" type="radio">
-</input><label class="tabbed-label" for="04f5fb58-625b-410e-83f2-760c82f492a0">
+<input checked="checked" id="21e118a9-e8ad-4c48-96c4-3c726c6466fc" name="a713f534-c2ad-4300-8d78-56dc7c3873f4" type="radio">
+</input><label class="tabbed-label" for="21e118a9-e8ad-4c48-96c4-3c726c6466fc">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 
@@ -1024,8 +1089,8 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8ddd2a86-afbc-40c3-a750-5845c46a2b07" name="24849048-2362-4f95-8ca5-bf4c7f2e55c5" type="radio">
-</input><label class="tabbed-label" for="8ddd2a86-afbc-40c3-a750-5845c46a2b07">
+<input id="b2f9a0d4-8101-448c-ab2b-c508b9db1525" name="a713f534-c2ad-4300-8d78-56dc7c3873f4" type="radio">
+</input><label class="tabbed-label" for="b2f9a0d4-8101-448c-ab2b-c508b9db1525">
 callbacks</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 
@@ -1045,8 +1110,8 @@ callbacks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4d0f14d0-7905-4f79-b1d9-06d88af2d883" name="24849048-2362-4f95-8ca5-bf4c7f2e55c5" type="radio">
-</input><label class="tabbed-label" for="4d0f14d0-7905-4f79-b1d9-06d88af2d883">
+<input id="e745642b-affe-4220-ba94-536db33734df" name="a713f534-c2ad-4300-8d78-56dc7c3873f4" type="radio">
+</input><label class="tabbed-label" for="e745642b-affe-4220-ba94-536db33734df">
 layouts</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1081,8 +1146,8 @@ layouts</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="408498b5-81d8-441c-9df0-9fb0039495ac" name="24849048-2362-4f95-8ca5-bf4c7f2e55c5" type="radio">
-</input><label class="tabbed-label" for="408498b5-81d8-441c-9df0-9fb0039495ac">
+<input id="f21c6a3c-49f9-4433-b1d9-e0eed898ca09" name="a713f534-c2ad-4300-8d78-56dc7c3873f4" type="radio">
+</input><label class="tabbed-label" for="f21c6a3c-49f9-4433-b1d9-e0eed898ca09">
 index</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1140,12 +1205,32 @@ index</label><div class="tabbed-content docutils">
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02_external-resources.html" title="previous page">添加 CSS 和 JS 以覆盖页面加载模板</a>
-    <a class='right-next' id="next-link" href="04_persistence.html" title="next page">persistence</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="02_external-resources.html" title="上一页 页">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">上一页</p>
+                <p class="prevnext-title">添加 CSS 和 JS 以覆盖页面加载模板</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04_persistence.html" title="下一页 页">
+            <div class="prevnext-info">
+                <p class="prevnext-label">下一页</p>
+                <p class="prevnext-title">persistence</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
