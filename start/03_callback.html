@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>回调与交互 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -744,17 +749,16 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="dash-interactive">
+  <section class="tex2jax_ignore mathjax_ignore" id="dash-interactive">
 <span id="id1"></span><h1>回调与交互<a class="headerlink" href="#dash-interactive" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/basic-callbacks">Basic Callbacks | Dash for Python Documentation | Plotly</a></p>
 <p>在 <a class="reference internal" href="02_layout.html#dash-layout"><span class="std std-ref">布局</span></a> 中，我们了解到 <code class="docutils literal notranslate"><span class="pre">app.layout</span></code> 描述应用程序的外观，并且是组件的分层树。<code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> 库提供了所有 HTML 标记的类，关键字参数描述了 HTML 属性，例如 <code class="docutils literal notranslate"><span class="pre">style</span></code>，<code class="docutils literal notranslate"><span class="pre">className</span></code> 和 <code class="docutils literal notranslate"><span class="pre">id</span></code>。<code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> 库生成更高级别的组件，如控件和图形。本章介绍如何使用回调函数制作 Dash 应用程序：每当输入组件的属性发生更改时 Dash 会自动调用的 Python 函数。</p>
 <p>为了获得最佳的用户交互和图表加载性能，生产Dash应用程序应考虑 Dash Enterprise 的 <a class="reference external" href="https://plotly.com/dash/job-queue">Job Queue</a>，<a class="reference external" href="https://plotly.com/dash/big-data-for-python">HPC</a>，<a class="reference external" href="https://plotly.com/dash/big-data-for-python">Datashader</a> 和 <a class="reference external" href="https://plotly.com/dash/kubernetes">horizontal scaling</a> 功能。</p>
 <p>让我们从一个交互式 Dash 应用程序的简单示例开始。</p>
 <p>为了保证全书的 Dash 应用代码的主题一致，创建文件 <a class="reference download internal" download="" href="../_downloads/3f41e546893dc64b71aaacad12cad815/app.py"><code class="xref download docutils literal notranslate"><span class="pre">../app.py</span></code></a>，其他应用均需要使用 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">app</span> <span class="pre">import</span> <span class="pre">app</span></code> 载入 <code class="docutils literal notranslate"><span class="pre">app</span></code>。</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>简单的交互<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
@@ -785,7 +789,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ul class="simple">
 <li><p>我们将应用程序接口的 <code class="docutils literal notranslate"><span class="pre">&quot;inputs&quot;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&quot;outputs&quot;</span></code> 声明性地描述为 <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器的参数。</p></li>
 </ul>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>关于 <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器</p>
 <ul class="simple">
@@ -796,7 +800,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> 装饰器需要直接位于回调函数声明的上方。如果装饰器和函数定义之间有空白行，则回调注册将不会成功。</p></li>
 <li><p>如果您对装饰器语法的含义感到好奇，可以阅读此 <a href="https://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators/1594484#1594484">StackOverflow 答案</a>，并通过阅读 <a href="https://www.python.org/dev/peps/pep-0318/#current-syntax">PEP 318-函数和方法的装饰器</a> 来了解有关装饰器的更多信息。</p></li>
 </ul>
-</div>
+</aside>
 <ul class="simple">
 <li><p>在 Dash 中，我们应用程序的输入和输出只是特定组件的属性。在此示例中，我们的输入是ID为<code class="docutils literal notranslate"><span class="pre">&quot;my-input&quot;</span></code>的组件的<code class="docutils literal notranslate"><span class="pre">&quot;value&quot;</span></code>属性。我们的输出是 ID 为 <code class="docutils literal notranslate"><span class="pre">&quot;my-output&quot;</span></code> 的组件的<code class="docutils literal notranslate"><span class="pre">&quot;children&quot;</span></code>属性。</p></li>
 <li><p>每当输入属性更改时，回调装饰器包装的函数将自动被调用。Dash 为函数提供输入属性的新值作为输入参数，Dash 使用函数返回的值更新输出组件的属性。</p></li>
@@ -807,13 +811,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>这有点像使用 Microsoft Excel 进行编程：每当输入单元格发生更改时，依赖于该单元格的所有单元格都会自动更新。这称为“反应式编程”（“Reactive Programming”）。</p>
 <p>还记得每个组件是如何通过其一组关键字参数进行完整描述的吗？这些属性现在很重要。借助 Dash 交互性，我们可以通过回调函数动态更新这些属性中的任何一个。通常，我们将更新组件的 <code class="docutils literal notranslate"><span class="pre">children</span></code> 以显示新文本，或者更新 <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code> 组件的 <code class="docutils literal notranslate"><span class="pre">figure</span></code> 以显示新数据，但是我们还可以更新组件的 <code class="docutils literal notranslate"><span class="pre">style</span></code>，甚至更新 <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> 组件可用的 <code class="docutils literal notranslate"><span class="pre">options</span></code>！</p>
 <p>让我们看一下另一个示例，其中 <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code> 更新了 <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>。</p>
-</div>
-<div class="section" id="figure-slider">
+</section>
+<section id="figure-slider">
 <h2>Figure 和 Slider 交互<a class="headerlink" href="#figure-slider" title="永久链接至标题">¶</a></h2>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 <span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
@@ -861,14 +864,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>回调不会修改原始数据，它只是通过 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 过滤器进行过滤来创建数据帧的副本。这很重要：您的回调函数绝不要在变量范围之外进行变量的更改。如果您的回调修改了全局状态，则一个用户的会话可能会影响下一个用户的会话，并且当应用程序部署在多个进程或线程上时，这些修改将不会在各个会话之间共享。</p></li>
 <li><p>我们正在使用 <code class="docutils literal notranslate"><span class="pre">layout.transition</span></code> 打开 <code class="docutils literal notranslate"><span class="pre">transitions</span></code>，以了解数据集如何随时间演变：<code class="docutils literal notranslate"><span class="pre">transitions</span></code>允许图表从一个状态平滑地更新到下一个状态，就好像它是动态的一样。</p></li>
 </ol>
-</div>
-<div class="section" id="dash-multiple-inputs">
+</section>
+<section id="dash-multiple-inputs">
 <span id="id3"></span><h2>多输入的回调<a class="headerlink" href="#dash-multiple-inputs" title="永久链接至标题">¶</a></h2>
 <p>在 Dash 中，任何 <code class="docutils literal notranslate"><span class="pre">&quot;Output&quot;</span></code> 可以具有多个 <code class="docutils literal notranslate"><span class="pre">&quot;Input&quot;</span></code> 组件。这是一个简单的示例，它将五个 Inputs（2个<code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>组件，2个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件和1个<code class="docutils literal notranslate"><span class="pre">Slider</span></code>组件的<code class="docutils literal notranslate"><span class="pre">value</span></code>属性）绑定到1个 Output 组件（<code class="docutils literal notranslate"><span class="pre">Graph</span></code>组件的<code class="docutils literal notranslate"><span class="pre">figure</span></code>属性）。请注意<code class="docutils literal notranslate"><span class="pre">app.callback</span></code>如何在第二个参数的列表内列出所有五个<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>。</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 <span class="kn">from</span> <span class="nn">sanstyle.github.file</span> <span class="kn">import</span> <span class="n">lfs_url</span>
@@ -962,12 +964,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>按指定顺序，<code class="docutils literal notranslate"><span class="pre">update_graph</span></code>函数的输入参数是每个<code class="docutils literal notranslate"><span class="pre">Input</span></code>属性的新值或当前值。</p>
 <p>即使一次仅更改一个<code class="docutils literal notranslate"><span class="pre">Input</span></code>（用户只能在给定的时刻更改单个<code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>的值），Dash 仍会收集所有指定<code class="docutils literal notranslate"><span class="pre">Input</span></code>属性的当前状态并将其传递给您的函数。您的回调函数始终保证传递给应用程序代表状态。</p>
 <p>让我们扩展示例以包括多个输出。</p>
-</div>
-<div class="section" id="dash-multiple-outputs">
+</section>
+<section id="dash-multiple-outputs">
 <span id="id4"></span><h2>多输出的回调<a class="headerlink" href="#dash-multiple-outputs" title="永久链接至标题">¶</a></h2>
 <p>到目前为止，我们编写的所有回调仅更新单个<code class="docutils literal notranslate"><span class="pre">Output</span></code>属性。我们也可以一次更新几个：将要更新的所有属性作为列表放置在装饰器中，并从回调中返回那么多项。如果两个输出依赖于相同的计算密集型中间结果（例如慢速数据库查询），则特别好。</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
@@ -1008,13 +1009,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>如果输出依赖于某些而非全部相同的输入，则将它们分开可以避免不必要的更新。</p></li>
 <li><p>如果它们具有相同的输入，但使用这些输入进行独立的计算，则将回调分开设置可以使它们并行运行。</p></li>
 </ul>
-</div>
-<div class="section" id="dash-chained-callback">
+</section>
+<section id="dash-chained-callback">
 <span id="id5"></span><h2>链式回调<a class="headerlink" href="#dash-chained-callback" title="永久链接至标题">¶</a></h2>
 <p>您也可以将输出和输入链接在一起：一个回调函数的输出可以是另一个回调函数的输入。</p>
 <p>此模式可用于创建动态 UI，其中一个输入组件将更新下一个输入组件的可用选项。这是一个简单的例子。</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
@@ -1066,13 +1066,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>第一个回调根据第一个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件中的选定值更新第二个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件中的可用选项。</p>
 <p>当<code class="docutils literal notranslate"><span class="pre">options</span></code>属性更改时，第二个回调将设置一个初始值：它将其设置为该<code class="docutils literal notranslate"><span class="pre">options</span></code>数组中的第一个值。</p>
 <p>最后的回调显示每个组件的选定<code class="docutils literal notranslate"><span class="pre">value</span></code>。如果更改国家<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件的<code class="docutils literal notranslate"><span class="pre">value</span></code>，则 Dash 将等待，直到更新了城市组件的值，然后才调用最后的回调。这样可以防止以<code class="docutils literal notranslate"><span class="pre">&quot;America&quot;</span></code>和<code class="docutils literal notranslate"><span class="pre">&quot;Montréal&quot;</span></code>之类的不一致状态调用您的回调。</p>
-</div>
-<div class="section" id="dash">
+</section>
+<section id="dash">
 <span id="dash-state-callback"></span><h2>带状态的 Dash 应用<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
 <p>在某些情况下，您的应用程序中可能会有“表单”类型的模式。在这种情况下，您可能希望读取输入组件的值，但是仅当用户完成了以表格形式输入其所有信息时才可以。</p>
 <p>将回调直接附加到输入值可以看起来像这样：</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
 
@@ -1101,8 +1100,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>在此示例中，只要<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>描述的任何属性发生更改，就会触发回调函数。在上面的输入中输入数据，自己尝试一下。</p>
 <p><code class="docutils literal notranslate"><span class="pre">dash.dependencies.State</span></code>允许您传递额外的值而无需触发回调。这是与上述相同的示例，但<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>为<code class="docutils literal notranslate"><span class="pre">dash.dependencies.State</span></code>，按钮为<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>。</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">State</span>
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
 
@@ -1133,12 +1131,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>在此示例中，在<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>框中更改文本不会触发回调，但单击按钮将起作用。<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>值的当前值仍会传递到回调中，即使它们不会触发回调函数本身。</p>
 <p>请注意，我们通过侦听<code class="docutils literal notranslate"><span class="pre">html.Button</span></code>组件的<code class="docutils literal notranslate"><span class="pre">n_clicks</span></code>属性来触发回调。<code class="docutils literal notranslate"><span class="pre">n_clicks</span></code>是一个属性，每次单击该组件时该属性都会增强。它在<code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code>库中的每个组件中都可用。</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>小结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>我们已经介绍了 Dash 中回调的基础。Dash 应用程序是基于一组简单但功能强大的原则构建的：声明性 UI，可通过反应性（reactive）和功能性（functional ）Python 回调进行自定义。声明性组件的每个元素属性都可以通过回调进行更新，并且该属性的子集（例如<code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>的<code class="docutils literal notranslate"><span class="pre">value</span></code>属性）可以由用户在界面中进行编辑。</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1192,7 +1190,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

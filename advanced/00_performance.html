@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>性能 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -724,12 +729,12 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="dash-performance">
+  <section class="tex2jax_ignore mathjax_ignore" id="dash-performance">
 <span id="id1"></span><h1>性能<a class="headerlink" href="#dash-performance" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/performance">Performance | Dash for Python Documentation | Plotly</a></p>
 <p>本章包含了一些改进你的 Dash 应用程序性能的建议。</p>
 <p>Dash 应用程序的主要性能限制可能是应用程序代码本身的回调。如果你能加快回调的速度，你的应用程序会感觉更轻快。</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>记忆化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>因为 Dash 的回调本质上是函数性的（它们不包含任何状态），所以很容易添加记忆缓存。内存保存函数被调用后的结果，并在使用相同参数调用函数时重用结果。</p>
 <p>关于在 Dash 应用中使用记忆来提高性能的简单例子，请参阅高级回调章节中的“<a class="reference internal" href="../basics/00_advanced-callbacks.html#dash-advanced-callbacks-memoization"><span class="std std-ref">用记忆提高性能</span></a>”一节。</p>
@@ -738,8 +743,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>下面是一个使用 Redis 的 Flask-Caching 的例子：</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 <span class="kn">from</span> <span class="nn">flask_caching</span> <span class="kn">import</span> <span class="n">Cache</span>
 
@@ -784,8 +788,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>下面是一个<strong>缓存数据集</strong>而不是回调的例子。它使用 FileSystem 缓存，将缓存的结果保存到文件系统。</p>
 <p>如果有一个数据集用于更新多个回调，那么这种方法很有效。</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
@@ -872,8 +875,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="520" src="https://dash-book.herokuapp.com/examples/caching-dataset"></div></div>
 </div>
-</div>
-<div class="section" id="graphs">
+</section>
+<section id="graphs">
 <h2>Graphs<a class="headerlink" href="#graphs" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://github.com/plotly/plotly.js">Plotly.js</a> 开箱即用非常快。</p>
 <p>大多数图形都是用 SVG 呈现的。这提供了清晰的渲染、发布质量的图像导出和广泛的浏览器支持。不幸的是，对于大型数据集（比如那些超过 15k 点的数据集），SVG 呈现图形可能很慢。为了克服这个限制，<code class="docutils literal notranslate"> <span class="pre">plotly.js</span></code> 提供了一些图表类型的 WebGL 替代方案。WebGL 使用 GPU 渲染图形。</p>
@@ -884,13 +887,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><code class="docutils literal notranslate"><span class="pre">heatmapgl</span></code>：<code class="docutils literal notranslate"><span class="pre">heatmap</span></code> 类型的 webgl 实现。<a class="reference external" href="https://plotly.com/python/reference/#heatmapgl">Reference</a></p></li>
 </ul>
 <p>：目前，dash 在更新时使用 <code class="docutils literal notranslate"><span class="pre">plotly.js</span></code> 的 <code class="docutils literal notranslate"><span class="pre">newPlot</span></code> 回调重新绘制整个图形。通过在此逻辑中引入 <code class="docutils literal notranslate"><span class="pre">restyle</span></code> 回调，可以显著提高更新图表的性能。</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>客户端回调<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>客户端回调以 JavaScript 在客户端执行代码，而不是以 Python 在服务器端执行代码。</p>
 <p>更多关于客户端回调的信息，请参阅 <a class="reference internal" href="../basics/01_clientside-callbacks.html#dash-clientside-callbacks"><span class="std std-ref">客户端回调</span></a> 一章。</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -944,7 +947,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

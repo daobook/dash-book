@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>多页面应用程序和 URL 支持 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -719,7 +724,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="url">
+  <section class="tex2jax_ignore mathjax_ignore" id="url">
 <span id="dash-urls"></span><h1>多页面应用程序和 URL 支持<a class="headerlink" href="#url" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/urls">URL Routing and Multiple Apps | Dash for Python Documentation | Plotly</a></p>
 <p>Dash 将 web 应用渲染为“单页应用”。这意味着当用户导航应用程序时，应用程序不会完全重新加载，从而使浏览速度非常快。</p>
@@ -860,7 +865,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>您可以修改此示例，以在不同的文件中导入不同页面的布局。</p></li>
 <li><p>你看到的这个 Dash 用户指南本身就是一个多页的 Dash 应用程序，使用了相同的原则。</p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>动态创建多页面应用验证的布局<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>Dash 将验证应用于回调，它将执行检查，例如验证回调参数的类型，检查指定的 <code class="docutils literal notranslate"><span class="pre">Input</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Output</span></code> 组件是否具有指定的属性。</p>
 <p>对于完全验证，回调中的所有组件都必须出现在应用程序的初始布局中，如果它们没有出现，你将看到一个错误。然而，在更复杂的 Dash 应用中，需要动态修改布局(如多页应用)，并非回调中出现的每个组件都包含在初始布局中。</p>
@@ -948,8 +953,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">await</span> <span class="n">run_server</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8050</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>结构化多页面应用程序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>下面是如何构建一个多页面应用程序，每个应用程序都包含在一个单独的文件中。文件结构：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">app</span><span class="o">.</span><span class="n">py</span>
@@ -962,8 +967,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">app.py</span></code></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ea68bcb3-54a9-4fd7-a6c6-600ba63c6a2c" name="87447a06-d931-4512-a6e8-6e045ad85350" type="radio">
-</input><label class="tabbed-label" for="ea68bcb3-54a9-4fd7-a6c6-600ba63c6a2c">
+<input checked="checked" id="5bc5e92b-0898-4a9d-9e66-ae0f99e4aa84" name="9613ba88-4a0f-4111-a3ee-5e330e5bfffb" type="radio">
+</input><label class="tabbed-label" for="5bc5e92b-0898-4a9d-9e66-ae0f99e4aa84">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 
@@ -972,8 +977,8 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="06723ec6-41c2-45e3-9a9b-6f846df5f50b" name="87447a06-d931-4512-a6e8-6e045ad85350" type="radio">
-</input><label class="tabbed-label" for="06723ec6-41c2-45e3-9a9b-6f846df5f50b">
+<input id="a56084cf-60d4-41ae-9ae1-f17fa854ea60" name="9613ba88-4a0f-4111-a3ee-5e330e5bfffb" type="radio">
+</input><label class="tabbed-label" for="a56084cf-60d4-41ae-9ae1-f17fa854ea60">
 apps/app1</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1003,8 +1008,8 @@ apps/app1</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="944b1a7b-c5ce-4aef-aac5-23ed3bfef79a" name="87447a06-d931-4512-a6e8-6e045ad85350" type="radio">
-</input><label class="tabbed-label" for="944b1a7b-c5ce-4aef-aac5-23ed3bfef79a">
+<input id="ad841957-a5d5-43be-bade-e70b6a38bb64" name="9613ba88-4a0f-4111-a3ee-5e330e5bfffb" type="radio">
+</input><label class="tabbed-label" for="ad841957-a5d5-43be-bade-e70b6a38bb64">
 apps/app2</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1036,8 +1041,8 @@ apps/app2</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8018f22e-26c5-4213-8faf-9f201eb7e3e0" name="87447a06-d931-4512-a6e8-6e045ad85350" type="radio">
-</input><label class="tabbed-label" for="8018f22e-26c5-4213-8faf-9f201eb7e3e0">
+<input id="787fb570-a379-4bbe-b4bb-09eafbddf434" name="9613ba88-4a0f-4111-a3ee-5e330e5bfffb" type="radio">
+</input><label class="tabbed-label" for="787fb570-a379-4bbe-b4bb-09eafbddf434">
 index</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">index.py</span></code> 在不同的 url 上加载不同的应用，就像这样：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
@@ -1079,8 +1084,8 @@ index</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="963ad812-f0a1-4a44-8deb-7c094f501fdc" name="b65413e4-afd9-4c97-9c86-5816575f41a4" type="radio">
-</input><label class="tabbed-label" for="963ad812-f0a1-4a44-8deb-7c094f501fdc">
+<input checked="checked" id="fabe83fd-50f6-4fb2-8fbf-bcbf4048b915" name="ff65d2b6-a0d9-4e83-87d8-025d3be1c4e2" type="radio">
+</input><label class="tabbed-label" for="fabe83fd-50f6-4fb2-8fbf-bcbf4048b915">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 
@@ -1089,8 +1094,8 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="ae86057c-a154-470b-8c05-d74b3cd7ead3" name="b65413e4-afd9-4c97-9c86-5816575f41a4" type="radio">
-</input><label class="tabbed-label" for="ae86057c-a154-470b-8c05-d74b3cd7ead3">
+<input id="1872da51-5d65-4743-a6a4-33eeead6c299" name="ff65d2b6-a0d9-4e83-87d8-025d3be1c4e2" type="radio">
+</input><label class="tabbed-label" for="1872da51-5d65-4743-a6a4-33eeead6c299">
 callbacks</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 
@@ -1110,8 +1115,8 @@ callbacks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="cc0b7bc9-9fed-453b-8278-04fb86345d14" name="b65413e4-afd9-4c97-9c86-5816575f41a4" type="radio">
-</input><label class="tabbed-label" for="cc0b7bc9-9fed-453b-8278-04fb86345d14">
+<input id="8f1e9756-ef8e-48c1-ba91-aba98ae7d69d" name="ff65d2b6-a0d9-4e83-87d8-025d3be1c4e2" type="radio">
+</input><label class="tabbed-label" for="8f1e9756-ef8e-48c1-ba91-aba98ae7d69d">
 layouts</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1146,8 +1151,8 @@ layouts</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="61011efb-459b-4ea8-9194-33343df25c8f" name="b65413e4-afd9-4c97-9c86-5816575f41a4" type="radio">
-</input><label class="tabbed-label" for="61011efb-459b-4ea8-9194-33343df25c8f">
+<input id="4bdc718b-e003-46a9-9270-d2aabaa719dc" name="ff65d2b6-a0d9-4e83-87d8-025d3be1c4e2" type="radio">
+</input><label class="tabbed-label" for="4bdc718b-e003-46a9-9270-d2aabaa719dc">
 index</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1179,8 +1184,8 @@ index</label><div class="tabbed-content docutils">
 </div>
 </div>
 <p>值得注意的是，在这两个项目结构中，Dash 实例是在单独的 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 中定义的，而运行应用的入口点是 <code class="docutils literal notranslate"><span class="pre">index.py</span></code>。这种分离是为了避免循环导入：包含回调定义的文件需要访问 Dash 应用程序实例，但是如果是从 <code class="docutils literal notranslate"><span class="pre">index.py</span></code> 导入的，<code class="docutils literal notranslate"><span class="pre">index.py</span></code> 的初始加载最终会要求自己已经导入，这是不能满足的。</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1234,7 +1239,7 @@ index</label><div class="tabbed-content docutils">
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

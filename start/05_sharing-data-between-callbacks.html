@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>在回调之间共享数据 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -738,17 +743,17 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="id1">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>在回调之间共享数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/sharing-data-between-callbacks">Part 5. Sharing Data Between Callbacks | Dash for Python Documentation | Plotly</a></p>
 <p><a class="reference internal" href="03_callback.html#dash-interactive"><span class="std std-ref">Dash 回调入门指南</span></a> 中解释的 Dash 核心原则之一是：<strong>Dash 回调 绝不能修改超出其作用域的变量</strong>。修改任何<strong>全局</strong>变量是不安全的。本章说明了原因，并提供了一些用于在回调之间共享状态的替代模式。</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>为什么要共享状态？<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在某些应用中，您可能会有多个回调，这些回调依赖于昂贵的数据处理任务，例如进行 SQL 查询，运行模拟或下载数据。</p>
 <p>您可以让一个回调运行该任务，然后将结果共享给其余的回调，而不是让每个回调都运行相同的昂贵任务。</p>
 <p>现在，您可以为一个回调提供 <a class="reference internal" href="03_callback.html#dash-multiple-outputs"><span class="std std-ref">多个输出</span></a>，这种需求已得到一定程度的缓解。这样，该昂贵的任务可以一次完成，并立即在所有输出中使用。但是在某些情况下，这还是不理想的，例如，如果有简单的后续任务可以修改结果，例如单位转换。我们只需要将结果从华氏温度更改为摄氏温度，就不必重复大型数据库查询！</p>
-</div>
-<div class="section" id="dash">
+</section>
+<section id="dash">
 <h2>Dash 是无状态的<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
 <p>Dash 被设计成一个无状态框架。</p>
 <p>无状态框架具有更强的可伸缩性和健壮性。您访问的大多数网站都是在无状态服务器上构建的。</p>
@@ -759,8 +764,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>或者在多个 Docker 容器或服务器上运行应用程序，并在它们之间实现负载平衡。</p>
 <p>无状态框架更加健壮，因为一个进程可能失败，而其他进程可以继续为请求提供服务。在 Dash Enterprise Kubernetes 中，这些容器可以运行在单独的服务器上，甚至是单独的区域，提供针对服务器故障的弹性。</p>
 <p>使用无状态框架，用户会话不会与服务器进程一一对应。每个回调请求都可以在任何可用的进程上执行。<code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> 将检查哪个进程不忙于运行回调，并将新的回调请求发送给该进程。这意味着一些进程可以平衡 10 个或 100 个并发用户的请求，只要这些请求不是在同一时间发生（它们通常不会！）。</p>
-</div>
-<div class="section" id="global">
+</section>
+<section id="global">
 <h2>为什么 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量会破坏您的应用程序<a class="headerlink" href="#global" title="永久链接至标题">¶</a></h2>
 <p>Dash 旨在在多用户环境中工作，在该环境中，多个人可以同时查看该应用程序，并且将进行<strong>独立的会话</strong>。</p>
 <p>如果您的应用程序使用修改后的 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量，则一个用户的会话可以将变量设置为一个值，这将影响下一个用户的会话。</p>
@@ -824,8 +829,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 </details>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>回调之间共享数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>为了在多个 Python 进程之间安全地共享数据，我们需要将数据存储在每个进程可访问的位置。</p>
 <p>有三个主要位置可存储此数据：</p>
@@ -835,8 +840,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>服务器端内存跨进程和服务器共享，比如 Redis 数据库。</p></li>
 </ol>
 <p>下面的三个示例说明了这些方法。</p>
-</div>
-<div class="section" id="dcc-store">
+</section>
+<section id="dcc-store">
 <h2>示例1 使用 <code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code> 在浏览器中存储数据<a class="headerlink" href="#dcc-store" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -901,8 +906,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 </div>
-</details></div>
-<div class="section" id="id4">
+</details></section>
+<section id="id4">
 <h2>示例2 前期聚合计算<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>如果数据很大，则通过网络发送计算的数据可能会很昂贵。在某些情况下，序列化此数据和 JSON 可能也很昂贵。</p>
 <p>在许多情况下，您的应用只会显示计算或过滤后的数据的子集或汇总。在这些情况下，您可以在数据处理回调中预先计算聚合，然后将这些聚合传输到其余的回调中。</p>
@@ -966,8 +971,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 </div>
-</details></div>
-<div class="section" id="id5">
+</details></section>
+<section id="id5">
 <h2>示例3 缓存和信号<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>这个例子：</p>
 <ul class="simple">
@@ -1132,8 +1137,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 </details>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>示例4 服务器上基于用户的会话数据<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>前面的示例在文件系统上缓存了计算，并且所有用户都可以访问这些计算。</p>
 <p>在某些情况下，您想使数据与用户会话隔离：一个用户的派生数据不应更新下一个用户的派生数据。一种实现方法是将数据保存在隐藏的 Div中，如第一个示例所示。</p>
@@ -1259,8 +1264,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>第二个会话显示的数据与第一个会话不同：在回调之间共享的数据被隔离到各个用户会话。</p></li>
 </ul>
 <p>问题？在 <a class="reference external" href="https://community.plotly.com/c/dash">Dash 社区论坛</a>上讨论这些示例。</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1314,7 +1319,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

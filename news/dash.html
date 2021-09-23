@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>关于 Plotly Dash 你需要知道的一切 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -716,26 +721,26 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="plotly-dash">
+  <section class="tex2jax_ignore mathjax_ignore" id="plotly-dash">
 <h1>关于 Plotly Dash 你需要知道的一切<a class="headerlink" href="#plotly-dash" title="永久链接至标题">¶</a></h1>
 <dl class="describe">
-<dt>
-<code class="sig-name descname"><span class="pre">参考</span></code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">参考</span></span></dt>
 <dd><p><a class="reference external" href="https://medium.datadriveninvestor.com/plotly-dash-everything-you-need-to-know-bc09a5e45395">Plotly Dash — Everything You Need To Know | by Stephen Kilcommins | DataDrivenInvestor</a></p>
 </dd></dl>
 
 <p><a class="reference external" href="https://xinetzone.github.io/wiki/glossary/dash.html#term-Dash" title="(在 Python)"><span class="xref std std-term">Dash</span></a> 是在 Flask, Plotly.js 和 React.js 之上编写的。它允许用户使用常规 Python 创建交互式仪表板，而不必担心后端代码、路由和请求。Dash 在浏览器中呈现，使其成为一个跨平台的解决方案。Dash 是一个与语言无关的框架——支持 Python、R 和 Julia 编程语言。</p>
-<div class="section" id="python">
+<section id="python">
 <h2>支持 Python 图形库<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
 <p>用于在 Dash 中创建图形的“<a class="reference external" href="https://dash.plotly.com/dash-core-components/graph">Graph</a>”组件将 Plotly 图形作为输入，这意味着 Dash 主要是为使用 “<code class="docutils literal notranslate"><span class="pre">plotly.py</span></code>” Python 图形库而构建的。Dash 中存在用于显示可选 Python 绘图库的外部库，即 Seaborn/Matplotlib、Altair/Vega-Lite 和 Bokeh，但是这些库不是很健壮，并且与输出图的交互水平与 Plotly 生成的图不在同一水平上。</p>
 <p>在 Dash 中用于与其他绘图库一起工作的主要 Python 库称为 “<a class="reference external" href="https://github.com/plotly/dash-alternative-viz">Dash -alternative-viz</a>”。如果您选择使用 Dash，建议主要使用 Plotly 图，因为框架是在考虑它们的情况下构建的。</p>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h2>多页面应用程序支持<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>Dash 显式支持多页面应用程序。它还可以在不刷新实际网页的情况下改变 URL，从而在页面之间快速导航，大大减少了页面加载时间。<a class="reference external" href="https://dash.plotly.com/introduction">Dash 用户指南</a> 本身就是一个多页面 Dash 应用程序的例子。</p>
 <p>虽然 Dash 以一种性能方式处理多页面应用程序，但在多页面应用程序中使用 Dash 的一个主要警告是，Dash 框架是无状态的，这限制了多页面应用程序的实现，因为状态不能在服务器端单独的页面之间共享。</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>安装和入门<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在你的终端，安装 <code class="docutils literal notranslate"><span class="pre">dash</span></code>：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install dash
@@ -751,19 +756,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div><p>在开始开发 Dash 应用程序时，这里有一个次要的学习曲线，为了真正找到你的立足点，你应该学习这个指南，而不是快速浏览。建议在开始创建你的第一个 Dash 应用程序之前，先彻底阅读一下这个教程指南以及 <a class="reference external" href="https://dash.plotly.com/dash-core-components">Dash 核心组件概述</a> 和 <a class="reference external" href="https://dash.plotly.com/dash-html-components">Dash HTML 组件概述</a>。</p>
 </div></blockquote>
 <p>你可以在这里找到一些 <a class="reference external" href="https://dash-gallery.plotly.host/Portal/">Dash 应用程序的例子</a>，以及相应的<a class="reference external" href="https://github.com/plotly/dash-sample-apps/">应用程序源代码</a>。</p>
-</div>
-<div class="section" id="dash">
+</section>
+<section id="dash">
 <h2>Dash<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://medium.com/plotly/integrate-machine-learning-and-big-data-into-real-time-business-intelligence-with-snowflake-and-c972b5ea274e">Integrate machine learning and big data into real-time business intelligence with Snowflake and Plotly’s Dash | by plotly | Plotly | Medium</a></p></li>
 <li><p><a class="reference external" href="https://medium.com/plotly/productionizing-object-detection-models-with-dash-enterprise-dba1c9402c2f">Productionizing Object Detection Models with Dash Enterprise | by plotly | Plotly | Medium</a></p></li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>部署<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>参考 <a class="reference external" href="https://towardsdatascience.com/the-easiest-way-to-deploy-your-dash-app-for-free-f92c575bb69e">The Easiest Way to Deploy Your Dash App for Free | by Elsa Scola | Towards Data Science</a> &amp; <a class="reference external" href="https://medium.com/analytics-vidhya/plotly-dash-apps-deploy-instantly-with-zero-configuration-fe1e5730763d">Plotly Dash apps: Deploy Instantly with Zero Configuration | by Dan Lester | Analytics Vidhya | Medium</a>。</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>菜单<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/plotly/dash-recipes">plotly/dash-recipes: A collection of scripts and examples created while answering questions from the greater Dash community (github.com)</a></p></li>
@@ -779,8 +784,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference external" href="https://medium.com/plotly/dash-is-an-ideal-front-end-for-your-databricks-spark-backend-212ee3cae6cc">Dash is an ideal Python based front-end for your Databricks Spark Backend | by plotly | Plotly | Medium</a></p></li>
 <li><p><a class="reference external" href="https://medium.com/plotly/beyond-tidy-plotly-express-now-accepts-wide-form-and-mixed-form-data-bdc3e054f891">Beyond “tidy”: Plotly Express now accepts wide-form and mixed-form data | by Nicolas Kruchten | Plotly | Medium</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -834,7 +839,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

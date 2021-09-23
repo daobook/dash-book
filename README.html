@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Dash Book &#8212; Dash 手册</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -118,6 +119,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -129,7 +134,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -282,7 +287,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -371,7 +376,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -491,7 +496,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -690,7 +695,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="dash-book">
+  <section class="tex2jax_ignore mathjax_ignore" id="dash-book">
 <h1>Dash Book<a class="headerlink" href="#dash-book" title="永久链接至标题">¶</a></h1>
 <p><a class="reference external" href="https://github.com/xinetzone/dash-book/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/xinetzone/dash-book" /></a> <a class="reference external" href="https://github.com/xinetzone/dash-book/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/xinetzone/dash-book" /></a> <a class="reference external" href="https://github.com/xinetzone/dash-book/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/xinetzone/dash-book" /></a> <a class="reference external" href="https://github.com/xinetzone/dash-book/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/xinetzone/dash-book" /></a>  <img alt="repo size" src="https://img.shields.io/github/repo-size/xinetzone/dash-book.svg" /> <a class="reference external" href="https://github.com/xinetzone/dash-book/graphs/contributors"><img alt="contributors" src="https://img.shields.io/github/contributors/xinetzone/dash-book.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/dash-book/watchers"><img alt="watcher" src="https://img.shields.io/github/watchers/xinetzone/dash-book.svg" /></a> <img alt="" src="https://github.com/xinetzone/dash-book/actions/workflows/docs.yml/badge.svg" /></p>
 <p><a class="reference external" href="https://dash-book.herokuapp.com/">Dash 示例</a></p>
@@ -698,7 +703,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="tip dropdown w3-pale-blue w3-card-4 w3-padding w3-round-xlarge w3-margin-top admonition">
 <p class="admonition-title">导航</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="start/index.html">快速上手</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="start/00_intro.html">Dash 简介</a></li>
@@ -734,7 +739,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">主题</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="custom-components/index.html">创建自己的组件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="production-capabilities/index.html">面向生产</a></li>
@@ -742,7 +747,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="html-components/index.html">Dash HTML 组件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="html-components/a.html"><code class="docutils literal notranslate"><span class="pre">html.A</span></code></a></li>
@@ -762,7 +767,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">混沌</span></p>
+<p class="caption" role="heading"><span class="caption-text">混沌</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about.html">关于本书</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">Sanstyle Book</a></li>
@@ -781,12 +786,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </div>
 </div>
-<div class="section" id="jupyterdash">
+<section id="jupyterdash">
 <h2>JupyterDash<a class="headerlink" href="#jupyterdash" title="永久链接至标题">¶</a></h2>
 <p>参考 <a class="reference external" href="https://github.com/plotly/jupyter-dash">plotly/jupyter-dash</a></p>
-<p><a class="reference external" href="https://xinetzone.github.io/wiki/glossary/dash.html#term-Dash" title="(在 Python)"><span class="xref std std-term">Dash</span></a> 是 Plotly 开源的 <a class="reference external" href="https://xinetzone.github.io/wiki/glossary/python.html#term-Python" title="(在 Python)"><span class="xref std std-term">Python</span></a>（以及 <a class="reference external" href="https://dashr.plotly.com/">R</a> 和 <a class="reference external" href="https://github.com/plotly/dash.jl">Julia</a>！）框架，用于使用纯 Python（不需要 <a class="reference external" href="https://xinetzone.github.io/wiki/glossary/javascript.html#term-JavaScript" title="(在 Python)"><span class="xref std std-term">JavaScript</span></a>）构建全栈分析 web 应用程序。得益于 <a class="reference external" href="https://dash.plotly.com/devtools">Dash DevTools</a> 提供的热加载和前端错误报告等功能，开发者可以使用传统的文本编辑器或集成开发环境(IDE)快速迭代应用设计。</p>
-</div>
-</div>
+<p><a class="reference external" href="https://xinetzone.github.io/wiki/glossary/dash.html#term-Dash" title="(在 Python)"><span class="xref std std-term">Dash</span></a> 是 Plotly 开源的 <a class="reference external" href="https://xinetzone.github.io/wiki/glossary/python.html#term-Python" title="(在 Python)"><span class="xref std std-term">Python</span></a>（以及 <a class="reference external" href="https://dashr.plotly.com/">R</a> 和 <a class="reference external" href="https://github.com/plotly/dash.jl">Julia</a> 等）框架，用于使用纯 Python（不需要 <a class="reference external" href="https://xinetzone.github.io/wiki/glossary/javascript.html#term-JavaScript" title="(在 Python)"><span class="xref std std-term">JavaScript</span></a>）构建全栈分析 web 应用程序。得益于 <a class="reference external" href="https://dash.plotly.com/devtools">Dash DevTools</a> 提供的热加载和前端错误报告等功能，开发者可以使用传统的文本编辑器或集成开发环境(IDE)快速迭代应用设计。</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -831,7 +836,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

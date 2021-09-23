@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Waitress &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -696,11 +701,11 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="waitress">
+  <section class="tex2jax_ignore mathjax_ignore" id="waitress">
 <h1>Waitress<a class="headerlink" href="#waitress" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://docs.pylonsproject.org/projects/waitress/en/stable/index.html">https://docs.pylonsproject.org/projects/waitress/en/stable/index.html</a></p>
 <p>Waitress 是一个具有可接受性能的生产质量的纯 Python WSGI 服务器。除了 Python 标准库中的依赖项外，它没有其他依赖项。它在 Python 3.6+ 下运行于 Unix 和 Windows 上的 CPython。它还可以在 UNIX 上的 PyPy 7.3.2 (PyPy3) 上运行。它支持 HTTP/1.0 和 HTTP/1.1。</p>
-<div class="section" id="id1">
+<section id="id1">
 <h2>用法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>下面的代码将在所有可用 IP 地址（IPv4 和 IPv6）上的 8080 端口上运行。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">waitress</span> <span class="kn">import</span> <span class="n">serve</span>
@@ -752,8 +757,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">waitress</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">8041</span> <span class="n">myapp</span><span class="p">:</span><span class="n">wsgifunc</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="heroku">
+</section>
+<section id="heroku">
 <h2>Heroku<a class="headerlink" href="#heroku" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Waitress</span></code> 可以用来在 Heroku 上提供 WSGI 应用程序，在你的 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> 文件中包含 <code class="docutils literal notranslate"><span class="pre">waitress</span></code>，并将 Procfile 更新如下：</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">web: waitress-serve \</span>
@@ -769,8 +774,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>代理配置通知 Waitress 信任 Heroku 负载均衡器设置的<a class="reference external" href="https://devcenter.heroku.com/articles/http-routing#heroku-headers">转发头</a>。它还允许设置标准 WEB_CONCURRENCY 环境变量来调整一次由 Waitress 处理的请求数量。</p>
 <p>注意 Waitress 使用一个线程模型和仔细的工作应采取确保请求不超过 30 秒或 Heroku 将通知客户端请求失败即使正在处理的请求仍由服务员和占领一个线程，直到它完成。</p>
 <p>有关这方面的更多信息，请参见 <a class="reference external" href="https://docs.pylonsproject.org/projects/waitress/en/stable/runner.html#runner">waitress-serve</a>。</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -824,7 +829,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>客户端回调 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -719,7 +724,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="dash-clientside-callbacks">
+  <section class="tex2jax_ignore mathjax_ignore" id="dash-clientside-callbacks">
 <span id="id1"></span><h1>客户端回调<a class="headerlink" href="#dash-clientside-callbacks" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/clientside-callbacks">Clientside Callbacks | Dash for Python Documentation | Plotly</a></p>
 <p>有时，回调可能会导致相当大的开销，尤其是在以下情况下：</p>
@@ -780,7 +785,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="id2">
+<section id="id2">
 <h2>一个简单的例子<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>下面是两个使用客户端回调与<code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code>组件一起更新图形的示例。在这些示例中，我们在后端更新了<code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code>组件。为了创建和显示图形，我们在前端有一个客户端回调，该回调添加了一些有关我们使用<code class="docutils literal notranslate"><span class="pre">&quot;Graph</span> <span class="pre">scale&quot;</span></code>下的单选按钮指定的<code class="docutils literal notranslate"><span class="pre">layout</span></code>的其他信息。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
@@ -890,8 +895,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="800" src="https://dash-book.herokuapp.com/examples/clientside-callbacks"></div></div>
 </div>
 <p>请注意，在此示例中，我们通过从数据框中提取相关数据来手动创建<code class="docutils literal notranslate"><span class="pre">figure</span></code>字典。这就是存储在我们的<code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code>组件中的内容； 展开上面的&quot;Contents of figure storage&quot;，以准确查看用于构建图形的内容。</p>
-</div>
-<div class="section" id="plotly-express-figure">
+</section>
+<section id="plotly-express-figure">
 <h2>使用 Plotly Express 生成 figure<a class="headerlink" href="#plotly-express-figure" title="永久链接至标题">¶</a></h2>
 <p>通过 Plotly Express，您可以创建 <code class="docutils literal notranslate"><span class="pre">figures</span></code> 的单行声明。当使用诸如 <code class="docutils literal notranslate"><span class="pre">plotly_express.Scatter</span></code> 创建 graph 时，您将获得一个字典作为返回值。该字典的形状与 <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code> 组件的 <code class="docutils literal notranslate"><span class="pre">figure</span></code> 参数相同。（有关<code class="docutils literal notranslate"><span class="pre">figure</span></code>形状的更多信息，请参见<a class="reference external" href="https://plotly.com/python/creating-and-updating-figures/">此处</a>。）</p>
 <p>我们可以重做上面的示例以使用 Plotly Express。</p>
@@ -1006,8 +1011,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Dash 当前不支持异步客户端回调，如果返回 <code class="docutils literal notranslate"><span class="pre">Promise</span></code>，它将失败。</p></li>
 <li><p>如果您需要引用服务器上的全局变量，或者需要数据库调用，则无法进行客户端回调。</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1061,7 +1066,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

@@ -4,7 +4,8 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>添加 CSS 和 JS 以覆盖页面加载模板 &#8212; Dash 手册</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,25 +23,25 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
     <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -83,12 +84,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -119,6 +120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
@@ -130,7 +135,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   教程
  </span>
@@ -283,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   主题
  </span>
@@ -372,7 +377,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -492,7 +497,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   混沌
  </span>
@@ -772,19 +777,19 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="css-js">
+  <section class="tex2jax_ignore mathjax_ignore" id="css-js">
 <span id="dash-external-resources"></span><h1>添加 CSS 和 JS 以覆盖页面加载模板<a class="headerlink" href="#css-js" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/external-resources">Adding CSS &amp; JS and Overriding the Page-Load Template | Dash for Python Documentation | Plotly</a></p>
 <p>Dash 应用程序通过 CSS 和 JavaScript 在 web 浏览器中呈现。在页面加载时，Dash 提供一个小的 HTML 模板，其中包括渲染应用程序所需的 CSS 和 JavaScript 引用。这一章涵盖了你需要知道的关于配置这个 HTML 文件以及关于在 Dash 应用程序中包括外部 CSS 和 JavaScript 的一切。</p>
-<div class="section" id="css-javascript">
+<section id="css-javascript">
 <h2>添加自定义 CSS 和 JavaScript<a class="headerlink" href="#css-javascript" title="永久链接至标题">¶</a></h2>
 <p>在你的 Dash 应用程序中包含自定义 CSS 或 JavaScript 是很简单的。你只需在 <code class="docutils literal notranslate"><span class="pre">app</span></code> 目录的根目录下创建一个名为 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 的文件夹，并在该文件夹中包含你的 CSS 和 JavaScript 文件。Dash 会自动提供这个文件夹中包含的所有文件。默认情况下，请求资产的 <code class="docutils literal notranslate"><span class="pre">url</span></code> 是 <code class="docutils literal notranslate"><span class="pre">/assets</span></code>，但是你可以用 <code class="docutils literal notranslate"><span class="pre">assets_url_path</span></code> 参数将其自定义为 <code class="docutils literal notranslate"><span class="pre">dash.Dash</span></code>。</p>
 <div class="w3-yellow docutils">
 <p>建议：你需要在 Dash 构造函数中包含 <code class="docutils literal notranslate"><span class="pre">__name__</span></code>。</p>
 </div>
 <p>也就是说，<code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash(__name__)</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash()</span></code>。理由见 <a class="reference external" href="https://community.plotly.com/t/dash-app-does-not-load-assets-and-app-index-string/12178/10?u=chriddyp">dash-app-does-not-load-assets-and-app-index-string</a>。</p>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h2>示例：包含本地 CSS 和 JavaScript<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>我们将创建几个文件：<code class="docutils literal notranslate"><span class="pre">app.py</span></code>，一个名为 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 的文件夹，以及该文件夹中的三个文件：</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>- app.py
@@ -795,8 +800,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="65ab9cdc-f8a8-46c1-a63a-7067ba310480" name="8bd15fea-d7f4-44d4-a642-0a93ac52d224" type="radio">
-</input><label class="tabbed-label" for="65ab9cdc-f8a8-46c1-a63a-7067ba310480">
+<input checked="checked" id="61d25e39-9f65-4c2c-afc7-4f84b201d647" name="15b2fd31-4a12-45e6-bfc5-6082b260a98d" type="radio">
+</input><label class="tabbed-label" for="61d25e39-9f65-4c2c-afc7-4f84b201d647">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
@@ -827,15 +832,15 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0f768f48-0021-4a87-9f96-29f9333fb975" name="8bd15fea-d7f4-44d4-a642-0a93ac52d224" type="radio">
-</input><label class="tabbed-label" for="0f768f48-0021-4a87-9f96-29f9333fb975">
+<input id="c491062e-9c91-4a26-904b-0c15ae1c04f2" name="15b2fd31-4a12-45e6-bfc5-6082b260a98d" type="radio">
+</input><label class="tabbed-label" for="c491062e-9c91-4a26-904b-0c15ae1c04f2">
 custom-script</label><div class="tabbed-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;如果您看到此警告，说明您的自定义 JavaScript 脚本已经运行！&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="e0c14551-e9b5-41de-a370-0392420b9edd" name="8bd15fea-d7f4-44d4-a642-0a93ac52d224" type="radio">
-</input><label class="tabbed-label" for="e0c14551-e9b5-41de-a370-0392420b9edd">
+<input id="8a3b3cea-a614-4e08-be89-0cb7ffef2725" name="15b2fd31-4a12-45e6-bfc5-6082b260a98d" type="radio">
+</input><label class="tabbed-label" for="8a3b3cea-a614-4e08-be89-0cb7ffef2725">
 typography</label><div class="tabbed-content docutils">
 <div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="p">{</span>
     <span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
@@ -847,8 +852,8 @@ typography</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8976c450-780a-40f3-9dc8-1fb38a87f1bf" name="8bd15fea-d7f4-44d4-a642-0a93ac52d224" type="radio">
-</input><label class="tabbed-label" for="8976c450-780a-40f3-9dc8-1fb38a87f1bf">
+<input id="bbf06c43-064e-4dfb-a63a-210b8700a769" name="15b2fd31-4a12-45e6-bfc5-6082b260a98d" type="radio">
+</input><label class="tabbed-label" for="bbf06c43-064e-4dfb-a63a-210b8700a769">
 header</label><div class="tabbed-content docutils">
 <div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span> <span class="p">{</span>
     <span class="n">height</span><span class="p">:</span> <span class="mi">60</span><span class="n">px</span><span class="p">;</span>
@@ -884,8 +889,8 @@ header</label><div class="tabbed-content docutils">
 <li><p>你的自定义 CSS 将包含在 Dash 组件 CSS 之后。</p></li>
 <li><p>建议在 dash init 中添加<code class="docutils literal notranslate"><span class="pre">__name__</span></code>，以确保加载 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹中的资源，例如：<code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash(__name__,</span> <span class="pre">meta_tags=[...])</span></code>。当您通过其他命令行运行应用程序时(如 <code class="docutils literal notranslate"><span class="pre">flask</span></code> 命令或 <code class="docutils literal notranslate"><span class="pre">gunicorn/waitress</span></code>)，<code class="docutils literal notranslate"><span class="pre">__main__</span></code> 模块将不再位于 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 所在的位置。通过明确设置 <code class="docutils literal notranslate"><span class="pre">__name__</span></code>， <code class="docutils literal notranslate"><span class="pre">Dash</span></code> 将能够正确地找到相对 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹。</p></li>
 </ol>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>添加外部 CSS / JavaScript<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>你可以通过 <code class="docutils literal notranslate"><span class="pre">external_stylesheets</span></code> 和 <code class="docutils literal notranslate"><span class="pre">external_scripts</span></code> init 关键字将托管在你的 Dash 应用程序上的资源添加到外部。</p>
 <p>资源可以是字符串，也可以是包含标签属性（<code class="docutils literal notranslate"><span class="pre">src</span></code>、<code class="docutils literal notranslate"><span class="pre">integrity</span></code>、<code class="docutils literal notranslate"><span class="pre">crossorigin</span></code> 等）的字典。你可以两者混合。</p>
@@ -928,8 +933,8 @@ header</label><div class="tabbed-content docutils">
     <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="dash">
+</section>
+<section id="dash">
 <h2>自定义 Dash 的文件或浏览器标签标题<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
 <p>文档标题是出现在网页浏览器选项卡中的网页名称。</p>
 <p>默认值是 <code class="docutils literal notranslate"><span class="pre">Dash</span></code>。</p>
@@ -937,8 +942,8 @@ header</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Weekly Analytics&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="url">
+</section>
+<section id="url">
 <h2>根据 URL 或选项卡动态更新文档标题<a class="headerlink" href="#url" title="永久链接至标题">¶</a></h2>
 <p>要动态设置文档标题，可以使用<code class="docutils literal notranslate"><span class="pre">clientside</span> <span class="pre">callback</span></code> 作为一个副作用更新 <code class="docutils literal notranslate"><span class="pre">document.title</span></code>。下面的示例设置 <code class="docutils literal notranslate"><span class="pre">document.title</span></code>的基础上，当前选择的选项卡。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -976,8 +981,8 @@ header</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 <p>基于 URL 更新页面将是类似的：回调的输入将是 <code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code> 的 <code class="docutils literal notranslate"><span class="pre">pathname</span></code> 属性。关于 <code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code>，请参阅 <a class="reference external" href="https://dash.plotly.com/urls">url 和多页应用程序</a>章节。</p>
-</div>
-<div class="section" id="dash-updating">
+</section>
+<section id="dash-updating">
 <h2>定制或删除 Dash 的<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息<a class="headerlink" href="#dash-updating" title="永久链接至标题">¶</a></h2>
 <p>当一个回调运行时，Dash 更新文档标题(出现在你的浏览器标签)与<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息。</p>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">update_title=属性</span></code> 定制此消息：</p>
@@ -988,8 +993,8 @@ header</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">update_title</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="dash-html-index">
+</section>
+<section id="dash-html-index">
 <h2>自定义 Dash 的 HTML index 模板<a class="headerlink" href="#dash-html-index" title="永久链接至标题">¶</a></h2>
 <p>Dash 的 UI 是通过 Dash 的 <code class="docutils literal notranslate"><span class="pre">React.js</span></code> 前端动态生成的。因此，在页面加载时，Dash提 供一个非常小的 HTML 模板字符串，其中包括渲染页面所需的 CSS 和 JavaScript 以及一些简单的 HTML 元标记。</p>
 <p>这个简单的 HTML 字符串是可定制的。如果你想自定义这个字符串:</p>
@@ -998,7 +1003,7 @@ header</label><div class="tabbed-content docutils">
 <li><p>在你的应用程序中包含自定义元标记。注意，元标记也可以通过 <code class="docutils literal notranslate"><span class="pre">meta_tags</span></code> 参数添加(下面的例子)。</p></li>
 <li><p>通过自己实例化 <code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code> 类，包含一个自定义版本的<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>。你可以通过下面的例子提供一个<code class="docutils literal notranslate"><span class="pre">hooks</span></code>配置对象来添加请求钩子。</p></li>
 </ul>
-<div class="section" id="option-1-index-string">
+<section id="option-1-index-string">
 <h3>Option 1 - index_string<a class="headerlink" href="#option-1-index-string" title="永久链接至标题">¶</a></h3>
 <p>添加一个<code class="docutils literal notranslate"><span class="pre">index_string</span></code>来修改默认的 HTML 索引模板：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -1047,8 +1052,8 @@ header</label><div class="tabbed-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">{%scripts%}</span></code> (required)：渲染 Dash 应用所需的 JavaScript 脚本集。这包括 Dash 组件的 JavaScript 文件以及在 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 文件夹中找到的任何 JavaScript 文件。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{%renderer%}</span></code> (required)：通过调用<code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">DashRenderer()</span></code>实例化<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>的<code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>脚本</p></li>
 </ul>
-</div>
-<div class="section" id="option-2-interpolate-index">
+</section>
+<section id="option-2-interpolate-index">
 <h3>Option 2 - interpolate_index<a class="headerlink" href="#option-2-interpolate-index" title="永久链接至标题">¶</a></h3>
 <p>如果你的 HTML 内容不是静态的，或者你想 introspect 或修改模板变量，那么你可以覆盖 <code class="docutils literal notranslate"><span class="pre">Dash.interpolate_index</span></code> 方法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -1104,8 +1109,8 @@ header</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">scripts</span></code>和<code class="docutils literal notranslate"><span class="pre">css</span></code>键的值可能会不同，这取决于您包含的组件库或<code class="docutils literal notranslate"><span class="pre">assets</span></code>文件夹中的文件。</p>
-</div>
-<div class="section" id="dash-renderer">
+</section>
+<section id="dash-renderer">
 <h3>使用请求钩子定制 dash-renderer<a class="headerlink" href="#dash-renderer" title="永久链接至标题">¶</a></h3>
 <p>为了实例化你自己的<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>版本，你可以覆盖 Dash 的HTML Index Template，并提供你自己的脚本来代替标准脚本。这个脚本应该在某处调用<code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">renderer</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">DashRenderer();</span></code>，它实例化了<code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code>类。当你设置<code class="docutils literal notranslate"><span class="pre">app.index_string</span></code>时，你可以将这个脚本添加到你的 index HTML 中，或者你可以像这样简单地覆盖<code class="docutils literal notranslate"><span class="pre">app.renderer</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -1152,9 +1157,9 @@ header</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 <p>请注意，<code class="docutils literal notranslate"><span class="pre">request_pre</span></code>函数将正在发送的请求的有效负载作为其参数，而<code class="docutils literal notranslate"><span class="pre">request_post</span></code>函数将有效负载和服务器的响应同时作为参数。这些可以在我们的功能中改变，允许你修改<code class="docutils literal notranslate"><span class="pre">Dash</span></code>发送给服务器的响应和请求对象。在上面的例子中，<code class="docutils literal notranslate"><span class="pre">request_pre</span></code>函数在每次服务器调用之前被触发，在这个例子中，它将<code class="docutils literal notranslate"><span class="pre">console.log()</span></code>请求参数。<code class="docutils literal notranslate"><span class="pre">request_post</span></code>函数将在每次服务器调用后触发，在我们的示例中还将打印出响应参数。</p>
-</div>
-</div>
-<div class="section" id="meta">
+</section>
+</section>
+<section id="meta">
 <h2>定制 Meta 标记<a class="headerlink" href="#meta" title="永久链接至标题">¶</a></h2>
 <p>要在你的应用程序中添加自定义元标签，你可以覆盖<code class="docutils literal notranslate"><span class="pre">Dash</span></code>的 HTML 索引模板。另外，<code class="docutils literal notranslate"><span class="pre">Dash</span></code> 提供了一个快捷方式：你可以直接在 <code class="docutils literal notranslate"><span class="pre">Dash</span></code> 构造函数中指定 <code class="docutils literal notranslate"><span class="pre">meta</span></code> 标签：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -1193,8 +1198,8 @@ header</label><div class="tabbed-content docutils">
     <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1248,7 +1253,7 @@ header</label><div class="tabbed-content docutils">
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
