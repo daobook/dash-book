@@ -10,6 +10,7 @@ sphinx-click
 # sphinxext-rediraffe
 sympy
 statsmodels
+dash
 jupyter-dash
 plotly
 pyorbital
