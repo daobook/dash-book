@@ -25,8 +25,7 @@ Dash 为应用程序的所有可视组件提供了 Python 类。
 ```{code-cell} ipython3
 import pandas as pd
 import plotly.express as px
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 from jupyter_dash import JupyterDash as Dash
 ```
 
@@ -80,8 +79,8 @@ go.FigureWidget(fig)
 
 ```{admonition} 解析
 - `layout` 由诸如 `html.Div` 和 `dcc.Graph` 之类的组件树组成。
-- 对于每个 HTML 标签都有一个 `dash_html_components` 库的组件与之对应。比如 `html.H1(children='Hello Dash')` 组件会在应用程序中生成一个 `<h1> Hello Dash </h1>` HTML 元素。
-- 并非所有组件都是纯 HTML。`dash_core_components` 描述了交互式的更高级组件，这些组件是通过 `React.js` 库使用 JavaScript，HTML 和 CSS 生成的。
+- 对于每个 HTML 标签都有一个 `html` 库的组件与之对应。比如 `html.H1(children='Hello Dash')` 组件会在应用程序中生成一个 `<h1> Hello Dash </h1>` HTML 元素。
+- 并非所有组件都是纯 HTML。`dcc` 描述了交互式的更高级组件，这些组件是通过 `React.js` 库使用 JavaScript，HTML 和 CSS 生成的。
 - 每个组件都完全通过关键字属性来描述。Dash 是声明性的：将主要通过这些属性来描述您的应用程序。`children` 属性是特殊的。按照惯例，它始终是第一个属性，这意味着您可以忽略它：`html.H1(children='Hello Dash')` 与 `html.H1('Hello Dash')` 相同。而且，它可以包含字符串，数字，单个组件或组件列表。
 - 应用程序中的字体看起来与此处显示的字体可能略有不同。此应用程序使用自定义 CSS 样式表来修改元素的默认样式。您可以在 [CSS 教程](https://dash.plotly.com/external-resources) 中了解更多信息，但现在您可以使用：
 
@@ -121,11 +120,11 @@ fig.update_layout(
 ```
 
 <!-- #region -->
-## `dash_html_components` 样式
+## `html` 样式
 
-`dash_html_components` 库包含每个 HTML 标记的组件类以及所有 HTML 参数的关键字参数。使用 `style` 属性可以修改 `html.Div` 和 `html.H1` 等组件的内联样式。比如，`html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDBFF'})` 在 Dash 应用程序中呈现为`<h1 style="text-align: center; color: #7FDBFF">Hello Dash</h1>`。
+`html` 库包含每个 HTML 标记的组件类以及所有 HTML 参数的关键字参数。使用 `style` 属性可以修改 `html.Div` 和 `html.H1` 等组件的内联样式。比如，`html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDBFF'})` 在 Dash 应用程序中呈现为`<h1 style="text-align: center; color: #7FDBFF">Hello Dash</h1>`。
 
-`dash_html_components` 和 HTML 属性之间有一些重要的区别：
+`html` 和 HTML 属性之间有一些重要的区别：
 
 1. HTML 中的 `style` 属性是用分号分隔的字符串。在 Dash 中，仅提供字典。
 2. `style` 字典中的键是驼峰式的。比如，可以是 `textAlign`，而不是 `text-align`。
@@ -158,17 +157,15 @@ Embed(snippet_url + '/examples/reusable-components',
 
 ## 可视化组件
 
-`dash_core_components` 库包含一个名为 `Graph` 的组件。`Graph` 使用开源 [plotly.js](https://github.com/plotly/plotly.js) JavaScript 图形库呈现交互式数据可视化。Plotly.js 支持超过 35 种图表类型，并以矢量质量 SVG 和高性能 WebGL 呈现图表。
+`dcc` 库包含一个名为 `Graph` 的组件。`Graph` 使用开源 [plotly.js](https://github.com/plotly/plotly.js) JavaScript 图形库呈现交互式数据可视化。Plotly.js 支持超过 35 种图表类型，并以矢量质量 SVG 和高性能 WebGL 呈现图表。
 
-`dash_core_components.Graph` 组件中的 `Figure` 参数与 Plotly 的开源 Python 图形库 `plotly.py` 使用的图形参数相同。请查看 [plotly.py 文档和画廊](https://plotly.com/python) 以了解更多信息。
+`dcc.Graph` 组件中的 `Figure` 参数与 Plotly 的开源 Python 图形库 `plotly.py` 使用的图形参数相同。请查看 [plotly.py 文档和画廊](https://plotly.com/python) 以了解更多信息。
 
 这是一个从 Pandas 数据框创建散点图的示例。
 <!-- #endregion -->
 
 ```{code-cell} ipython3
 import pandas as pd
-import dash_core_components as dcc
-import dash_html_components as html
 
 df = pd.read_csv('https://gist.githubusercontent.com/chriddyp/5d1ea79569ed194d432e56108a04d188/raw/a9f9e8076b837d541398e999dcbac2b2826a81f8/gdp-life-exp-2007.csv')
 fig = px.scatter(df, x="gdp per capita", y="life expectancy",
@@ -193,12 +190,9 @@ fig
 
 ## Markdown
 
-虽然 Dash 通过 `dash_html_components` 库公开 HTML，但是用 HTML 编写副本可能很繁琐。要编写文本块，可以使用 `dash_core_components` 库中的 `Markdown` 组件。使用以下代码创建一个名为 `app.py` 的文件：
+虽然 Dash 通过 `html` 库公开 HTML，但是用 HTML 编写副本可能很繁琐。要编写文本块，可以使用 `dcc` 库中的 `Markdown` 组件。使用以下代码创建一个名为 `app.py` 的文件：
 
 ```{code-cell} ipython3
-import dash_core_components as dcc
-import dash_html_components as html
-
 markdown_text = '''
 ### Dash and Markdown
 
@@ -226,7 +220,7 @@ if this is your first introduction to Markdown!
 
 ## 核心组件
 
-`dash_core_components` 包含一组更高级别的组件，例如下拉列表，图形，Markdown 块等。
+`dcc` 包含一组更高级别的组件，例如下拉列表，图形，Markdown 块等。
 
 像所有 Dash 组件一样，对它们进行了完全声明式的描述。每个可配置的选项都可以用作组件的关键字参数。
 
@@ -251,11 +245,11 @@ Embed(snippet_url + '/examples/intro',
 
 ## 总结
 
-Dash 应用程序的 `layout` 描述了该应用程序的外观。`layout` 是组件的分层树。`dash_html_components` 库提供了所有 HTML 标记的类，关键字参数描述了 HTML 属性，例如样式，`className` 和 `id`。 `dash_core_components` 库生成更高级别的组件，如控件和图形。
+Dash 应用程序的 `layout` 描述了该应用程序的外观。`layout` 是组件的分层树。`html` 库提供了所有 HTML 标记的类，关键字参数描述了 HTML 属性，例如样式，`className` 和 `id`。 `dcc` 库生成更高级别的组件，如控件和图形。
 
 更多内容，请参阅：
 
-- [`dash_core_components` 画廊](https://dash.plotly.com/dash-core-components)
-- [`dash_html_components` 画廊](https://dash.plotly.com/dash-html-components)
+- [`dcc` 画廊](https://dash.plotly.com/dash-core-components)
+- [`html` 画廊](https://dash.plotly.com/dash-html-components)
 
 Dash 的交互性可转到 [](dash:interactive)。

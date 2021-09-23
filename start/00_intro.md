@@ -19,7 +19,7 @@ Dash 应用程序由两部分组成：
 pip install dash
 ```
 
-这带来了构成 Dash 核心的三个组件库：`dash_html_components`、`dash_core_components`、`dash_table` 以及 `plotly` 图形库。这些库正在积极开发中，所以要经常安装和升级。
+这带来了构成 Dash 核心的三个组件库：`html`、`dcc`、`dash_table` 以及 `plotly` 图形库。这些库正在积极开发中，所以要经常安装和升级。
 
 如果喜欢使用 [Jupyter 笔记本](https://plotly.com/dash/workspaces/?tab=jupyter-notebooks) 或 JupyterLab 作为你的开发环境，建议安装 [`jupyter-dash`](https://github.com/plotly/jupyter-dash)：
 
@@ -27,6 +27,6 @@ pip install dash
 conda install -c conda-forge -c plotly jupyter-dash
 ```
 
-Dash 为应用程序的所有可视化组件提供了 Python 类。在 `dash_core_components` 和 `dash_html_components` 库中维护了一组组件，但也可以用 JavaScript 和 React.js [构建自己的组件](https://github.com/plotly/dash-component-boilerplate)。
+Dash 为应用程序的所有可视化组件提供了 Python 类。在 `dcc` 和 `html` 库中维护了一组组件，但也可以用 JavaScript 和 React.js [构建自己的组件](https://github.com/plotly/dash-component-boilerplate)。
 
 注意：在本书中，使用 Jupyter 环境。
