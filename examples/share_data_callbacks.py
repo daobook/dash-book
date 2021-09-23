@@ -4,7 +4,7 @@ import pandas as pd
 from dash.dependencies import Output, Input
 from dash.exceptions import PreventUpdate
 from dash import dcc, html
-import dash_table
+from dash import dash_table
 from sanstyle.github.file import lfs_url
 
 from app import app
