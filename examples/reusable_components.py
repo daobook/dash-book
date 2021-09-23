@@ -1,5 +1,5 @@
 import pandas as pd
-import dash_html_components as html
+from dash import html
 
 from sanstyle.github.file import lfs_url
 

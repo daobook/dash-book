@@ -1,5 +1,5 @@
 from dash.dependencies import Input, Output
-import dash_html_components as html
+from dash import html
 from datetime import datetime
 import time
 from app import app

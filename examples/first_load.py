@@ -1,5 +1,5 @@
 from dash.dependencies import Input, Output
-import dash_html_components as html
+from dash import html
 from app import app
 
 layout = html.Div(

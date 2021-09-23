@@ -2,8 +2,6 @@
 
 参考：[Introduction | Dash for Python Documentation | Plotly](https://dash.plotly.com/introduction)
 
-Dash 是一个用于构建 Web 分析应用程序的高效 Python 框架。Dash 是建立在 Flask、Plotly.js 和 React.js 上的，非常适用于使用纯 Python 构建具有高度可定制的用户界面的数据可视化应用。
-
 Dash 通过一些简单的模式，抽象出构建一个基于 Web 的交互式应用程序所需的所有技术和协议。Dash 非常简单，您可以在一个下午就将用户界面绑定到您的 Python 代码中。
 
 Dash 应用程序在网络浏览器中呈现。您可以将应用程序部署到服务器上，然后通过 URL 共享它们。由于 Dash 应用是在网页浏览器中查看的，因此 Dash 天生就具备跨平台和移动功能。
