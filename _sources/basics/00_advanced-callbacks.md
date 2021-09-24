@@ -27,7 +27,7 @@ kernelspec:
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/prevent-update',
       className='w3-pale-blue',
       height=70)
@@ -46,7 +46,7 @@ Embed(snippet_url + '/examples/prevent-update',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/no-update',
       className='w3-pale-blue',
       height=160)
@@ -70,7 +70,7 @@ Embed(snippet_url + '/examples/no-update',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/callback-context',
       className='w3-pale-blue',
       height=470)
@@ -125,7 +125,7 @@ Dash 文档的 [](dash:performance) 部分深入研究了利用多个进程和�
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/first-load',
       className='w3-pale-blue',
       height=100)
@@ -158,7 +158,7 @@ Embed(snippet_url + '/examples/first-load',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/indirect-result',
       className='w3-pale-blue',
       height=110)
@@ -188,7 +188,7 @@ Embed(snippet_url + '/examples/indirect-result',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/prevent-initial-call',
       className='w3-pale-blue',
       height=150)
@@ -265,7 +265,7 @@ def update_layout_div(value):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/sync-slider-text',
       className='w3-pale-blue',
       height=110)
@@ -282,7 +282,7 @@ Embed(snippet_url + '/examples/sync-slider-text',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/convert-temperature',
       className='w3-pale-blue',
       height=110)
@@ -299,7 +299,7 @@ Embed(snippet_url + '/examples/convert-temperature',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/sync-checklists',
       className='w3-pale-blue',
       height=80)

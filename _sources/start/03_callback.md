@@ -14,9 +14,9 @@ kernelspec:
 
 参考：[Basic Callbacks | Dash for Python Documentation | Plotly](https://dash.plotly.com/basic-callbacks)
 
-在 [布局](dash:layout) 中，我们了解到 `app.layout` 描述应用程序的外观，并且是组件的分层树。`dash_html_components` 库提供了所有 HTML 标记的类，关键字参数描述了 HTML 属性，例如 `style`，`className` 和 `id`。`dash_core_components` 库生成更高级别的组件，如控件和图形。本章介绍如何使用回调函数制作 Dash 应用程序：每当输入组件的属性发生更改时 Dash 会自动调用的 Python 函数。
+在 [布局](dash:layout) 中，我们了解到 `app.layout` 描述应用程序的外观，并且是组件的分层树。`html` 库提供了所有 HTML 标记的类，关键字参数描述了 HTML 属性，例如 `style`，`className` 和 `id`。`dcc` 库生成更高级别的组件，如控件和图形。本章介绍如何使用回调函数制作 Dash 应用程序：每当输入组件的属性发生更改时 Dash 会自动调用的 Python 函数。
 
-为了获得最佳的用户交互和图表加载性能，生产Dash应用程序应考虑 Dash Enterprise 的 [Job Queue](https://plotly.com/dash/job-queue)，[HPC](https://plotly.com/dash/big-data-for-python)，[Datashader](https://plotly.com/dash/big-data-for-python) 和 [horizontal scaling](https://plotly.com/dash/kubernetes) 功能。
+为了获得最佳的用户交互和图表加载性能，生产 Dash 应用程序应考虑 Dash Enterprise 的 [Job Queue](https://plotly.com/dash/job-queue)，[HPC](https://plotly.com/dash/big-data-for-python)，[Datashader](https://plotly.com/dash/big-data-for-python) 和 [horizontal scaling](https://plotly.com/dash/kubernetes) 功能。
 
 让我们从一个交互式 Dash 应用程序的简单示例开始。
 

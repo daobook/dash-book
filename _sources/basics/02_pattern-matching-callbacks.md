@@ -67,7 +67,7 @@ def display_output(values):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/all-pattern',
       className='w3-pale-blue',
       height=300)
@@ -190,7 +190,7 @@ def display_output(value, id):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/match-pattern',
       className='w3-pale-blue',
       height=300)
@@ -330,7 +330,7 @@ def display_output(matching_value, previous_values):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/allsmaller-pattern',
       className='w3-pale-blue',
       height=300)
@@ -486,7 +486,7 @@ def show_totals(done):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/todo',
       className='w3-pale-blue',
       height=300)

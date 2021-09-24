@@ -13,15 +13,15 @@ kernelspec:
 
 参考：[Part 4\. Interactive Graphing and Crossfiltering | Dash for Python Documentation | Plotly](https://dash.plotly.com/interactive-graphing)
 
-`dash_core_components`库包含一个名为`Graph`的组件。
+`dcc`库包含一个名为`Graph`的组件。
 
 `Graph`使用开源 [`plotly.js`](https://github.com/plotly/plotly.js) JavaScript 图形库呈现交互式数据可视化。`plotly.js` 支持超过 35 种图表类型，并以矢量质量 SVG 和高性能 WebGL 呈现图表。
 
-`dash_core_components.Graph`组件中的 `figure` 参数与 Plotly 的开源 Python 图形库 `plotly.py` 使用的图形参数相同。请查看 [plotly.py 文档和画廊](https://plotly.com/python) 以了解更多信息。
+`dcc.Graph` 组件中的 `figure` 参数与 Plotly 的开源 Python 图形库 `plotly.py` 使用的图形参数相同。请查看 [plotly.py 文档和画廊](https://plotly.com/python) 以了解更多信息。
 
 Dash 组件通过一组属性声明性地描述。所有这些属性都可以通过回调函数进行更新，但是这些属性的子集只能通过用户交互来更新，例如，当您单击`dcc.Dropdown`组件中的某个选项时，该组件的`value`属性将发生更改。
 
-`dcc.Graph`组件具有四个可以通过用户交互更改的属性：`hoverData`，`clickData`，`selectedData`，`relayoutData`。当您将鼠标悬停在点上，单击点或选择图形中的点区域时，这些属性会更新。
+`dcc.Graph` 组件具有四个可以通过用户交互更改的属性：`hoverData`，`clickData`，`selectedData`，`relayoutData`。当您将鼠标悬停在点上，单击点或选择图形中的点区域时，这些属性会更新。
 
 为了获得最佳的用户交互和图表加载性能，生产环境的 Dash 应用程序应考虑 Dash Enterprise 的 [Job Queue](https://plotly.com/dash/job-queue), [HPC](https://plotly.com/dash/big-data-for-python), [Datashader](https://plotly.com/dash/big-data-for-python), 和 [horizontal scaling](https://plotly.com/dash/kubernetes)。
 

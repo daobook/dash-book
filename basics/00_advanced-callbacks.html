@@ -841,7 +841,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="70" src="https://dash-book.herokuapp.com/examples/prevent-update"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="70" src="https://dash-tests.herokuapp.com/examples/prevent-update"></div></div>
 </div>
 </section>
 <section id="dash-no-update">
@@ -895,7 +895,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="160" src="https://dash-book.herokuapp.com/examples/no-update"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="160" src="https://dash-tests.herokuapp.com/examples/no-update"></div></div>
 </div>
 </section>
 <section id="dash-callback-context">
@@ -957,7 +957,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="470" src="https://dash-book.herokuapp.com/examples/callback-context"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="470" src="https://dash-tests.herokuapp.com/examples/callback-context"></div></div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">提示</p>
@@ -1014,7 +1014,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="100" src="https://dash-book.herokuapp.com/examples/first-load"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="100" src="https://dash-tests.herokuapp.com/examples/first-load"></div></div>
 </div>
 <p>请注意，当完成该应用程序的 Web 浏览器加载并准备好与用户进行交互时，<code class="docutils literal notranslate"><span class="pre">html.Div</span></code> 组件不会像在应用程序的 <code class="docutils literal notranslate"><span class="pre">layout</span></code> 中声明的那样说“未执行回调”，而是 <code class="docutils literal notranslate"><span class="pre">n_clicks</span></code> 为 <code class="docutils literal notranslate"><span class="pre">None</span></code>，这是由于 <code class="docutils literal notranslate"><span class="pre">change_text()</span></code> 回调正在执行。这是因为回调的“初始调用”是使用值为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 的 <code class="docutils literal notranslate"><span class="pre">n_clicks</span></code> 发生的。</p>
 </section>
@@ -1076,7 +1076,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="110" src="https://dash-book.herokuapp.com/examples/indirect-result"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="110" src="https://dash-tests.herokuapp.com/examples/indirect-result"></div></div>
 </div>
 <p>上面的 Dash 应用演示了回调如何链接在一起。请注意，如果您先单击 <code class="docutils literal notranslate"><span class="pre">&quot;execute</span> <span class="pre">slow</span> <span class="pre">callback&quot;</span></code>，然后单击 <code class="docutils literal notranslate"><span class="pre">&quot;execute</span> <span class="pre">fast</span> <span class="pre">callback&quot;</span></code>，则直到慢速回调完成执行后，才会执行第三个回调。这是因为第三个回调将第二个回调的输出作为其输入，这使 <code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code> 知道应将其执行延迟到第二个回调完成之后。</p>
 </section>
@@ -1138,7 +1138,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-book.herokuapp.com/examples/prevent-initial-call"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-tests.herokuapp.com/examples/prevent-initial-call"></div></div>
 </div>
 <p>但是，仅当应用程序初始加载时在应用程序 <code class="docutils literal notranslate"><span class="pre">layout</span></code> 中同时存在回调输出和输入的情况下，以上行为才适用。</p>
 <p>重要的是要注意，在应用程序最初加载之后，如果回调的输入由于另一个回调的结果而被插入到 <code class="docutils literal notranslate"><span class="pre">layout</span></code> 中，除非输出与该输入一起插入，否则 <code class="docutils literal notranslate"><span class="pre">prevent_initial_call</span></code> 不会阻止回调的触发！</p>
@@ -1230,7 +1230,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="110" src="https://dash-book.herokuapp.com/examples/sync-slider-text"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="110" src="https://dash-tests.herokuapp.com/examples/sync-slider-text"></div></div>
 </div>
 </section>
 <section id="id7">
@@ -1276,7 +1276,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="110" src="https://dash-book.herokuapp.com/examples/convert-temperature"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="110" src="https://dash-tests.herokuapp.com/examples/convert-temperature"></div></div>
 </div>
 </section>
 <section id="id8">
@@ -1330,7 +1330,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="80" src="https://dash-book.herokuapp.com/examples/sync-checklists"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="80" src="https://dash-tests.herokuapp.com/examples/sync-checklists"></div></div>
 </div>
 </section>
 </section>
