@@ -195,7 +195,7 @@ def generated_figure_json(data):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/clientside-callbacks',
       className='w3-pale-blue',
       height=800)
@@ -315,7 +315,7 @@ def generated_px_figure_json(data):
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/clientside-callbacks-px',
       className='w3-pale-blue',
       height=800)
