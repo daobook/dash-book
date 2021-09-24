@@ -32,7 +32,7 @@ Dash 中的组件通常通过用户交互进行更新，比如：选择下拉菜
 
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/live-update',
       className='w3-pale-blue',
       height=523)

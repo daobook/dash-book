@@ -214,7 +214,12 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/03_callback-gotchas.html">
+    <a class="reference internal" href="../basics/03_long-callbacks.html">
+     长时回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/04_callback-gotchas.html">
      回调 Gotchas
     </a>
    </li>
@@ -800,8 +805,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a28d8556-1d4f-4db3-b3e9-94d60f8eb8c6" name="96dbf325-c9d3-46f9-9812-7d7d5d95b3ab" type="radio">
-</input><label class="tabbed-label" for="a28d8556-1d4f-4db3-b3e9-94d60f8eb8c6">
+<input checked="checked" id="628ec492-45aa-45e9-a810-83c0672f5fb2" name="1aa26410-4cb2-4d03-ad57-1f951d8222c9" type="radio">
+</input><label class="tabbed-label" for="628ec492-45aa-45e9-a810-83c0672f5fb2">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
@@ -832,15 +837,15 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="99c8e0d0-8947-4f6d-bd07-1e2c57aa6013" name="96dbf325-c9d3-46f9-9812-7d7d5d95b3ab" type="radio">
-</input><label class="tabbed-label" for="99c8e0d0-8947-4f6d-bd07-1e2c57aa6013">
+<input id="a08a322a-8ef2-4797-94d0-674601e7146f" name="1aa26410-4cb2-4d03-ad57-1f951d8222c9" type="radio">
+</input><label class="tabbed-label" for="a08a322a-8ef2-4797-94d0-674601e7146f">
 custom-script</label><div class="tabbed-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;如果您看到此警告，说明您的自定义 JavaScript 脚本已经运行！&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="89094685-6c64-4196-9e12-50f7113764d8" name="96dbf325-c9d3-46f9-9812-7d7d5d95b3ab" type="radio">
-</input><label class="tabbed-label" for="89094685-6c64-4196-9e12-50f7113764d8">
+<input id="83509ca4-0f93-4215-9027-25018ff34bb3" name="1aa26410-4cb2-4d03-ad57-1f951d8222c9" type="radio">
+</input><label class="tabbed-label" for="83509ca4-0f93-4215-9027-25018ff34bb3">
 typography</label><div class="tabbed-content docutils">
 <div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="p">{</span>
     <span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
@@ -852,8 +857,8 @@ typography</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e44e1fab-e00b-40dd-8c73-c546d9f296d2" name="96dbf325-c9d3-46f9-9812-7d7d5d95b3ab" type="radio">
-</input><label class="tabbed-label" for="e44e1fab-e00b-40dd-8c73-c546d9f296d2">
+<input id="c3c76fb9-276d-4df9-b59c-ca8b78b18704" name="1aa26410-4cb2-4d03-ad57-1f951d8222c9" type="radio">
+</input><label class="tabbed-label" for="c3c76fb9-276d-4df9-b59c-ca8b78b18704">
 header</label><div class="tabbed-content docutils">
 <div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span> <span class="p">{</span>
     <span class="n">height</span><span class="p">:</span> <span class="mi">60</span><span class="n">px</span><span class="p">;</span>
@@ -872,7 +877,7 @@ header</label><div class="tabbed-content docutils">
 <p>当你运行 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 时，你的应用看起来应该是这样的：</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-book.herokuapp.com/examples/external-resources"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-tests.herokuapp.com/examples/external-resources"></div></div>
 </div>
 <p>在自动添加 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 时，你需要牢记以下几点:</p>
 <ol class="simple">

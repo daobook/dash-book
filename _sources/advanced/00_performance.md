@@ -42,7 +42,7 @@ Dash 应用程序经常跨多个进程或线程部署。在这些情况下，每
 
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/flask-caching',
       className='w3-pale-blue',
       height=120)
@@ -61,7 +61,7 @@ Embed(snippet_url + '/examples/flask-caching',
 
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/caching-dataset',
       className='w3-pale-blue',
       height=520)

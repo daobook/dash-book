@@ -214,7 +214,12 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/03_callback-gotchas.html">
+    <a class="reference internal" href="../basics/03_long-callbacks.html">
+     长时回调
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/04_callback-gotchas.html">
      回调 Gotchas
     </a>
    </li>
@@ -967,8 +972,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">app.py</span></code></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="56f88a37-9476-40f8-b49e-55cc15e75907" name="25805598-e893-42e0-9c04-2864ab3d0a79" type="radio">
-</input><label class="tabbed-label" for="56f88a37-9476-40f8-b49e-55cc15e75907">
+<input checked="checked" id="e6620df9-9b83-484a-8fa7-5b0e5c242758" name="891ea982-c06f-4b81-bc21-1134f52e1fd1" type="radio">
+</input><label class="tabbed-label" for="e6620df9-9b83-484a-8fa7-5b0e5c242758">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 
@@ -977,8 +982,8 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="873a82ed-4968-4bfb-aaee-abf0b8b9df86" name="25805598-e893-42e0-9c04-2864ab3d0a79" type="radio">
-</input><label class="tabbed-label" for="873a82ed-4968-4bfb-aaee-abf0b8b9df86">
+<input id="9c226e51-c4d0-4a60-adf8-ae2bfa3d8fa3" name="891ea982-c06f-4b81-bc21-1134f52e1fd1" type="radio">
+</input><label class="tabbed-label" for="9c226e51-c4d0-4a60-adf8-ae2bfa3d8fa3">
 apps/app1</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1008,8 +1013,8 @@ apps/app1</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="3d140ccb-f600-4d6d-b1f0-689071a6e39c" name="25805598-e893-42e0-9c04-2864ab3d0a79" type="radio">
-</input><label class="tabbed-label" for="3d140ccb-f600-4d6d-b1f0-689071a6e39c">
+<input id="e99ecd69-ddb5-437c-9f83-6c6fbf13d408" name="891ea982-c06f-4b81-bc21-1134f52e1fd1" type="radio">
+</input><label class="tabbed-label" for="e99ecd69-ddb5-437c-9f83-6c6fbf13d408">
 apps/app2</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1041,8 +1046,8 @@ apps/app2</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c607a8d2-40fc-4364-81fe-c0eabe12214f" name="25805598-e893-42e0-9c04-2864ab3d0a79" type="radio">
-</input><label class="tabbed-label" for="c607a8d2-40fc-4364-81fe-c0eabe12214f">
+<input id="1cec09fd-73c9-4719-ac56-55e2b1973b71" name="891ea982-c06f-4b81-bc21-1134f52e1fd1" type="radio">
+</input><label class="tabbed-label" for="1cec09fd-73c9-4719-ac56-55e2b1973b71">
 index</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">index.py</span></code> 在不同的 url 上加载不同的应用，就像这样：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
@@ -1084,8 +1089,8 @@ index</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="738df805-a09d-49d0-9e97-5ce4adef23a7" name="94691805-55c9-4a43-8372-5eb825e6da0f" type="radio">
-</input><label class="tabbed-label" for="738df805-a09d-49d0-9e97-5ce4adef23a7">
+<input checked="checked" id="54f992c8-424b-46a9-9ae4-03ce43f23f7a" name="6f6ac89a-4ff6-4e09-820f-f5d22ba71b6d" type="radio">
+</input><label class="tabbed-label" for="54f992c8-424b-46a9-9ae4-03ce43f23f7a">
 app</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 
@@ -1094,8 +1099,8 @@ app</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="d43bd748-d1dc-4e24-8e9f-182398b832d6" name="94691805-55c9-4a43-8372-5eb825e6da0f" type="radio">
-</input><label class="tabbed-label" for="d43bd748-d1dc-4e24-8e9f-182398b832d6">
+<input id="b22d06ea-15af-4b60-9be9-724c075d4546" name="6f6ac89a-4ff6-4e09-820f-f5d22ba71b6d" type="radio">
+</input><label class="tabbed-label" for="b22d06ea-15af-4b60-9be9-724c075d4546">
 callbacks</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 
@@ -1115,8 +1120,8 @@ callbacks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e7b4d7df-954c-4e14-8767-4b6f6ecbef5c" name="94691805-55c9-4a43-8372-5eb825e6da0f" type="radio">
-</input><label class="tabbed-label" for="e7b4d7df-954c-4e14-8767-4b6f6ecbef5c">
+<input id="81f42d08-ae8f-4591-9fe4-bf7cc6640ff0" name="6f6ac89a-4ff6-4e09-820f-f5d22ba71b6d" type="radio">
+</input><label class="tabbed-label" for="81f42d08-ae8f-4591-9fe4-bf7cc6640ff0">
 layouts</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1151,8 +1156,8 @@ layouts</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="36549028-540b-4503-8cde-071cb1b9a52d" name="94691805-55c9-4a43-8372-5eb825e6da0f" type="radio">
-</input><label class="tabbed-label" for="36549028-540b-4503-8cde-071cb1b9a52d">
+<input id="4e4b5a42-e47d-45e5-b582-dbce692a0b96" name="6f6ac89a-4ff6-4e09-820f-f5d22ba71b6d" type="radio">
+</input><label class="tabbed-label" for="4e4b5a42-e47d-45e5-b582-dbce692a0b96">
 index</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
