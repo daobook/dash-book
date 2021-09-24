@@ -24,7 +24,7 @@ kernelspec:
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/simple-slider',
       className='w3-pale-blue',
       height=70)

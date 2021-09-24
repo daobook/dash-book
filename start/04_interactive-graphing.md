@@ -37,7 +37,7 @@ Dash 组件通过一组属性声明性地描述。所有这些属性都可以通
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/print-graph',
       className='w3-pale-blue',
       height=800)
@@ -56,7 +56,7 @@ Embed(snippet_url + '/examples/print-graph',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/hover-update-graph',
       className='w3-pale-blue',
       height=600)
@@ -77,7 +77,7 @@ Embed(snippet_url + '/examples/hover-update-graph',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/cross-filter',
       className='w3-padding',
       height=500)

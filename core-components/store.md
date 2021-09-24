@@ -28,7 +28,7 @@ kernelspec:
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/store-clicks',
       className='w3-pale-blue',
       height=210)
@@ -45,7 +45,7 @@ Embed(snippet_url + '/examples/store-clicks',
 
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/share-data-callbacks',
       className='w3-pale-blue',
       height=800)

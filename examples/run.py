@@ -6,7 +6,7 @@ from examples import intro, callback, figure_n_slider, \
     convert_temperature, sync_checklists, clientside_callbacks, \
     clientside_callbacks_px, all_pattern, match_pattern, allsmaller_pattern, \
     todo, store_clicks, reusable_components, external_resources, live_update, \
-    flask_caching, caching_dataset, share_data_callbacks, simple_slider, \
+    share_data_callbacks, simple_slider, \
     simple_range_slider, mark_range_slider
 
 
@@ -71,8 +71,8 @@ def callback_example(pathname):
         return external_resources.layout
     elif pathname == '/examples/live-update':
         return live_update.layout
-    elif pathname == '/examples/flask-caching':
-        return flask_caching.layout
+    # elif pathname == '/examples/flask-caching':
+    #     return flask_caching.layout
     # elif pathname == '/examples/caching-dataset':
     #     return caching_dataset.layout
     elif pathname == '/examples/share-data-callbacks':

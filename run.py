@@ -4,7 +4,6 @@ from dash.dependencies import Input, Output
 
 from app import app
 from layouts import index
-from examples.run import callback_example
 
 layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -18,8 +17,8 @@ layout = html.Div([
 def display_page(pathname):
     if pathname == '/':
         return index.layout
-    elif pathname.startswith('/examples/'):
-        return callback_example(pathname)
+    # elif pathname.startswith('/examples/'):
+    #     return callback_example(pathname)
     # else:
     #     return '404'
 
@@ -39,4 +38,3 @@ if __name__ == '__main__':
 else:
     app.layout = layout
     server = app.server  # 用于 Dash 服务器部署
-

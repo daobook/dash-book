@@ -29,7 +29,7 @@ kernelspec:
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/simple-range-slider',
       className='w3-pale-blue',
       height=100)
@@ -48,7 +48,7 @@ Embed(snippet_url + '/examples/simple-range-slider',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/mark-range-slider',
       className='w3-pale-blue',
       height=100)

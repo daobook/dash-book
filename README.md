@@ -2,7 +2,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/xinetzone/dash-book)](https://github.com/xinetzone/dash-book/issues) [![GitHub forks](https://img.shields.io/github/forks/xinetzone/dash-book)](https://github.com/xinetzone/dash-book/network) [![GitHub stars](https://img.shields.io/github/stars/xinetzone/dash-book)](https://github.com/xinetzone/dash-book/stargazers) [![GitHub license](https://img.shields.io/github/license/xinetzone/dash-book)](https://github.com/xinetzone/dash-book/blob/main/LICENSE)  ![repo size](https://img.shields.io/github/repo-size/xinetzone/dash-book.svg) [![contributors](https://img.shields.io/github/contributors/xinetzone/dash-book.svg)](https://github.com/xinetzone/dash-book/graphs/contributors) [![watcher](https://img.shields.io/github/watchers/xinetzone/dash-book.svg)](https://github.com/xinetzone/dash-book/watchers) ![](https://github.com/xinetzone/dash-book/actions/workflows/docs.yml/badge.svg)
 
-[Dash 示例](https://dash-book.herokuapp.com/)
+[Dash 示例](https://dash-tests.herokuapp.com/)
 
 本站收录 {term}`Dash` 相关优质资源。
 

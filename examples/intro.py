@@ -44,7 +44,6 @@ layout = html.Div([
 
     html.Label('Text Input'),
     dcc.Input(value='MTL', type='text'),
-
     html.Label('Slider'),
     dcc.Slider(
         min=0,
