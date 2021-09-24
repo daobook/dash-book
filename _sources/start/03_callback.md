@@ -32,7 +32,7 @@ kernelspec:
 :tags: [remove-input]
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/callback',
       className='w3-pale-blue',
       height=150)
@@ -96,7 +96,7 @@ Embed(snippet_url + '/examples/callback',
 :tags: [remove-input]
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/multiple-inputs',
                    className='w3-pale-blue',
                    height=550)
@@ -124,7 +124,7 @@ Embed(snippet_url + '/examples/multiple-inputs',
 :tags: [remove-input]
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 figure_n_slider_dash = Embed(snippet_url + '/examples/multiple-outputs',
                    className='w3-pale-blue',
                    height=280)
@@ -153,7 +153,7 @@ figure_n_slider_dash
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/chained-callback',
       className='w3-pale-blue',
       height=230)
@@ -181,7 +181,7 @@ Embed(snippet_url + '/examples/chained-callback',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/table-callback',
       className='w3-pale-blue',
       height=60)
@@ -200,7 +200,7 @@ Embed(snippet_url + '/examples/table-callback',
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/state-callback',
       className='w3-pale-blue',
       height=60)

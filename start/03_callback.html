@@ -24,7 +24,7 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -783,7 +783,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-book.herokuapp.com/examples/callback"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-tests.herokuapp.com/examples/callback"></div></div>
 </div>
 <p>让我们拆解这个例子：</p>
 <ul class="simple">
@@ -854,7 +854,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <span class="k">return</span> <span class="n">fig</span>
 </pre></div>
 </div>
-<p><span class="pasted-inline"><span class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="500" src="https://dash-book.herokuapp.com/examples/figure-n-slider"></span></span></p>
+<p><span class="pasted-inline"><span class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="500" src="https://dash-tests.herokuapp.com/examples/figure-n-slider"></span></span></p>
 <p>在此示例中，<code class="docutils literal notranslate"><span class="pre">Slider</span></code> 的 <code class="docutils literal notranslate"><span class="pre">&quot;value&quot;</span></code> 属性是应用程序的输入，而应用程序的输出则是 <code class="docutils literal notranslate"><span class="pre">Graph</span></code> 的 <code class="docutils literal notranslate"><span class="pre">&quot;figure&quot;</span></code> 属性。每当 <code class="docutils literal notranslate"><span class="pre">Slider</span></code> 的值更改时，Dash 就会使用新值调用回调函数 <code class="docutils literal notranslate"><span class="pre">update_figure</span></code>。该函数使用此新值过滤数据框，构造一个 <code class="docutils literal notranslate"><span class="pre">figure</span></code> 对象，并将其返回给 Dash 应用程序。</p>
 <p>此示例中有一些不错的模式：</p>
 <ol class="simple">
@@ -958,7 +958,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="550" src="https://dash-book.herokuapp.com/examples/multiple-inputs"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="550" src="https://dash-tests.herokuapp.com/examples/multiple-inputs"></div></div>
 </div>
 <p>在此示例中，只要<code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>，<code class="docutils literal notranslate"><span class="pre">Slider</span></code>或<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件的<code class="docutils literal notranslate"><span class="pre">value</span></code>属性发生更改，就会调用 <code class="docutils literal notranslate"><span class="pre">update_graph</span></code> 函数。</p>
 <p>按指定顺序，<code class="docutils literal notranslate"><span class="pre">update_graph</span></code>函数的输入参数是每个<code class="docutils literal notranslate"><span class="pre">Input</span></code>属性的新值或当前值。</p>
@@ -1002,7 +1002,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="280" src="https://dash-book.herokuapp.com/examples/multiple-outputs"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="280" src="https://dash-tests.herokuapp.com/examples/multiple-outputs"></div></div>
 </div>
 <p>提醒您：即使您可以合并输出，也不总是一个好主意：</p>
 <ul class="simple">
@@ -1061,7 +1061,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="230" src="https://dash-book.herokuapp.com/examples/chained-callback"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="230" src="https://dash-tests.herokuapp.com/examples/chained-callback"></div></div>
 </div>
 <p>第一个回调根据第一个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件中的选定值更新第二个<code class="docutils literal notranslate"><span class="pre">RadioItems</span></code>组件中的可用选项。</p>
 <p>当<code class="docutils literal notranslate"><span class="pre">options</span></code>属性更改时，第二个回调将设置一个初始值：它将其设置为该<code class="docutils literal notranslate"><span class="pre">options</span></code>数组中的第一个值。</p>
@@ -1096,7 +1096,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="60" src="https://dash-book.herokuapp.com/examples/table-callback"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="60" src="https://dash-tests.herokuapp.com/examples/table-callback"></div></div>
 </div>
 <p>在此示例中，只要<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>描述的任何属性发生更改，就会触发回调函数。在上面的输入中输入数据，自己尝试一下。</p>
 <p><code class="docutils literal notranslate"><span class="pre">dash.dependencies.State</span></code>允许您传递额外的值而无需触发回调。这是与上述相同的示例，但<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>为<code class="docutils literal notranslate"><span class="pre">dash.dependencies.State</span></code>，按钮为<code class="docutils literal notranslate"><span class="pre">dash.dependencies.Input</span></code>。</p>
@@ -1127,7 +1127,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="60" src="https://dash-book.herokuapp.com/examples/state-callback"></div></div>
+<div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="60" src="https://dash-tests.herokuapp.com/examples/state-callback"></div></div>
 </div>
 <p>在此示例中，在<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>框中更改文本不会触发回调，但单击按钮将起作用。<code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code>值的当前值仍会传递到回调中，即使它们不会触发回调函数本身。</p>
 <p>请注意，我们通过侦听<code class="docutils literal notranslate"><span class="pre">html.Button</span></code>组件的<code class="docutils literal notranslate"><span class="pre">n_clicks</span></code>属性来触发回调。<code class="docutils literal notranslate"><span class="pre">n_clicks</span></code>是一个属性，每次单击该组件时该属性都会增强。它在<code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code>库中的每个组件中都可用。</p>

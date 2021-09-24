@@ -62,7 +62,7 @@ rename_suffix(root, old, new)
 ```{code-cell} ipython3
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 figure_n_slider_dash = Embed(snippet_url + '/examples/figure-n-slider',
                    className='w3-pale-blue',
                    height=500)

@@ -149,7 +149,7 @@ fig.update_layout(
         
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/reusable-components',
       className='w3-pale-blue',
       height=400)
@@ -237,7 +237,7 @@ if this is your first introduction to Markdown!
 
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/intro',
       className='w3-pale-blue',
       height=270)
