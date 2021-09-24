@@ -93,7 +93,7 @@ alert('如果您看到此警告，说明您的自定义 JavaScript 脚本已经�
 :tags: [remove-input]
 from sanstyle.display.html import Embed
 
-snippet_url = 'https://dash-book.herokuapp.com'
+snippet_url = 'https://dash-tests.herokuapp.com'
 Embed(snippet_url + '/examples/external-resources',
       className='w3-pale-blue',
       height=150)

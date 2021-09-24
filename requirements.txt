@@ -20,3 +20,6 @@ sanstyle -i https://pypi.org/simple/
 Flask-Caching
 redis
 # jupyter-server-proxy
+diskcache 
+multiprocess 
+psutil
