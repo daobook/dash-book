@@ -31,7 +31,7 @@ html:
   use_edit_page_button: false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button: true # Whether to add a link to your repository button
   use_issues_button: true # Whether to add an "open an issue" button
-  baseurl: https://xinetzone.github.io/dash-book/ # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  baseurl: https://daobook.github.io/dash-book/ # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   
   extra_navbar: |
     <div class="w3-padding w3-card-4 w3-pale-green">
@@ -66,10 +66,10 @@ html:
   comments:
     hypothesis: true
     utterances:
-      repo: "xinetzone/dash-book"
+      repo: "daobook/dash-book"
 
 repository:
-  url: https://github.com/xinetzone/dash-book # The URL to your book's repository
+  url: https://github.com/daobook/dash-book # The URL to your book's repository
   path_to_book: "./" # A path to your book's folder, relative to the repository root., ie docs
   branch: main # Which branch of the repository should be used when creating links
 
