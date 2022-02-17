@@ -21,7 +21,7 @@ layout = html.Div(
 def first_callback(n):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    return "in the fast callback it is " + current_time
+    return f'in the fast callback it is {current_time}'
 
 
 @app.callback(
@@ -30,7 +30,7 @@ def second_callback(n):
     time.sleep(5)
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    return "in the slow callback it is " + current_time
+    return f'in the slow callback it is {current_time}'
 
 
 @app.callback(
@@ -40,4 +40,4 @@ def second_callback(n):
 def third_callback(n, m):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    return "in the third callback it is " + current_time
+    return f'in the third callback it is {current_time}'

@@ -67,6 +67,4 @@ def on_data_set_graph(data, field):
         a['mode'] = 'lines+markers'
         a['x'].append(row[field])
         a['y'].append(row['year'])
-    return {
-        'data': [x for x in aggregation.values()]
-    }
+    return {'data': list(aggregation.values())}

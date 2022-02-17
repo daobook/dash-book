@@ -34,7 +34,7 @@ def show_factors(num):
 
 def prime_factors(num):
     n, i, out = num, 2, []
-    while i * i <= n:
+    while i ** 2 <= n:
         if n % i == 0:
             n = int(n / i)
             out.append(i)
