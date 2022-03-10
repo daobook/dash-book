@@ -22,7 +22,10 @@ layout = html.Div(
 def first_callback(n):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    return ["in the first callback it is " + current_time, "in the first callback it is " + current_time]
+    return [
+        f'in the first callback it is {current_time}',
+        "in the first callback it is " + current_time,
+    ]
 
 
 @app.callback(
@@ -31,7 +34,7 @@ def second_callback(n):
     time.sleep(2)
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    return "in the second callback it is " + current_time
+    return f'in the second callback it is {current_time}'
 
 
 @app.callback(
@@ -42,4 +45,4 @@ def third_output(n, m):
     time.sleep(2)
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    return "in the third callback it is " + current_time
+    return f'in the third callback it is {current_time}'

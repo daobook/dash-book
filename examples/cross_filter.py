@@ -6,7 +6,7 @@ import plotly.express as px
 from app import app
 
 # make a sample data frame with 6 columns
-df = pd.DataFrame({"Col " + str(i+1): np.random.rand(30) for i in range(6)})
+df = pd.DataFrame({f'Col {str(i+1)}': np.random.rand(30) for i in range(6)})
 
 layout = html.Div([
     html.Div(

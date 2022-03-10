@@ -17,4 +17,4 @@ layout = html.Div(
     Input("button_1", "n_clicks")
 )
 def change_text(n_clicks):
-    return ["n_clicks 是 " + str(n_clicks), "n_clicks is " + str(n_clicks)]
+    return [f'n_clicks 是 {str(n_clicks)}', f'n_clicks is {str(n_clicks)}']
