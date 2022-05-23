@@ -45,6 +45,7 @@ await run_server(app, layout, port=8050) # 启动应用
 可以直接批量修改文件后缀：
 
 ```python
+from sanstyle.utils import rename_suffix
 rename_suffix(root, old, new)
 ```
 

@@ -115,21 +115,21 @@ sphinx:
         - fmt: Rmd
     bibtex_reference_style: author_year  # or label, super, \supercite
     # #917 this path will be the default in sphinx v4
-    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    # However, it is incompatible with the mathjax config below for macros
-    mathjax_config:
-      TeX:
-        Macros:
-          "N": "\\mathbb{N}"
-          "floor": ["\\lfloor#1\\rfloor", 1]
-          "bmat": ["\\left[\\begin{array}"]
-          "emat": ["\\end{array}\\right]"]
-    latex_elements:
-        preamble: |
-          \newcommand\N{\mathbb{N}}
-          \newcommand\floor[1]{\lfloor#1\rfloor}
-          \newcommand{\bmat}{\left[\begin{array}}
-          \newcommand{\emat}{\end{array}\right]}
+    # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    # # However, it is incompatible with the mathjax config below for macros
+    # mathjax_config:
+    #   TeX:
+    #     Macros:
+    #       "N": "\\mathbb{N}"
+    #       "floor": ["\\lfloor#1\\rfloor", 1]
+    #       "bmat": ["\\left[\\begin{array}"]
+    #       "emat": ["\\end{array}\\right]"]
+    # latex_elements:
+    #     preamble: |
+    #       \newcommand\N{\mathbb{N}}
+    #       \newcommand\floor[1]{\lfloor#1\rfloor}
+    #       \newcommand{\bmat}{\left[\begin{array}}
+    #       \newcommand{\emat}{\end{array}\right]}
     intersphinx_mapping:
       wiki:
         - "https://xinetzone.github.io/wiki/"
