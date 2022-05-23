@@ -25,3 +25,4 @@ multiprocess
 psutil
 jupytext
 myst-nb
+sphinx=4.4
