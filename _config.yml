@@ -79,21 +79,21 @@ launch_buttons:
   colab_url: "https://colab.research.google.com"
   thebe: true
 
-parse:
-  myst_substitutions:
-    sub3: My _global_ value!
-  myst_enable_extensions: # 在 myst 解析器中启用的默认扩展。参考 https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
-    - amsmath # 启用解析 LaTeX 样式的数学块
-    - colon_fence # 启用 ::: 防护栅栏，以便使其更易于在不支持 MyST 的界面中呈现
-    - deflist # 启用定义清单
-    - dollarmath # 为数学块支持 $$ 和 $ 语法
-    - html_admonition  # 启用纯定义的 HTML 的提示
-    - html_image # 启用解析原始 HTML 图像
-    - linkify # 自动检测 Markdown 中类似 HTML 的链接并将其转换为超链接
-    - replacements
-    - smartquotes
-    - substitution # 为了允许您定义 Markdown “变量”并在使用它们时置换文本
-  myst_url_schemes: mailto, http, https # 在 Markdown 链接中将被识别为外部 URL 的 URI 方案
+# parse:
+#   myst_substitutions:
+#     sub3: My _global_ value!
+#   myst_enable_extensions: # 在 myst 解析器中启用的默认扩展。参考 https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+#     - amsmath # 启用解析 LaTeX 样式的数学块
+#     - colon_fence # 启用 ::: 防护栅栏，以便使其更易于在不支持 MyST 的界面中呈现
+#     - deflist # 启用定义清单
+#     - dollarmath # 为数学块支持 $$ 和 $ 语法
+#     - html_admonition  # 启用纯定义的 HTML 的提示
+#     - html_image # 启用解析原始 HTML 图像
+#     - linkify # 自动检测 Markdown 中类似 HTML 的链接并将其转换为超链接
+#     - replacements
+#     - smartquotes
+#     - substitution # 为了允许您定义 Markdown “变量”并在使用它们时置换文本
+#   myst_url_schemes: [mailto, http, https] # 在 Markdown 链接中将被识别为外部 URL 的 URI 方案
 
 #######################################################################################
 # LaTeX-specific settings
