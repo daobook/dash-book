@@ -23,3 +23,5 @@ redis
 diskcache 
 multiprocess 
 psutil
+jupytext
+myst-nb
