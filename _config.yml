@@ -93,7 +93,6 @@ parse:
     - replacements
     - smartquotes
     - substitution # 为了允许您定义 Markdown “变量”并在使用它们时置换文本
-  myst_url_schemes: (mailto, http, https) # 在 Markdown 链接中将被识别为外部 URL 的 URI 方案
 
 #######################################################################################
 # LaTeX-specific settings
