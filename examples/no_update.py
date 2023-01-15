@@ -4,7 +4,8 @@ from dash.exceptions import PreventUpdate
 from dash import no_update
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.P('输入一个合数以查看它的质因数'),
     dcc.Input(id='num', type='number', debounce=True, min=1, step=1),

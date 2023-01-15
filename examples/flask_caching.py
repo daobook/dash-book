@@ -5,7 +5,8 @@ from dash.dependencies import Input, Output
 from flask_caching import Cache
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 cache = Cache(app.server, config={
     # try 'filesystem' if you don't want to setup redis
     'CACHE_TYPE': 'redis',

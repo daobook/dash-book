@@ -2,7 +2,8 @@ from dash.dependencies import Input, Output
 from dash import dcc, html
 from dash import callback_context
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.Div('温度变换'),
     '摄氏度',

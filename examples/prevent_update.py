@@ -2,7 +2,8 @@ from dash import html
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 from app import app
-
+import dash
+dash.register_page(__name__)
 
 layout = html.Div([
     html.Button('点击这里查看内容', id='show-secret'),

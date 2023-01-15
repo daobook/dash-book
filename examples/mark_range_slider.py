@@ -1,5 +1,6 @@
 from dash import dcc
-
+import dash
+dash.register_page(__name__)
 layout = dcc.RangeSlider(
     min=0,
     max=10,

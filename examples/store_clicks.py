@@ -2,7 +2,8 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
 from app import app
-
+import dash
+dash.register_page(__name__)
 
 layout = html.Div([
     # 每次刷新页面时，内存存储都会恢复到默认值

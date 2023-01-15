@@ -1,7 +1,8 @@
 from dash.dependencies import Input, Output
 from dash import html
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div(
     [
         html.Button("执行回调", id="button_1"),

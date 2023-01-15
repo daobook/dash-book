@@ -2,7 +2,8 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 all_options = {
     'America': ['New York City', 'San Francisco', 'Cincinnati'],
     'Canada': [u'Montréal', 'Toronto', 'Ottawa']

@@ -3,7 +3,8 @@ from dash import html
 from datetime import datetime
 import time
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div(
     [
         html.Button("execute fast callback", id="button_3"),

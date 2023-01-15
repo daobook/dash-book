@@ -2,7 +2,8 @@ import pandas as pd
 from dash import html
 
 from sanstyle.github.file import lfs_url
-
+import dash
+dash.register_page(__name__)
 
 url = lfs_url('SanstyleLab/plotly-dastsets',
               'simple/usa-agricultural-exports-2011.csv')

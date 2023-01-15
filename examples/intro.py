@@ -1,5 +1,6 @@
 from dash import dcc, html
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.Label('Dropdown'),
     dcc.Dropdown(

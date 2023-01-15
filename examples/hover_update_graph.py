@@ -3,7 +3,8 @@ import pandas as pd
 import plotly.express as px
 from dash.dependencies import Input, Output
 from app import app
-
+import dash
+dash.register_page(__name__)
 
 df = pd.read_csv('https://plotly.github.io/datasets/country_indicators.csv')
 

@@ -1,7 +1,8 @@
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 from app import app
-
+import dash
+dash.register_page(__name__)
 
 layout = html.Div([
     dcc.Input(id='input-1-state', type='text', value='Montréal'),

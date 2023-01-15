@@ -7,7 +7,8 @@ from dash.dependencies import Input, Output
 # pip install pyorbital
 from pyorbital.orbital import Orbital
 from app import app
-
+import dash
+dash.register_page(__name__)
 satellite = Orbital('TERRA')
 
 layout = html.Div(

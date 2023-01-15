@@ -4,7 +4,8 @@ import pandas as pd
 
 from sanstyle.github.file import lfs_url
 from app import app
-
+import dash
+dash.register_page(__name__)
 url = lfs_url('SanstyleLab/plotly-dastsets',
               'gapminder2007.csv')
 df = pd.read_csv(url)

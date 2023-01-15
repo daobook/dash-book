@@ -2,7 +2,8 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State, MATCH
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.Button("Add Filter", id="dynamic-add-filter", n_clicks=0),
     html.Div(id='dynamic-dropdown-container', children=[]),

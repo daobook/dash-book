@@ -9,7 +9,8 @@ from examples import intro, callback, figure_n_slider, \
     share_data_callbacks, simple_slider, \
     simple_range_slider, mark_range_slider
 
-
+import dash
+dash.register_page(__name__)
 def callback_example(pathname):
     if pathname == '/examples/intro':
         return intro.layout

@@ -8,7 +8,8 @@ from dash import dash_table
 from sanstyle.github.file import lfs_url
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 url = lfs_url('SanstyleLab/plotly-dastsets',
               'gapminderDataFiveYear.csv')
 df = pd.read_csv(url)

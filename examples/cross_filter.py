@@ -4,7 +4,8 @@ import pandas as pd
 from dash.dependencies import Input, Output
 import plotly.express as px
 from app import app
-
+import dash
+dash.register_page(__name__)
 # make a sample data frame with 6 columns
 df = pd.DataFrame({f'Col {str(i+1)}': np.random.rand(30) for i in range(6)})
 

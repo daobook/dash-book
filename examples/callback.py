@@ -2,7 +2,8 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.H6("更改文本框中的值以查看回调操作！"),
     html.Div(["输入：",

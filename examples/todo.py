@@ -2,7 +2,8 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State, MATCH, ALL
 from dash import callback_context
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.Div('Dash To-Do list'),
     dcc.Input(id="new-item"),

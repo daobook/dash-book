@@ -5,7 +5,8 @@ from dash.dependencies import Input, Output
 from dash import callback_context
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 layout = html.Div([
     html.Button('Button 1', id='btn-1'),
     html.Button('Button 2', id='btn-2'),

@@ -6,7 +6,8 @@ import plotly.express as px
 import pandas as pd
 
 from app import app
-
+import dash
+dash.register_page(__name__)
 styles = {
     'pre': {
         'border': 'thin lightgrey solid',
