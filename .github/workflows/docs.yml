@@ -23,6 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install --upgrade setuptools pip
           pip install -r requirements.txt
           conda install ipykernel
           python -m ipykernel install --user --name ai --display-name "ai"
