@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - uses: s-weigand/setup-conda@v1
       - run: conda --version
       - run: which python
@@ -25,7 +25,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           conda install ipykernel
-          conda install -c conda-forge myst-parser
           python -m ipykernel install --user --name ai --display-name "ai"
       - name: Install theme
         run: |
