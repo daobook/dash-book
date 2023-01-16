@@ -14,7 +14,7 @@ jupyter-dash
 plotly
 pyorbital
 gunicorn
-dash-xinet
+dash-xinet>=0.2.5
 sanstyle
 # Flask-Caching
 # redis
@@ -22,6 +22,6 @@ sanstyle
 # diskcache 
 # multiprocess 
 # psutil
-jupytext
+# jupytext
 myst-nb
 # sphinx
