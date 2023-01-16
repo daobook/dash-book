@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.9"
       - uses: s-weigand/setup-conda@v1
       - run: conda --version
       - run: which python
