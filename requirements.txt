@@ -15,8 +15,8 @@ jupyter-dash
 plotly
 pyorbital
 gunicorn
-dash-xinet -i https://pypi.org/simple/ 
-sanstyle -i https://pypi.org/simple/ 
+dash-xinet
+sanstyle
 Flask-Caching
 redis
 # jupyter-server-proxy
@@ -25,4 +25,4 @@ multiprocess
 psutil
 jupytext
 myst-nb
-sphinx==4.4
+sphinx
