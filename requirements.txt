@@ -11,7 +11,7 @@ sphinx-click
 # sphinxext-rediraffe
 sympy
 statsmodels
-jupyter-dash
+dash
 plotly
 # pyorbital
 gunicorn
