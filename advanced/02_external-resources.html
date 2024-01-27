@@ -1,54 +1,64 @@
 
 <!DOCTYPE html>
 
-<html lang="zh">
+
+<html lang="zh" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>添加 CSS 和 JS 以覆盖页面加载模板 &#8212; Dash 手册</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=649e6dda" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css?v=e1e06c3a" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css?v=ddc176f5" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css?v=e16040ca" />
+    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css?v=164bff81" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=4835f541"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -84,710 +94,535 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/02_external-resources';</script>
     <link rel="canonical" href="https://daobook.github.io/dash-book/advanced/02_external-resources.html" />
-    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
-    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="icon" href="../_static/page-logo.jfif"/>
+    <link rel="author" title="关于此文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="多页面应用程序和 URL 支持" href="03_urls.html" />
     <link rel="prev" title="实时更新" href="01_live-updates.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Dash 手册</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p class="caption" role="heading">
- <span class="caption-text">
-  教程
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Dash 手册 - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Dash 手册 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../start/index.html">
-   快速上手
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/00_intro.html">
-     Dash 简介
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/01_sanstyle.html">
-     Dash Xinet 与 Sanstyle
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/02_layout.html">
-     布局
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/03_callback.html">
-     回调与交互
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/04_interactive-graphing.html">
-     交互式可视化
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/05_sharing-data-between-callbacks.html">
-     在回调之间共享数据
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/06_faqs.html">
-     FAQs
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../basics/index.html">
-   指南
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/00_advanced-callbacks.html">
-     高级回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/01_clientside-callbacks.html">
-     客户端回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/02_pattern-matching-callbacks.html">
-     模式匹配回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/03_long-callbacks.html">
-     长时回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/04_callback-gotchas.html">
-     回调 Gotchas
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   高级教程
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="00_performance.html">
-     性能
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_live-updates.html">
-     实时更新
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     添加 CSS 和 JS 以覆盖页面加载模板
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_urls.html">
-     多页面应用程序和 URL 支持
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_persistence.html">
-     persistence
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_devtools.html">
-     devtools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06_loading-states.html">
-     Loading States
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07_testing.html">
-     testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="08_app-lifecycle.html">
-     app-lifecycle
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="09_reference.html">
-     reference
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="test.html">
-     测试
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../start/index.html">快速上手</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/00_intro.html">Dash 简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/01_sanstyle.html">Dash Xinet 与 Sanstyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/02_layout.html">布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/03_callback.html">回调与交互</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/04_interactive-graphing.html">交互式可视化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/05_sharing-data-between-callbacks.html">在回调之间共享数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/06_faqs.html">FAQs</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  主题
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/index.html">指南</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/00_advanced-callbacks.html">高级回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/01_clientside-callbacks.html">客户端回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/02_pattern-matching-callbacks.html">模式匹配回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/03_long-callbacks.html">长时回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/04_callback-gotchas.html">回调 Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">高级教程</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="00_performance.html">性能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_live-updates.html">实时更新</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">添加 CSS 和 JS 以覆盖页面加载模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_urls.html">多页面应用程序和 URL 支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_persistence.html">persistence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_devtools.html">devtools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_loading-states.html">Loading States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_testing.html">testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_app-lifecycle.html">app-lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_reference.html">reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">测试</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">主题</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../custom-components/index.html">
-   创建自己的组件
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../custom-components/00_react-for-python-developers.html">
-     面向 Python 开发人员：入门
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../custom-components/01_plugins.html">
-     编写自己的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../custom-components/02_d3-react-components.html">
-     将
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       D3.js
-      </span>
-     </code>
-     图表封装为 Python Dash 组件
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../production-capabilities/index.html">
-   面向生产
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/00_deployment.html">
-     部署 Dash 应用
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/01_authentication.html">
-     authentication
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/02_integrating-dash.html">
-     integrating-dash
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/server.html">
-     Waitress
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../w3schools/index.html">
-   W3Schools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../w3schools/nav.html">
-     Nav
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../custom-components/index.html">创建自己的组件</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom-components/00_react-for-python-developers.html">面向 Python 开发人员：入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-components/01_plugins.html">编写自己的组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-components/02_d3-react-components.html">将 <code class="docutils literal notranslate"><span class="pre">D3.js</span></code> 图表封装为 Python Dash 组件</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  参考
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../production-capabilities/index.html">面向生产</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/00_deployment.html">部署 Dash 应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/01_authentication.html">authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/02_integrating-dash.html">integrating-dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/server.html">Waitress</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../w3schools/index.html">W3Schools</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../w3schools/nav.html">Nav</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../html-components/index.html">
-   Dash HTML 组件
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../html-components/a.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       html.A
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../core-components/index.html">
-   Dash 核心组件
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/graph.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Graph
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/interval.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Interval
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/link.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Link
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/location.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Location
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/range-slider.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.RangeSlider
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/slider.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Slider
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/store.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Store
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../principle/index.html">
-   解释
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../principle/topic.html">
-     高级教程
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../html-components/index.html">Dash HTML 组件</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html-components/a.html"><code class="docutils literal notranslate"><span class="pre">html.A</span></code></a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  混沌
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../core-components/index.html">Dash 核心组件</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/graph.html"><code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/interval.html"><code class="docutils literal notranslate"><span class="pre">dcc.Interval</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/link.html"><code class="docutils literal notranslate"><span class="pre">dcc.Link</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/location.html"><code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/range-slider.html"><code class="docutils literal notranslate"><span class="pre">dcc.RangeSlider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/slider.html"><code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/store.html"><code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../principle/index.html">解释</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../principle/topic.html">高级教程</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">混沌</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about.html">
-   关于本书
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">
-   Sanstyle Book
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../news/index.html">
-   Dash 资讯
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/av.html">
-     自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/dash.html">
-     关于 Plotly Dash 你需要知道的一切
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/dashboard-giant.html">
-     Streamlit vs Dash vs Voilà vs Panel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/deploy-github-pages.html">
-     Deploy dash to github pages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/panel.html">
-     关于 Panel 你需要知道的一切
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/streamlit.html">
-     关于 Streamlit 你需要知道的一切
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/voila.html">
-     关于 Voilà 你需要知道的一切
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book.html">
-   外部资源
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHANGELOG.html">
-   变更日志
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于本书</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">Sanstyle Book</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../news/index.html">Dash 资讯</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../news/av.html">自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/dash.html">关于 Plotly Dash 你需要知道的一切</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/dashboard-giant.html">Streamlit vs Dash vs Voilà vs Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/deploy-github-pages.html">Deploy dash to github pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/panel.html">关于 Panel 你需要知道的一切</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/streamlit.html">关于 Streamlit 你需要知道的一切</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/voila.html">关于 Voilà 你需要知道的一切</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../book.html">外部资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">变更日志</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <div class="w3-padding w3-card-4 w3-pale-green">
-  <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
-      data-position="top" data-delay="50">
-      <i class="fab fa-github"></i>
-  </a>
-  <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
-      data-delay="50">
-      <i class="fas fa-envelope-open"></i>
-  </a>
-  <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
-      target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
-      <i class="fab fa-qq"></i>
-  </a>
-  <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
-      data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
-      <i class="fab fa-zhihu1">知</i>
-  </a>
-  <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
-      data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
-      <i class="fab fa-linkedin"></i>
-  </a>
-  <div><a href="https://github.com/xinetzone/sanstyle">上善若水</a> 版权所有</div>
-</div>
-
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/advanced/02_external-resources.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/advanced/02_external-resources.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/daobook/dash-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/daobook/dash-book/issues/new?title=Issue%20on%20page%20%2Fadvanced/02_external-resources.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/daobook/dash-book/main?urlpath=tree/./advanced/02_external-resources.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/daobook/dash-book/blob/main/./advanced/02_external-resources.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/daobook/dash-book/main?urlpath=tree/./advanced/02_external-resources.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/daobook/dash-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="源码库"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/daobook/dash-book/issues/new?title=Issue%20on%20page%20%2Fadvanced/02_external-resources.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/advanced/02_external-resources.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="下载笔记本文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/advanced/02_external-resources.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>添加 CSS 和 JS 以覆盖页面加载模板</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> 目录 </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#css-javascript">
-   添加自定义 CSS 和 JavaScript
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   示例：包含本地 CSS 和 JavaScript
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   添加外部 CSS / JavaScript
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dash">
-   自定义 Dash 的文件或浏览器标签标题
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#url">
-   根据 URL 或选项卡动态更新文档标题
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dash-updating">
-   定制或删除 Dash 的
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     "Updating..."
-    </span>
-   </code>
-   消息
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dash-html-index">
-   自定义 Dash 的 HTML index 模板
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#option-1-index-string">
-     Option 1 - index_string
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#option-2-interpolate-index">
-     Option 2 - interpolate_index
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dash-renderer">
-     使用请求钩子定制 dash-renderer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#meta">
-   定制 Meta 标记
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#css-javascript">添加自定义 CSS 和 JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">示例：包含本地 CSS 和 JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">添加外部 CSS / JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash">自定义 Dash 的文件或浏览器标签标题</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#url">根据 URL 或选项卡动态更新文档标题</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-updating">定制或删除 Dash 的<code class="docutils literal notranslate"><span class="pre">"Updating..."</span></code>消息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-html-index">自定义 Dash 的 HTML index 模板</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-index-string">Option 1 - index_string</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-interpolate-index">Option 2 - interpolate_index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-renderer">使用请求钩子定制 dash-renderer</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta">定制 Meta 标记</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="css-js">
-<span id="dash-external-resources"></span><h1>添加 CSS 和 JS 以覆盖页面加载模板<a class="headerlink" href="#css-js" title="永久链接至标题">¶</a></h1>
+<span id="dash-external-resources"></span><h1>添加 CSS 和 JS 以覆盖页面加载模板<a class="headerlink" href="#css-js" title="Link to this heading">#</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/external-resources">Adding CSS &amp; JS and Overriding the Page-Load Template | Dash for Python Documentation | Plotly</a></p>
 <p>Dash 应用程序通过 CSS 和 JavaScript 在 web 浏览器中呈现。在页面加载时，Dash 提供一个小的 HTML 模板，其中包括渲染应用程序所需的 CSS 和 JavaScript 引用。这一章涵盖了你需要知道的关于配置这个 HTML 文件以及关于在 Dash 应用程序中包括外部 CSS 和 JavaScript 的一切。</p>
 <section id="css-javascript">
-<h2>添加自定义 CSS 和 JavaScript<a class="headerlink" href="#css-javascript" title="永久链接至标题">¶</a></h2>
+<h2>添加自定义 CSS 和 JavaScript<a class="headerlink" href="#css-javascript" title="Link to this heading">#</a></h2>
 <p>在你的 Dash 应用程序中包含自定义 CSS 或 JavaScript 是很简单的。你只需在 <code class="docutils literal notranslate"><span class="pre">app</span></code> 目录的根目录下创建一个名为 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 的文件夹，并在该文件夹中包含你的 CSS 和 JavaScript 文件。Dash 会自动提供这个文件夹中包含的所有文件。默认情况下，请求资产的 <code class="docutils literal notranslate"><span class="pre">url</span></code> 是 <code class="docutils literal notranslate"><span class="pre">/assets</span></code>，但是你可以用 <code class="docutils literal notranslate"><span class="pre">assets_url_path</span></code> 参数将其自定义为 <code class="docutils literal notranslate"><span class="pre">dash.Dash</span></code>。</p>
 <div class="w3-yellow docutils">
 <p>建议：你需要在 Dash 构造函数中包含 <code class="docutils literal notranslate"><span class="pre">__name__</span></code>。</p>
@@ -795,84 +630,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>也就是说，<code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash(__name__)</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">dash.Dash()</span></code>。理由见 <a class="reference external" href="https://community.plotly.com/t/dash-app-does-not-load-assets-and-app-index-string/12178/10?u=chriddyp">dash-app-does-not-load-assets-and-app-index-string</a>。</p>
 </section>
 <section id="id1">
-<h2>示例：包含本地 CSS 和 JavaScript<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>示例：包含本地 CSS 和 JavaScript<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>我们将创建几个文件：<code class="docutils literal notranslate"><span class="pre">app.py</span></code>，一个名为 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 的文件夹，以及该文件夹中的三个文件：</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>- app.py
-- assets/
-    <span class="p">|</span>-- typography.css
-    <span class="p">|</span>-- header.css
-    <span class="p">|</span>-- custom-script.js
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-<span class="w"> </span>app.py
+-<span class="w"> </span>assets/
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>typography.css
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>header.css
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>custom-script.js
 </pre></div>
-</div>
-<div class="tabbed-set docutils">
-<input checked="checked" id="a690f95e-12b6-4d06-a646-10371e760156" name="9b75d087-eca8-4160-aa11-74a90e7673db" type="radio">
-</input><label class="tabbed-label" for="a690f95e-12b6-4d06-a646-10371e760156">
-app</label><div class="tabbed-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-
-<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
-    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
-        <span class="n">className</span><span class="o">=</span><span class="s2">&quot;app-header&quot;</span><span class="p">,</span>
-        <span class="n">children</span><span class="o">=</span><span class="p">[</span>
-            <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;Plotly Dash&#39;</span><span class="p">,</span> <span class="n">className</span><span class="o">=</span><span class="s2">&quot;app-header--title&quot;</span><span class="p">)</span>
-        <span class="p">]</span>
-    <span class="p">),</span>
-    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
-        <span class="n">children</span><span class="o">=</span><span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
-            <span class="n">html</span><span class="o">.</span><span class="n">H5</span><span class="p">(</span><span class="s1">&#39;Overview&#39;</span><span class="p">),</span>
-            <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">                This is an example of a simple Dash app with</span>
-<span class="s1">                local, customized CSS.</span>
-<span class="s1">            &#39;&#39;&#39;</span><span class="p">)</span>
-        <span class="p">])</span>
-    <span class="p">)</span>
-<span class="p">])</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="3fb512e4-afeb-4378-be37-ab4453fe183c" name="9b75d087-eca8-4160-aa11-74a90e7673db" type="radio">
-</input><label class="tabbed-label" for="3fb512e4-afeb-4378-be37-ab4453fe183c">
-custom-script</label><div class="tabbed-content docutils">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;如果您看到此警告，说明您的自定义 JavaScript 脚本已经运行！&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="696635e1-4ca0-47fc-b3bf-fe96f2bbf5bb" name="9b75d087-eca8-4160-aa11-74a90e7673db" type="radio">
-</input><label class="tabbed-label" for="696635e1-4ca0-47fc-b3bf-fe96f2bbf5bb">
-typography</label><div class="tabbed-content docutils">
-<div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="p">{</span>
-    <span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span> <span class="p">{</span>
-    <span class="n">color</span><span class="p">:</span> <span class="n">hotpink</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<input id="96c65d5d-7465-4757-860d-c5a358a51bb3" name="9b75d087-eca8-4160-aa11-74a90e7673db" type="radio">
-</input><label class="tabbed-label" for="96c65d5d-7465-4757-860d-c5a358a51bb3">
-header</label><div class="tabbed-content docutils">
-<div class="code css highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span> <span class="p">{</span>
-    <span class="n">height</span><span class="p">:</span> <span class="mi">60</span><span class="n">px</span><span class="p">;</span>
-    <span class="n">line</span><span class="o">-</span><span class="n">height</span><span class="p">:</span> <span class="mi">60</span><span class="n">px</span><span class="p">;</span>
-    <span class="n">border</span><span class="o">-</span><span class="n">bottom</span><span class="p">:</span> <span class="n">thin</span> <span class="n">lightgrey</span> <span class="n">solid</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span> <span class="o">.</span><span class="n">app</span><span class="o">-</span><span class="n">header</span><span class="o">--</span><span class="n">title</span> <span class="p">{</span>
-    <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="mi">22</span><span class="n">px</span><span class="p">;</span>
-    <span class="n">padding</span><span class="o">-</span><span class="n">left</span><span class="p">:</span> <span class="mi">5</span><span class="n">px</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>当你运行 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 时，你的应用看起来应该是这样的：</p>
 <div class="cell tag_remove-input docutils container">
@@ -880,7 +645,7 @@ header</label><div class="tabbed-content docutils">
 <div class="output text_html"><embed type="text/html" class="w3-pale-blue" width="100%" height="150" src="https://dash-tests.herokuapp.com/examples/external-resources"></div></div>
 </div>
 <p>在自动添加 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 时，你需要牢记以下几点:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>以下文件类型将自动包括:</p>
 <ul class="simple">
 <li><p>CSS 文件后缀为 <code class="docutils literal notranslate"><span class="pre">.css</span></code></p></li>
@@ -896,7 +661,7 @@ header</label><div class="tabbed-content docutils">
 </ol>
 </section>
 <section id="id2">
-<h2>添加外部 CSS / JavaScript<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>添加外部 CSS / JavaScript<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>你可以通过 <code class="docutils literal notranslate"><span class="pre">external_stylesheets</span></code> 和 <code class="docutils literal notranslate"><span class="pre">external_scripts</span></code> init 关键字将托管在你的 Dash 应用程序上的资源添加到外部。</p>
 <p>资源可以是字符串，也可以是包含标签属性（<code class="docutils literal notranslate"><span class="pre">src</span></code>、<code class="docutils literal notranslate"><span class="pre">integrity</span></code>、<code class="docutils literal notranslate"><span class="pre">crossorigin</span></code> 等）的字典。你可以两者混合。</p>
 <p>外部 css/js 文件在 <code class="docutils literal notranslate"><span class="pre">assets</span></code> 之前被加载。</p>
@@ -940,7 +705,7 @@ header</label><div class="tabbed-content docutils">
 </div>
 </section>
 <section id="dash">
-<h2>自定义 Dash 的文件或浏览器标签标题<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
+<h2>自定义 Dash 的文件或浏览器标签标题<a class="headerlink" href="#dash" title="Link to this heading">#</a></h2>
 <p>文档标题是出现在网页浏览器选项卡中的网页名称。</p>
 <p>默认值是 <code class="docutils literal notranslate"><span class="pre">Dash</span></code>。</p>
 <p>在 Dash 1.14.0 中，你可以使用 <code class="docutils literal notranslate"><span class="pre">title=</span></code> 关键字来定制这个标题:</p>
@@ -949,7 +714,7 @@ header</label><div class="tabbed-content docutils">
 </div>
 </section>
 <section id="url">
-<h2>根据 URL 或选项卡动态更新文档标题<a class="headerlink" href="#url" title="永久链接至标题">¶</a></h2>
+<h2>根据 URL 或选项卡动态更新文档标题<a class="headerlink" href="#url" title="Link to this heading">#</a></h2>
 <p>要动态设置文档标题，可以使用<code class="docutils literal notranslate"><span class="pre">clientside</span> <span class="pre">callback</span></code> 作为一个副作用更新 <code class="docutils literal notranslate"><span class="pre">document.title</span></code>。下面的示例设置 <code class="docutils literal notranslate"><span class="pre">document.title</span></code>的基础上，当前选择的选项卡。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
@@ -968,7 +733,7 @@ header</label><div class="tabbed-content docutils">
 
 
 <span class="n">app</span><span class="o">.</span><span class="n">clientside_callback</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    function(tab_value) {</span>
 <span class="sd">        if (tab_value === &#39;tab-1&#39;) {</span>
 <span class="sd">            document.title = &#39;Tab 1&#39;</span>
@@ -988,7 +753,7 @@ header</label><div class="tabbed-content docutils">
 <p>基于 URL 更新页面将是类似的：回调的输入将是 <code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code> 的 <code class="docutils literal notranslate"><span class="pre">pathname</span></code> 属性。关于 <code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code>，请参阅 <a class="reference external" href="https://dash.plotly.com/urls">url 和多页应用程序</a>章节。</p>
 </section>
 <section id="dash-updating">
-<h2>定制或删除 Dash 的<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息<a class="headerlink" href="#dash-updating" title="永久链接至标题">¶</a></h2>
+<h2>定制或删除 Dash 的<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息<a class="headerlink" href="#dash-updating" title="Link to this heading">#</a></h2>
 <p>当一个回调运行时，Dash 更新文档标题(出现在你的浏览器标签)与<code class="docutils literal notranslate"><span class="pre">&quot;Updating...&quot;</span></code>消息。</p>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">update_title=属性</span></code> 定制此消息：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">update_title</span><span class="o">=</span><span class="s1">&#39;Loading...&#39;</span><span class="p">)</span>
@@ -1000,7 +765,7 @@ header</label><div class="tabbed-content docutils">
 </div>
 </section>
 <section id="dash-html-index">
-<h2>自定义 Dash 的 HTML index 模板<a class="headerlink" href="#dash-html-index" title="永久链接至标题">¶</a></h2>
+<h2>自定义 Dash 的 HTML index 模板<a class="headerlink" href="#dash-html-index" title="Link to this heading">#</a></h2>
 <p>Dash 的 UI 是通过 Dash 的 <code class="docutils literal notranslate"><span class="pre">React.js</span></code> 前端动态生成的。因此，在页面加载时，Dash提 供一个非常小的 HTML 模板字符串，其中包括渲染页面所需的 CSS 和 JavaScript 以及一些简单的 HTML 元标记。</p>
 <p>这个简单的 HTML 字符串是可定制的。如果你想自定义这个字符串:</p>
 <ul class="simple">
@@ -1009,7 +774,7 @@ header</label><div class="tabbed-content docutils">
 <li><p>通过自己实例化 <code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code> 类，包含一个自定义版本的<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>。你可以通过下面的例子提供一个<code class="docutils literal notranslate"><span class="pre">hooks</span></code>配置对象来添加请求钩子。</p></li>
 </ul>
 <section id="option-1-index-string">
-<h3>Option 1 - index_string<a class="headerlink" href="#option-1-index-string" title="永久链接至标题">¶</a></h3>
+<h3>Option 1 - index_string<a class="headerlink" href="#option-1-index-string" title="Link to this heading">#</a></h3>
 <p>添加一个<code class="docutils literal notranslate"><span class="pre">index_string</span></code>来修改默认的 HTML 索引模板：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1059,7 +824,7 @@ header</label><div class="tabbed-content docutils">
 </ul>
 </section>
 <section id="option-2-interpolate-index">
-<h3>Option 2 - interpolate_index<a class="headerlink" href="#option-2-interpolate-index" title="永久链接至标题">¶</a></h3>
+<h3>Option 2 - interpolate_index<a class="headerlink" href="#option-2-interpolate-index" title="Link to this heading">#</a></h3>
 <p>如果你的 HTML 内容不是静态的，或者你想 introspect 或修改模板变量，那么你可以覆盖 <code class="docutils literal notranslate"><span class="pre">Dash.interpolate_index</span></code> 方法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1078,10 +843,10 @@ header</label><div class="tabbed-content docutils">
 <span class="s1">            &lt;body&gt;</span>
 
 <span class="s1">                &lt;div id=&quot;custom-header&quot;&gt;My custom header&lt;/div&gt;</span>
-<span class="s1">                </span><span class="si">{app_entry}</span><span class="s1"></span>
-<span class="s1">                </span><span class="si">{config}</span><span class="s1"></span>
-<span class="s1">                </span><span class="si">{scripts}</span><span class="s1"></span>
-<span class="s1">                </span><span class="si">{renderer}</span><span class="s1"></span>
+<span class="s1">                </span><span class="si">{app_entry}</span>
+<span class="s1">                </span><span class="si">{config}</span>
+<span class="s1">                </span><span class="si">{scripts}</span>
+<span class="s1">                </span><span class="si">{renderer}</span>
 <span class="s1">                &lt;div id=&quot;custom-footer&quot;&gt;My custom footer&lt;/div&gt;</span>
 <span class="s1">            &lt;/body&gt;</span>
 <span class="s1">        &lt;/html&gt;</span>
@@ -1116,7 +881,7 @@ header</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">scripts</span></code>和<code class="docutils literal notranslate"><span class="pre">css</span></code>键的值可能会不同，这取决于您包含的组件库或<code class="docutils literal notranslate"><span class="pre">assets</span></code>文件夹中的文件。</p>
 </section>
 <section id="dash-renderer">
-<h3>使用请求钩子定制 dash-renderer<a class="headerlink" href="#dash-renderer" title="永久链接至标题">¶</a></h3>
+<h3>使用请求钩子定制 dash-renderer<a class="headerlink" href="#dash-renderer" title="Link to this heading">#</a></h3>
 <p>为了实例化你自己的<code class="docutils literal notranslate"><span class="pre">dash-renderer</span></code>版本，你可以覆盖 Dash 的HTML Index Template，并提供你自己的脚本来代替标准脚本。这个脚本应该在某处调用<code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">renderer</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">DashRenderer();</span></code>，它实例化了<code class="docutils literal notranslate"><span class="pre">DashRenderer</span></code>类。当你设置<code class="docutils literal notranslate"><span class="pre">app.index_string</span></code>时，你可以将这个脚本添加到你的 index HTML 中，或者你可以像这样简单地覆盖<code class="docutils literal notranslate"><span class="pre">app.renderer</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1165,7 +930,7 @@ header</label><div class="tabbed-content docutils">
 </section>
 </section>
 <section id="meta">
-<h2>定制 Meta 标记<a class="headerlink" href="#meta" title="永久链接至标题">¶</a></h2>
+<h2>定制 Meta 标记<a class="headerlink" href="#meta" title="Link to this heading">#</a></h2>
 <p>要在你的应用程序中添加自定义元标签，你可以覆盖<code class="docutils literal notranslate"><span class="pre">Dash</span></code>的 HTML 索引模板。另外，<code class="docutils literal notranslate"><span class="pre">Dash</span></code> 提供了一个快捷方式：你可以直接在 <code class="docutils literal notranslate"><span class="pre">Dash</span></code> 构造函数中指定 <code class="docutils literal notranslate"><span class="pre">meta</span></code> 标签：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
@@ -1218,7 +983,7 @@ header</label><div class="tabbed-content docutils">
             mode: "ai"
         },
         kernelOptions: {
-            kernelName: "ai",
+            name: "ai",
             path: "./advanced"
         },
         predefinedOutput: true
@@ -1226,61 +991,112 @@ header</label><div class="tabbed-content docutils">
     </script>
     <script>kernelName = 'ai'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="01_live-updates.html" title="上一页 页">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">上一页</p>
-                <p class="prevnext-title">实时更新</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="03_urls.html" title="下一页 页">
-            <div class="prevnext-info">
-                <p class="prevnext-label">下一页</p>
-                <p class="prevnext-title">多页面应用程序和 URL 支持</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_live-updates.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">实时更新</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03_urls.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">多页面应用程序和 URL 支持</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          <div class="extra_footer">
-            <p class="w3-card w3-pale-blue w3-padding">
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#css-javascript">添加自定义 CSS 和 JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">示例：包含本地 CSS 和 JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">添加外部 CSS / JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash">自定义 Dash 的文件或浏览器标签标题</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#url">根据 URL 或选项卡动态更新文档标题</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-updating">定制或删除 Dash 的<code class="docutils literal notranslate"><span class="pre">"Updating..."</span></code>消息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-html-index">自定义 Dash 的 HTML index 模板</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-index-string">Option 1 - index_string</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-interpolate-index">Option 2 - interpolate_index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-renderer">使用请求钩子定制 dash-renderer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta">定制 Meta 标记</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p class="w3-card w3-pale-blue w3-padding">
   Copyright © 2021
   <a href="https://sanstylelab.github.io/">SanstyleLab</a> | 
   Powered by <a href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a>.
 </p>
 
-          </div>
-      </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
   </footer>
-</main>
-
-
-      </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
   </body>
 </html>

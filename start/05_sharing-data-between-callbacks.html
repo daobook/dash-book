@@ -1,54 +1,64 @@
 
 <!DOCTYPE html>
 
-<html lang="zh">
+
+<html lang="zh" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>在回调之间共享数据 &#8212; Dash 手册</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=649e6dda" />
     <link rel="stylesheet" type="text/css" href="../_static/page.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3pro.css?v=e1e06c3a" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3.css?v=ddc176f5" />
+    <link rel="stylesheet" type="text/css" href="../_static/w3css/4/w3mobile.css?v=e16040ca" />
+    <link rel="stylesheet" type="text/css" href="../_static/xin-css/main.css?v=164bff81" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=4835f541"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -84,686 +94,456 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start/05_sharing-data-between-callbacks';</script>
     <link rel="canonical" href="https://daobook.github.io/dash-book/start/05_sharing-data-between-callbacks.html" />
-    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
-    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="icon" href="../_static/page-logo.jfif"/>
+    <link rel="author" title="关于此文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="FAQs" href="06_faqs.html" />
     <link rel="prev" title="交互式可视化" href="04_interactive-graphing.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Dash 手册</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p class="caption" role="heading">
- <span class="caption-text">
-  教程
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Dash 手册 - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Dash 手册 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   快速上手
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="00_intro.html">
-     Dash 简介
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_sanstyle.html">
-     Dash Xinet 与 Sanstyle
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_layout.html">
-     布局
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_callback.html">
-     回调与交互
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_interactive-graphing.html">
-     交互式可视化
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     在回调之间共享数据
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06_faqs.html">
-     FAQs
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../basics/index.html">
-   指南
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/00_advanced-callbacks.html">
-     高级回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/01_clientside-callbacks.html">
-     客户端回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/02_pattern-matching-callbacks.html">
-     模式匹配回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/03_long-callbacks.html">
-     长时回调
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/04_callback-gotchas.html">
-     回调 Gotchas
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../advanced/index.html">
-   高级教程
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/00_performance.html">
-     性能
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/01_live-updates.html">
-     实时更新
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/02_external-resources.html">
-     添加 CSS 和 JS 以覆盖页面加载模板
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/03_urls.html">
-     多页面应用程序和 URL 支持
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/04_persistence.html">
-     persistence
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/05_devtools.html">
-     devtools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/06_loading-states.html">
-     Loading States
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/07_testing.html">
-     testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/08_app-lifecycle.html">
-     app-lifecycle
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/09_reference.html">
-     reference
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../advanced/test.html">
-     测试
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">快速上手</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="00_intro.html">Dash 简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_sanstyle.html">Dash Xinet 与 Sanstyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_layout.html">布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_callback.html">回调与交互</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_interactive-graphing.html">交互式可视化</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">在回调之间共享数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_faqs.html">FAQs</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  主题
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../custom-components/index.html">
-   创建自己的组件
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../custom-components/00_react-for-python-developers.html">
-     面向 Python 开发人员：入门
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../custom-components/01_plugins.html">
-     编写自己的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../custom-components/02_d3-react-components.html">
-     将
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       D3.js
-      </span>
-     </code>
-     图表封装为 Python Dash 组件
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../production-capabilities/index.html">
-   面向生产
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/00_deployment.html">
-     部署 Dash 应用
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/01_authentication.html">
-     authentication
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/02_integrating-dash.html">
-     integrating-dash
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../production-capabilities/server.html">
-     Waitress
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../w3schools/index.html">
-   W3Schools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../w3schools/nav.html">
-     Nav
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/index.html">指南</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/00_advanced-callbacks.html">高级回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/01_clientside-callbacks.html">客户端回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/02_pattern-matching-callbacks.html">模式匹配回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/03_long-callbacks.html">长时回调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/04_callback-gotchas.html">回调 Gotchas</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  参考
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../html-components/index.html">
-   Dash HTML 组件
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../html-components/a.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       html.A
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../core-components/index.html">
-   Dash 核心组件
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/graph.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Graph
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/interval.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Interval
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/link.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Link
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/location.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Location
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/range-slider.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.RangeSlider
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/slider.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Slider
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-components/store.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dcc.Store
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../principle/index.html">
-   解释
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../principle/topic.html">
-     高级教程
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">高级教程</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/00_performance.html">性能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/01_live-updates.html">实时更新</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/02_external-resources.html">添加 CSS 和 JS 以覆盖页面加载模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/03_urls.html">多页面应用程序和 URL 支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/04_persistence.html">persistence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/05_devtools.html">devtools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/06_loading-states.html">Loading States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/07_testing.html">testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/08_app-lifecycle.html">app-lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/09_reference.html">reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/test.html">测试</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  混沌
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">主题</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about.html">
-   关于本书
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">
-   Sanstyle Book
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../news/index.html">
-   Dash 资讯
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/av.html">
-     自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/dash.html">
-     关于 Plotly Dash 你需要知道的一切
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/dashboard-giant.html">
-     Streamlit vs Dash vs Voilà vs Panel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/deploy-github-pages.html">
-     Deploy dash to github pages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/panel.html">
-     关于 Panel 你需要知道的一切
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/streamlit.html">
-     关于 Streamlit 你需要知道的一切
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../news/voila.html">
-     关于 Voilà 你需要知道的一切
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book.html">
-   外部资源
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHANGELOG.html">
-   变更日志
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../custom-components/index.html">创建自己的组件</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom-components/00_react-for-python-developers.html">面向 Python 开发人员：入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-components/01_plugins.html">编写自己的组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-components/02_d3-react-components.html">将 <code class="docutils literal notranslate"><span class="pre">D3.js</span></code> 图表封装为 Python Dash 组件</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../production-capabilities/index.html">面向生产</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/00_deployment.html">部署 Dash 应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/01_authentication.html">authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/02_integrating-dash.html">integrating-dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-capabilities/server.html">Waitress</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../w3schools/index.html">W3Schools</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../w3schools/nav.html">Nav</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../html-components/index.html">Dash HTML 组件</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html-components/a.html"><code class="docutils literal notranslate"><span class="pre">html.A</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../core-components/index.html">Dash 核心组件</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/graph.html"><code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/interval.html"><code class="docutils literal notranslate"><span class="pre">dcc.Interval</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/link.html"><code class="docutils literal notranslate"><span class="pre">dcc.Link</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/location.html"><code class="docutils literal notranslate"><span class="pre">dcc.Location</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/range-slider.html"><code class="docutils literal notranslate"><span class="pre">dcc.RangeSlider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/slider.html"><code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-components/store.html"><code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../principle/index.html">解释</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../principle/topic.html">高级教程</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">混沌</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于本书</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://xinetzone.github.io/sanstyle-book/">Sanstyle Book</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../news/index.html">Dash 资讯</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../news/av.html">自动驾驶汽车数据集的历史和三个可视化的开源 Python 应用程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/dash.html">关于 Plotly Dash 你需要知道的一切</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/dashboard-giant.html">Streamlit vs Dash vs Voilà vs Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/deploy-github-pages.html">Deploy dash to github pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/panel.html">关于 Panel 你需要知道的一切</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/streamlit.html">关于 Streamlit 你需要知道的一切</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/voila.html">关于 Voilà 你需要知道的一切</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../book.html">外部资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">变更日志</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <div class="w3-padding w3-card-4 w3-pale-green">
-  <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
-      data-position="top" data-delay="50">
-      <i class="fab fa-github"></i>
-  </a>
-  <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
-      data-delay="50">
-      <i class="fas fa-envelope-open"></i>
-  </a>
-  <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
-      target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
-      <i class="fab fa-qq"></i>
-  </a>
-  <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
-      data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
-      <i class="fab fa-zhihu1">知</i>
-  </a>
-  <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
-      data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
-      <i class="fab fa-linkedin"></i>
-  </a>
-  <div><a href="https://github.com/xinetzone/sanstyle">上善若水</a> 版权所有</div>
-</div>
-
-</div>
-
-</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/start/05_sharing-data-between-callbacks.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/daobook/dash-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/daobook/dash-book/issues/new?title=Issue%20on%20page%20%2Fstart/05_sharing-data-between-callbacks.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/daobook/dash-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="源码库"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/daobook/dash-book/issues/new?title=Issue%20on%20page%20%2Fstart/05_sharing-data-between-callbacks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/start/05_sharing-data-between-callbacks.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>在回调之间共享数据</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> 目录 </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   为什么要共享状态？
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dash">
-   Dash 是无状态的
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#global">
-   为什么
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     global
-    </span>
-   </code>
-   变量会破坏您的应用程序
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   回调之间共享数据
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dcc-store">
-   示例1 使用
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     dcc.Store
-    </span>
-   </code>
-   在浏览器中存储数据
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   示例2 前期聚合计算
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   示例3 缓存和信号
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   示例4 服务器上基于用户的会话数据
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">为什么要共享状态？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash">Dash 是无状态的</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global">为什么 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量会破坏您的应用程序</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">回调之间共享数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcc-store">示例1 使用 <code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code> 在浏览器中存储数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">示例2 前期聚合计算</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">示例3 缓存和信号</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">示例4 服务器上基于用户的会话数据</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>在回调之间共享数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>在回调之间共享数据<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>参考：<a class="reference external" href="https://dash.plotly.com/sharing-data-between-callbacks">Part 5. Sharing Data Between Callbacks | Dash for Python Documentation | Plotly</a></p>
 <p><a class="reference internal" href="03_callback.html#dash-interactive"><span class="std std-ref">Dash 回调入门指南</span></a> 中解释的 Dash 核心原则之一是：<strong>Dash 回调 绝不能修改超出其作用域的变量</strong>。修改任何<strong>全局</strong>变量是不安全的。本章说明了原因，并提供了一些用于在回调之间共享状态的替代模式。</p>
 <section id="id2">
-<h2>为什么要共享状态？<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>为什么要共享状态？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>在某些应用中，您可能会有多个回调，这些回调依赖于昂贵的数据处理任务，例如进行 SQL 查询，运行模拟或下载数据。</p>
 <p>您可以让一个回调运行该任务，然后将结果共享给其余的回调，而不是让每个回调都运行相同的昂贵任务。</p>
 <p>现在，您可以为一个回调提供 <a class="reference internal" href="03_callback.html#dash-multiple-outputs"><span class="std std-ref">多个输出</span></a>，这种需求已得到一定程度的缓解。这样，该昂贵的任务可以一次完成，并立即在所有输出中使用。但是在某些情况下，这还是不理想的，例如，如果有简单的后续任务可以修改结果，例如单位转换。我们只需要将结果从华氏温度更改为摄氏温度，就不必重复大型数据库查询！</p>
 </section>
 <section id="dash">
-<h2>Dash 是无状态的<a class="headerlink" href="#dash" title="永久链接至标题">¶</a></h2>
+<h2>Dash 是无状态的<a class="headerlink" href="#dash" title="Link to this heading">#</a></h2>
 <p>Dash 被设计成一个无状态框架。</p>
 <p>无状态框架具有更强的可伸缩性和健壮性。您访问的大多数网站都是在无状态服务器上构建的。</p>
 <p>它们具有更强的可伸缩性，因为向应用程序添加更多计算能力很简单。要扩展应用程序以服务更多用户或运行更多计算，只需在单独的进程中运行应用程序的更多“副本”。在生产中，这可以通过 <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> 的 worker 命令来完成：</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gunicorn app:server --workers <span class="m">8</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gunicorn<span class="w"> </span>app:server<span class="w"> </span>--workers<span class="w"> </span><span class="m">8</span>
 </pre></div>
 </div>
 <p>或者在多个 Docker 容器或服务器上运行应用程序，并在它们之间实现负载平衡。</p>
@@ -771,11 +551,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>使用无状态框架，用户会话不会与服务器进程一一对应。每个回调请求都可以在任何可用的进程上执行。<code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> 将检查哪个进程不忙于运行回调，并将新的回调请求发送给该进程。这意味着一些进程可以平衡 10 个或 100 个并发用户的请求，只要这些请求不是在同一时间发生（它们通常不会！）。</p>
 </section>
 <section id="global">
-<h2>为什么 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量会破坏您的应用程序<a class="headerlink" href="#global" title="永久链接至标题">¶</a></h2>
+<h2>为什么 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量会破坏您的应用程序<a class="headerlink" href="#global" title="Link to this heading">#</a></h2>
 <p>Dash 旨在在多用户环境中工作，在该环境中，多个人可以同时查看该应用程序，并且将进行<strong>独立的会话</strong>。</p>
 <p>如果您的应用程序使用修改后的 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量，则一个用户的会话可以将变量设置为一个值，这将影响下一个用户的会话。</p>
 <p>Dash 还设计为能够与 <strong>多个 python worker</strong> 一起运行，以便可以并行执行回调。这通常是使用类似的语法在 <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> 上完成的：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ gunicorn --workers <span class="m">4</span> app:server
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gunicorn<span class="w"> </span>--workers<span class="w"> </span><span class="m">4</span><span class="w"> </span>app:server
 </pre></div>
 </div>
 <p>（<code class="docutils literal notranslate"><span class="pre">app</span></code>指的是名为 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 的文件，而 <code class="docutils literal notranslate"><span class="pre">server</span></code> 指的是该文件中名为 <code class="docutils literal notranslate"><span class="pre">server</span></code> 的变量：<code class="docutils literal notranslate"><span class="pre">server</span> <span class="pre">=</span> <span class="pre">app.server</span></code>）。</p>
@@ -836,10 +616,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </details>
 </section>
 <section id="id3">
-<h2>回调之间共享数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>回调之间共享数据<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>为了在多个 Python 进程之间安全地共享数据，我们需要将数据存储在每个进程可访问的位置。</p>
 <p>有三个主要位置可存储此数据：</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>借助 <a class="reference internal" href="../core-components/store.html#dash-dcc-store"><span class="std std-ref">dcc.Store</span></a> 在用户的浏览器会话中存储</p></li>
 <li><p>在磁盘上（例如在文件或新数据库上）</p></li>
 <li><p>服务器端内存跨进程和服务器共享，比如 Redis 数据库。</p></li>
@@ -847,9 +627,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>下面的三个示例说明了这些方法。</p>
 </section>
 <section id="dcc-store">
-<h2>示例1 使用 <code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code> 在浏览器中存储数据<a class="headerlink" href="#dcc-store" title="永久链接至标题">¶</a></h2>
+<h2>示例1 使用 <code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code> 在浏览器中存储数据<a class="headerlink" href="#dcc-store" title="Link to this heading">#</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>注意：这个例子是用“hidden div”来实现的。我们推荐使用 <code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code> 代替。将数据存储在浏览器客户端的内存中，而不是浏览器的 DOM 中，这样的意图就更清楚了。</p>
 </div>
 <p>要在用户浏览器的会话中保存数据，请执行以下操作：</p>
@@ -865,13 +645,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </li>
 </ul>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-此示例概述了如何在一个回调中执行昂贵的数据处理步骤，将输出序列化为 JSON 并将其提供为其他回调的输入。本示例使用标准的 Dash 回调并将 JSON 格式的数据存储在应用程序中的隐藏 div 中。<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+此示例概述了如何在一个回调中执行昂贵的数据处理步骤，将输出序列化为 JSON 并将其提供为其他回调的输入。本示例使用标准的 Dash 回调并将 JSON 格式的数据存储在应用程序中的隐藏 div 中。<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">global_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
 <span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
     <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;graph&#39;</span><span class="p">),</span>
@@ -913,16 +693,16 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </details></section>
 <section id="id4">
-<h2>示例2 前期聚合计算<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>示例2 前期聚合计算<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>如果数据很大，则通过网络发送计算的数据可能会很昂贵。在某些情况下，序列化此数据和 JSON 可能也很昂贵。</p>
 <p>在许多情况下，您的应用只会显示计算或过滤后的数据的子集或汇总。在这些情况下，您可以在数据处理回调中预先计算聚合，然后将这些聚合传输到其余的回调中。</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-这是一个简单的示例，说明如何将经过筛选或聚合的数据传输到多个回调。<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+这是一个简单的示例，说明如何将经过筛选或聚合的数据传输到多个回调。<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
     <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;intermediate-value&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span>
     <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;dropdown&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
@@ -978,7 +758,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </details></section>
 <section id="id5">
-<h2>示例3 缓存和信号<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>示例3 缓存和信号<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>这个例子：</p>
 <ul class="simple">
 <li><p>通过 Flask-Cache 使用 Redis 来存储“全局变量”。该数据通过一个函数访问，该函数的输出由其输入参数缓存并键入键。</p></li>
@@ -1144,7 +924,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </details>
 </section>
 <section id="id6">
-<h2>示例4 服务器上基于用户的会话数据<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>示例4 服务器上基于用户的会话数据<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>前面的示例在文件系统上缓存了计算，并且所有用户都可以访问这些计算。</p>
 <p>在某些情况下，您想使数据与用户会话隔离：一个用户的派生数据不应更新下一个用户的派生数据。一种实现方法是将数据保存在隐藏的 Div中，如第一个示例所示。</p>
 <p>执行此操作的另一种方法是使用会话ID将数据保存在文件系统缓存中，然后使用该会话 ID 引用数据。因为数据保存在服务器上而不是通过网络传输，所以此方法通常比“hidden div”方法更快。</p>
@@ -1284,7 +1064,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./start"
         },
         predefinedOutput: true
@@ -1292,61 +1072,107 @@ commentsRunWhenDOMLoaded(addUtterances);
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="04_interactive-graphing.html" title="上一页 页">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">上一页</p>
-                <p class="prevnext-title">交互式可视化</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="06_faqs.html" title="下一页 页">
-            <div class="prevnext-info">
-                <p class="prevnext-label">下一页</p>
-                <p class="prevnext-title">FAQs</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_interactive-graphing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">交互式可视化</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06_faqs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">FAQs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          <div class="extra_footer">
-            <p class="w3-card w3-pale-blue w3-padding">
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">为什么要共享状态？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash">Dash 是无状态的</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global">为什么 <code class="docutils literal notranslate"><span class="pre">global</span></code> 变量会破坏您的应用程序</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">回调之间共享数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcc-store">示例1 使用 <code class="docutils literal notranslate"><span class="pre">dcc.Store</span></code> 在浏览器中存储数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">示例2 前期聚合计算</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">示例3 缓存和信号</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">示例4 服务器上基于用户的会话数据</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p class="w3-card w3-pale-blue w3-padding">
   Copyright © 2021
   <a href="https://sanstylelab.github.io/">SanstyleLab</a> | 
   Powered by <a href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a>.
 </p>
 
-          </div>
-      </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
   </footer>
-</main>
-
-
-      </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
   </body>
 </html>
